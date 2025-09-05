@@ -5,53 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOCU™ Professional - 台灣法律文件智能生成系統</title>
     
-    <!-- Advanced Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
     
     <style>
-        /* =============== DESIGN SYSTEM =============== */
         :root {
-            /* Premium Color Palette */
             --primary-900: #0A0E1F;
             --primary-800: #141929;
             --primary-700: #1E2433;
             --primary-600: #282F3D;
             --primary-500: #323A47;
-            
             --accent-gold: #FFB800;
             --accent-gold-dark: #E5A600;
             --accent-gold-light: #FFD166;
-            
             --accent-blue: #0066FF;
             --accent-green: #00C896;
             --accent-red: #FF3B30;
             --accent-purple: #8B5CF6;
-            
-            /* Semantic Colors */
             --color-success: #10B981;
             --color-warning: #F59E0B;
             --color-error: #EF4444;
             --color-info: #3B82F6;
-            
-            /* Text Colors */
             --text-primary: #FFFFFF;
             --text-secondary: #94A3B8;
             --text-tertiary: #64748B;
             --text-disabled: #475569;
-            
-            /* Glass Morphism */
             --glass-bg: rgba(255, 255, 255, 0.02);
             --glass-border: rgba(255, 255, 255, 0.05);
             --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            
-            /* Advanced Shadows */
             --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-sm: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-md: 0 4px 6px -2px rgba(0, 0, 0, 0.1);
@@ -59,23 +41,16 @@
             --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
             --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             --shadow-glow: 0 0 50px rgba(255, 184, 0, 0.15);
-            
-            /* Animations */
             --ease-spring: cubic-bezier(0.43, 0.195, 0.02, 0.96);
             --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
             --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
-            
-            /* Layout */
             --nav-height: 72px;
             --sidebar-width: 420px;
             --container-max: 1440px;
             --spacing-unit: 8px;
         }
         
-        /* =============== RESET & BASE =============== */
-        *,
-        *::before,
-        *::after {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -98,7 +73,6 @@
             overflow-x: hidden;
         }
         
-        /* =============== ADVANCED BACKGROUND =============== */
         .universe-bg {
             position: fixed;
             inset: 0;
@@ -126,36 +100,19 @@
         }
         
         @keyframes float-particle {
-            from {
-                transform: translateY(100vh) rotate(0deg);
-            }
-            to {
-                transform: translateY(-100px) rotate(360deg);
-            }
+            from { transform: translateY(100vh) rotate(0deg); }
+            to { transform: translateY(-100px) rotate(360deg); }
         }
         
-        /* =============== CUSTOM SCROLLBAR =============== */
-        ::-webkit-scrollbar {
-            width: 12px;
-            height: 12px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: var(--primary-800);
-            border-radius: 10px;
-        }
-        
+        ::-webkit-scrollbar { width: 12px; height: 12px; }
+        ::-webkit-scrollbar-track { background: var(--primary-800); border-radius: 10px; }
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, var(--accent-gold), var(--accent-gold-dark));
             border-radius: 10px;
             border: 2px solid var(--primary-800);
         }
+        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--accent-gold-light), var(--accent-gold)); }
         
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, var(--accent-gold-light), var(--accent-gold));
-        }
-        
-        /* =============== NAVIGATION SYSTEM =============== */
         .nav-system {
             position: fixed;
             top: 0;
@@ -193,9 +150,7 @@
             transition: transform 0.3s var(--ease-spring);
         }
         
-        .nav-brand:hover {
-            transform: translateX(5px);
-        }
+        .nav-brand:hover { transform: translateX(5px); }
         
         .brand-logo {
             width: 42px;
@@ -222,9 +177,7 @@
             transition: transform 0.6s;
         }
         
-        .nav-brand:hover .brand-logo::after {
-            transform: translateX(100%);
-        }
+        .nav-brand:hover .brand-logo::after { transform: translateX(100%); }
         
         .brand-text {
             font-size: 24px;
@@ -245,7 +198,6 @@
             box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
         }
         
-        /* =============== CUSTOM BUTTON SYSTEM =============== */
         .btn-custom {
             position: relative;
             display: inline-flex;
@@ -284,9 +236,7 @@
             height: 300px;
         }
         
-        .btn-custom:active {
-            transform: scale(0.98);
-        }
+        .btn-custom:active { transform: scale(0.98); }
         
         .btn-primary {
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
@@ -311,7 +261,6 @@
             border-color: rgba(255, 255, 255, 0.1);
         }
         
-        /* =============== CUSTOM INPUT SYSTEM =============== */
         .form-control-custom {
             position: relative;
             margin-bottom: calc(var(--spacing-unit) * 3);
@@ -358,9 +307,7 @@
             color: var(--accent-gold);
         }
         
-        .form-input-custom::placeholder {
-            color: transparent;
-        }
+        .form-input-custom::placeholder { color: transparent; }
         
         .input-helper {
             position: absolute;
@@ -371,9 +318,7 @@
             font-size: 14px;
         }
         
-        .input-error {
-            border-color: var(--color-error) !important;
-        }
+        .input-error { border-color: var(--color-error) !important; }
         
         .error-message {
             color: var(--color-error);
@@ -384,7 +329,7 @@
             gap: 4px;
         }
         
-        /* =============== CUSTOM SELECT SYSTEM =============== */
+        /* Continuing CSS styles... */
         .select-custom {
             position: relative;
             width: 100%;
@@ -417,13 +362,8 @@
             box-shadow: 0 0 0 4px rgba(255, 184, 0, 0.1);
         }
         
-        .select-arrow {
-            transition: transform 0.3s var(--ease-spring);
-        }
-        
-        .select-trigger.active .select-arrow {
-            transform: rotate(180deg);
-        }
+        .select-arrow { transition: transform 0.3s var(--ease-spring); }
+        .select-trigger.active .select-arrow { transform: rotate(180deg); }
         
         .select-dropdown {
             position: absolute;
@@ -480,7 +420,6 @@
             font-weight: 700;
         }
         
-        /* =============== CUSTOM CHECKBOX SYSTEM =============== */
         .checkbox-custom {
             display: flex;
             align-items: flex-start;
@@ -492,9 +431,7 @@
             position: relative;
         }
         
-        .checkbox-custom:hover {
-            background: rgba(255, 184, 0, 0.03);
-        }
+        .checkbox-custom:hover { background: rgba(255, 184, 0, 0.03); }
         
         .checkbox-custom input {
             position: absolute;
@@ -535,9 +472,7 @@
             stroke-dashoffset: 0;
         }
         
-        .checkbox-content {
-            flex: 1;
-        }
+        .checkbox-content { flex: 1; }
         
         .checkbox-title {
             color: var(--text-primary);
@@ -552,7 +487,6 @@
             line-height: 1.5;
         }
         
-        /* =============== HERO SECTION =============== */
         .hero-container {
             min-height: 100vh;
             display: flex;
@@ -572,19 +506,11 @@
             align-items: center;
         }
         
-        .hero-text {
-            animation: fadeInUp 1s var(--ease-out-expo);
-        }
+        .hero-text { animation: fadeInUp 1s var(--ease-out-expo); }
         
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .hero-badge {
@@ -614,7 +540,6 @@
             background-clip: text;
         }
         
-        /* =============== DOCUMENT SECTION =============== */
         .document-container {
             display: none;
             min-height: 100vh;
@@ -668,14 +593,9 @@
             gap: 12px;
         }
         
-        .section-title i {
-            color: var(--accent-gold);
-        }
+        .section-title i { color: var(--accent-gold); }
         
-        /* Progress Bar */
-        .progress-container {
-            margin-bottom: 28px;
-        }
+        .progress-container { margin-bottom: 28px; }
         
         .progress-bar {
             height: 8px;
@@ -718,7 +638,6 @@
             text-align: right;
         }
         
-        /* Document Preview */
         .document-preview {
             background: white;
             border-radius: 16px;
@@ -758,12 +677,11 @@
             background: white;
         }
         
-        /* =============== MODAL SYSTEM =============== */
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(20px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -781,60 +699,219 @@
         .modal-container {
             background: var(--primary-800);
             border: 1px solid var(--glass-border);
-            border-radius: 20px;
+            border-radius: 24px;
             width: 90%;
-            max-width: 560px;
-            max-height: 90vh;
-            overflow-y: auto;
+            max-width: 480px;
+            position: relative;
             transform: scale(0.9) translateY(20px);
-            transition: transform 0.3s var(--ease-spring);
+            transition: all 0.3s var(--ease-spring);
+            overflow: hidden;
         }
         
         .modal-overlay.active .modal-container {
             transform: scale(1) translateY(0);
         }
         
-        .modal-header {
-            padding: 32px 32px 0;
-            text-align: center;
-        }
-        
-        .modal-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
-            border-radius: 16px;
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+        
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            transform: rotate(90deg);
+        }
+        
+        .modal-content { padding: 40px; }
+        
+        .auth-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            background: var(--glass-bg);
+            padding: 5px;
+            border-radius: 12px;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .auth-tab.active {
+            background: var(--accent-gold);
             color: var(--primary-900);
         }
         
-        .modal-title {
+        .auth-form { display: none; }
+        .auth-form.active { display: block; animation: fadeInUp 0.5s var(--ease-out-expo); }
+        
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .auth-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: var(--primary-900);
+            box-shadow: 0 10px 30px rgba(255, 184, 0, 0.3);
+        }
+        
+        .auth-title {
             font-size: 28px;
             font-weight: 800;
             color: var(--text-primary);
             margin-bottom: 8px;
         }
         
-        .modal-subtitle {
+        .auth-subtitle {
             font-size: 16px;
             color: var(--text-secondary);
         }
         
-        .modal-body {
-            padding: 32px;
+        .form-extras {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
         
-        .modal-footer {
-            padding: 0 32px 32px;
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        .remember-me input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .forgot-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+        
+        .forgot-link:hover { opacity: 0.8; }
+        
+        .btn-auth-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: var(--primary-900);
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 184, 0, 0.3);
+        }
+        
+        .btn-auth-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 184, 0, 0.4);
+        }
+        
+        .auth-divider {
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .auth-divider span {
+            background: var(--primary-800);
+            padding: 0 15px;
+            color: var(--text-tertiary);
+            font-size: 13px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .auth-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--glass-border);
+        }
+        
+        .social-login {
             display: flex;
             gap: 12px;
         }
         
-        /* =============== NOTIFICATION SYSTEM =============== */
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            color: var(--text-primary);
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .social-btn:hover { transform: translateY(-2px); }
+        
+        .social-btn.google:hover {
+            background: rgba(219, 68, 55, 0.1);
+            border-color: #DB4437;
+        }
+        
+        .social-btn.facebook:hover {
+            background: rgba(24, 119, 242, 0.1);
+            border-color: #1877F2;
+        }
+        
         .notification-container {
             position: fixed;
             top: calc(var(--nav-height) + 20px);
@@ -886,9 +963,7 @@
             color: var(--color-error);
         }
         
-        .notification-content {
-            flex: 1;
-        }
+        .notification-content { flex: 1; }
         
         .notification-title {
             font-weight: 700;
@@ -902,390 +977,33 @@
             color: var(--text-secondary);
         }
         
-        /* =============== RESPONSIVE DESIGN =============== */
         @media (max-width: 1280px) {
-            .document-layout {
-                grid-template-columns: 360px 1fr;
-            }
-            
-            :root {
-                --sidebar-width: 360px;
-            }
+            .document-layout { grid-template-columns: 360px 1fr; }
+            :root { --sidebar-width: 360px; }
         }
         
         @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-            
-            .document-layout {
-                grid-template-columns: 1fr;
-            }
-            
-            .document-sidebar {
-                position: static;
-                max-height: none;
-            }
+            .hero-content { grid-template-columns: 1fr; gap: 60px; }
+            .document-layout { grid-template-columns: 1fr; }
+            .document-sidebar { position: static; max-height: none; }
         }
         
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 36px;
-            }
-            
-            .preview-content {
-                padding: 30px;
-            }
+            .hero-title { font-size: 36px; }
+            .preview-content { padding: 30px; }
         }
         
-        /* =============== PRINT STYLES =============== */
         @media print {
-            body {
-                background: white;
-            }
-            
-            .nav-system,
-            .preview-toolbar,
-            .document-sidebar {
-                display: none !important;
-            }
-            
-            .preview-content {
-                padding: 0;
-                box-shadow: none;
-            }
+            body { background: white; }
+            .nav-system, .preview-toolbar, .document-sidebar { display: none !important; }
+            .preview-content { padding: 0; box-shadow: none; }
         }
-
-        /* =============== AUTH MODAL STYLES =============== */
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(20px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s var(--ease-spring);
-    z-index: 2000;
-}
-
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.modal-container {
-    background: var(--primary-800);
-    border: 1px solid var(--glass-border);
-    border-radius: 24px;
-    width: 90%;
-    max-width: 480px;
-    position: relative;
-    transform: scale(0.9) translateY(20px);
-    transition: all 0.3s var(--ease-spring);
-    overflow: hidden;
-}
-
-.modal-overlay.active .modal-container {
-    transform: scale(1) translateY(0);
-}
-
-.modal-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s;
-    z-index: 10;
-}
-
-.modal-close:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-primary);
-    transform: rotate(90deg);
-}
-
-.modal-content {
-    padding: 40px;
-}
-
-/* Auth Tabs */
-.auth-tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 30px;
-    background: var(--glass-bg);
-    padding: 5px;
-    border-radius: 12px;
-}
-
-.auth-tab {
-    flex: 1;
-    padding: 12px;
-    background: transparent;
-    border: none;
-    color: var(--text-secondary);
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.3s;
-}
-
-.auth-tab.active {
-    background: var(--accent-gold);
-    color: var(--primary-900);
-}
-
-/* Auth Forms */
-.auth-form {
-    display: none;
-}
-
-.auth-form.active {
-    display: block;
-    animation: fadeInUp 0.5s var(--ease-out-expo);
-}
-
-.auth-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.auth-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px;
-    background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    color: var(--primary-900);
-    box-shadow: 0 10px 30px rgba(255, 184, 0, 0.3);
-}
-
-.auth-icon.register {
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-    box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
-}
-
-.auth-title {
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-}
-
-.auth-subtitle {
-    font-size: 16px;
-    color: var(--text-secondary);
-}
-
-/* Form Extras */
-.form-extras {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.remember-me {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    color: var(--text-secondary);
-    font-size: 14px;
-}
-
-.remember-me input {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-
-.forgot-link {
-    color: var(--accent-gold);
-    text-decoration: none;
-    font-size: 14px;
-    transition: opacity 0.3s;
-}
-
-.forgot-link:hover {
-    opacity: 0.8;
-}
-
-/* Auth Submit Button */
-.btn-auth-submit {
-    width: 100%;
-    padding: 16px;
-    background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
-    color: var(--primary-900);
-    border: none;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(255, 184, 0, 0.3);
-}
-
-.btn-auth-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 184, 0, 0.4);
-}
-
-/* Auth Divider */
-.auth-divider {
-    text-align: center;
-    margin: 25px 0;
-    position: relative;
-}
-
-.auth-divider span {
-    background: var(--primary-800);
-    padding: 0 15px;
-    color: var(--text-tertiary);
-    font-size: 13px;
-    position: relative;
-    z-index: 1;
-}
-
-.auth-divider::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--glass-border);
-}
-
-/* Social Login */
-.social-login {
-    display: flex;
-    gap: 12px;
-}
-
-.social-btn {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid var(--glass-border);
-    background: var(--glass-bg);
-    color: var(--text-primary);
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: all 0.3s;
-}
-
-.social-btn:hover {
-    transform: translateY(-2px);
-}
-
-.social-btn.google:hover {
-    background: rgba(219, 68, 55, 0.1);
-    border-color: #DB4437;
-}
-
-.social-btn.facebook:hover {
-    background: rgba(24, 119, 242, 0.1);
-    border-color: #1877F2;
-}
-
-/* Password Strength */
-.password-strength {
-    height: 4px;
-    background: var(--glass-border);
-    border-radius: 2px;
-    margin-top: 8px;
-    overflow: hidden;
-}
-
-.password-strength::after {
-    content: '';
-    display: block;
-    height: 100%;
-    border-radius: 2px;
-    transition: all 0.3s;
-}
-
-.password-strength.weak::after {
-    width: 33%;
-    background: var(--color-error);
-}
-
-.password-strength.medium::after {
-    width: 66%;
-    background: var(--color-warning);
-}
-
-.password-strength.strong::after {
-    width: 100%;
-    background: var(--color-success);
-}
-
-/* Terms Checkbox */
-.terms-checkbox {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-}
-
-.terms-checkbox input {
-    margin-top: 3px;
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-
-.terms-checkbox label {
-    color: var(--text-secondary);
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.terms-checkbox a {
-    color: var(--accent-gold);
-    text-decoration: none;
-}
-
-.terms-checkbox a:hover {
-    text-decoration: underline;
-}
-
     </style>
 </head>
 <body>
-    <!-- Background Effects -->
     <div class="universe-bg"></div>
     <div id="particles"></div>
     
-    <!-- Navigation System -->
     <nav class="nav-system" id="navSystem">
         <div class="nav-container">
             <div class="nav-brand" onclick="navigateHome()">
@@ -1317,7 +1035,6 @@
         </div>
     </nav>
     
-    <!-- Hero Section -->
     <section id="heroSection" class="hero-container">
         <div class="hero-content">
             <div class="hero-text">
@@ -1365,7 +1082,7 @@
             
             <div class="hero-visual">
                 <div class="feature-cards-grid">
-                    <div class="feature-card">
+                    <div class="feature-card" style="background: var(--glass-bg); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-radius: 16px; padding: 24px;">
                         <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
                             <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
                                 <i class="fas fa-balance-scale" style="color: white; font-size: 24px;"></i>
@@ -1386,11 +1103,9 @@
         </div>
     </section>
     
-    <!-- Document Creation Section -->
     <section id="documentSection" class="document-container">
         <div class="document-layout">
             <aside class="document-sidebar">
-                <!-- Progress Section -->
                 <div class="sidebar-section">
                     <div class="progress-container">
                         <div class="progress-bar">
@@ -1402,7 +1117,6 @@
                     </div>
                 </div>
                 
-                <!-- Form Section -->
                 <div class="sidebar-section">
                     <h3 class="section-title">
                         <i class="fas fa-file-contract"></i>
@@ -1410,7 +1124,6 @@
                     </h3>
                     
                     <form id="documentForm">
-                        <!-- Document Type -->
                         <div class="form-control-custom">
                             <div class="select-custom">
                                 <div class="select-trigger" id="docTypeTrigger">
@@ -1439,7 +1152,6 @@
                             <input type="hidden" id="docType" required>
                         </div>
                         
-                        <!-- Company Info -->
                         <div class="form-control-custom">
                             <input type="text" class="form-input-custom" id="companyName" placeholder=" " required>
                             <label class="form-label-custom">甲方名稱/公司 *</label>
@@ -1463,7 +1175,6 @@
                             <label class="form-label-custom">負責人/代表人 *</label>
                         </div>
                         
-                        <!-- Counterparty Info -->
                         <div class="form-control-custom">
                             <input type="text" class="form-input-custom" id="counterpartyName" placeholder=" " required>
                             <label class="form-label-custom">乙方姓名 *</label>
@@ -1487,7 +1198,6 @@
                             <label class="form-label-custom">聯絡電話 *</label>
                         </div>
                         
-                        <!-- Amount & Dates -->
                         <div class="form-control-custom">
                             <input type="text" class="form-input-custom" id="amount" placeholder=" ">
                             <label class="form-label-custom">金額 (新台幣)</label>
@@ -1505,7 +1215,6 @@
                     </form>
                 </div>
                 
-                <!-- Dynamic Options -->
                 <div class="sidebar-section" id="optionsSection" style="display: none;">
                     <h3 class="section-title">
                         <i class="fas fa-sliders-h"></i>
@@ -1514,7 +1223,6 @@
                     <div id="dynamicOptions"></div>
                 </div>
                 
-                <!-- Action Buttons -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                     <button class="btn-custom btn-glass" onclick="resetForm()">
                         <i class="fas fa-redo"></i>
@@ -1527,7 +1235,6 @@
                 </div>
             </aside>
             
-            <!-- Document Preview -->
             <main class="document-preview">
                 <div class="preview-toolbar">
                     <div class="preview-title">
@@ -1557,194 +1264,139 @@
         </div>
     </section>
     
-    <!-- Notification Container -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeAuthModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-content">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="loginTab" onclick="switchTab('login')">
+                        登入
+                    </button>
+                    <button class="auth-tab" id="registerTab" onclick="switchTab('register')">
+                        註冊
+                    </button>
+                </div>
+                
+                <form id="loginForm" class="auth-form active">
+                    <div class="auth-header">
+                        <div class="auth-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h2 class="auth-title">歡迎回來</h2>
+                        <p class="auth-subtitle">登入您的帳號以繼續</p>
+                    </div>
+                    
+                    <div class="form-control-custom">
+                        <input type="email" class="form-input-custom" id="loginEmail" placeholder=" " required>
+                        <label class="form-label-custom">電子郵件</label>
+                    </div>
+                    
+                    <div class="form-control-custom">
+                        <input type="password" class="form-input-custom" id="loginPassword" placeholder=" " required>
+                        <label class="form-label-custom">密碼</label>
+                    </div>
+                    
+                    <div class="form-extras">
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <span>記住我</span>
+                        </label>
+                        <a href="#" class="forgot-link" onclick="showForgotPassword(); return false;">忘記密碼？</a>
+                    </div>
+                    
+                    <button type="submit" class="btn-auth-submit">
+                        <span>登入</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <div class="auth-divider">
+                        <span>或使用其他方式登入</span>
+                    </div>
+                    
+                    <div class="social-login">
+                        <button type="button" class="social-btn google" onclick="socialLogin('google')">
+                            <i class="fab fa-google"></i>
+                            Google
+                        </button>
+                        <button type="button" class="social-btn facebook" onclick="socialLogin('facebook')">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </button>
+                    </div>
+                </form>
 
-    <!-- Login/Register Modal -->
-<div class="modal-overlay" id="authModal">
-    <div class="modal-container">
-        <button class="modal-close" onclick="closeAuthModal()">
-            <i class="fas fa-times"></i>
-        </button>
-        
-        <div class="modal-content">
-            <div class="auth-tabs">
-                <button class="auth-tab active" id="loginTab" onclick="switchTab('login')">
-                    登入
-                </button>
-                <button class="auth-tab" id="registerTab" onclick="switchTab('register')">
-                    註冊
-                </button>
+                <form id="registerForm" class="auth-form">
+                    <div class="auth-header">
+                        <div class="auth-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h2 class="auth-title">建立新帳號</h2>
+                        <p class="auth-subtitle">註冊以開始使用我們的服務</p>
+                    </div>
+                    
+                    <div class="form-control-custom">
+                        <input type="text" class="form-input-custom" id="registerName" placeholder=" " required>
+                        <label class="form-label-custom">姓名</label>
+                    </div>
+                    
+                    <div class="form-control-custom">
+                        <input type="email" class="form-input-custom" id="registerEmail" placeholder=" " required>
+                        <label class="form-label-custom">電子郵件</label>
+                    </div>
+                    
+                    <div class="form-control-custom">
+                        <input type="password" class="form-input-custom" id="registerPassword" placeholder=" " required>
+                        <label class="form-label-custom">密碼</label>
+                    </div>
+                    
+                    <div class="form-control-custom">
+                        <input type="password" class="form-input-custom" id="confirmPassword" placeholder=" " required>
+                        <label class="form-label-custom">確認密碼</label>
+                    </div>
+                    
+                    <div class="form-extras">
+                        <label class="remember-me">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <span>我同意<a href="#" onclick="showTerms(); return false;">服務條款</a>與<a href="#" onclick="showPrivacy(); return false;">隱私政策</a></span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-auth-submit">
+                        <span>註冊</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <div class="auth-divider">
+                        <span>或使用其他方式註冊</span>
+                    </div>
+                    
+                    <div class="social-login">
+                        <button type="button" class="social-btn google" onclick="socialLogin('google')">
+                            <i class="fab fa-google"></i>
+                            Google
+                        </button>
+                        <button type="button" class="social-btn facebook" onclick="socialLogin('facebook')">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </button>
+                    </div>
+                </form>
             </div>
-            
-            <!-- Login Form -->
-            <form id="loginForm" class="auth-form active">
-                <div class="auth-header">
-                    <div class="auth-icon">
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                    <h2 class="auth-title">歡迎回來</h2>
-                    <p class="auth-subtitle">登入您的帳號以繼續</p>
-                </div>
-                
-                <div class="form-control-custom">
-                    <input type="email" class="form-input-custom" id="loginEmail" placeholder=" " required>
-                    <label class="form-label-custom">電子郵件</label>
-                </div>
-                
-                <div class="form-control-custom">
-                    <input type="password" class="form-input-custom" id="loginPassword" placeholder=" " required>
-                    <label class="form-label-custom">密碼</label>
-                </div>
-                
-                <div class="form-extras">
-                    <label class="remember-me">
-                        <input type="checkbox" id="rememberMe">
-                        <span>記住我</span>
-                    </label>
-                    <a href="#" class="forgot-link" onclick="showForgotPassword()">忘記密碼？</a>
-                </div>
-                
-                <button type="submit" class="btn-auth-submit">
-                    <span>登入</span>
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-                
-                <div class="auth-divider">
-                    <span>或使用其他方式登入</span>
-                </div>
-                
-                <div class="social-login">
-                    <button type="button" class="social-btn google" onclick="socialLogin('google')">
-                        <i class="fab fa-google"></i>
-                        Google
-                    </button>
-                    <button type="button" class="social-btn facebook" onclick="socialLogin('facebook')">
-                        <i class="fab fa-facebook-f"></i>
-                        Facebook
-                    </button>
-                </div>
-            </form>
-
-            <!-- Register Form -->
-            <form id="registerForm" class="auth-form">
-                <div class="auth-header">
-                    <div class="auth-icon">
-                        <i class="fas fa-user-plus"></i>
-                    </div>
-                    <h2 class="auth-title">建立新帳號</h2>
-                    <p class="auth-subtitle">註冊以開始使用我們的服務</p>
-                </div>
-                
-                <div class="form-control-custom">
-                    <input type="text" class="form-input-custom" id="registerName" placeholder=" " required>
-                    <label class="form-label-custom">姓名</label>
-                </div>
-                
-                <div class="form-control-custom">
-                    <input type="email" class="form-input-custom" id="registerEmail" placeholder=" " required>
-                    <label class="form-label-custom">電子郵件</label>
-                </div>
-                
-                <div class="form-control-custom">
-                    <input type="password" class="form-input-custom" id="registerPassword" placeholder=" " required>
-                    <label class="form-label-custom">密碼</label>
-                </div>
-                
-                <div class="form-control-custom">
-                    <input type="password" class="form-input-custom" id="confirmPassword" placeholder=" " required>
-                    <label class="form-label-custom">確認密碼</label>
-                </div>
-                
-                <div class="form-extras">
-                    <label class="remember-me">
-                        <input type="checkbox" id="agreeTerms" required>
-                        <span>我同意<a href="#" onclick="showTerms()">服務條款</a>與<a href="#" onclick="showPrivacy()">隱私政策</a></span>
-                    </label>
-                </div>
-                
-                <button type="submit" class="btn-auth-submit">
-                    <span>註冊</span>
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-                
-                <div class="auth-divider">
-                    <span>或使用其他方式註冊</span>
-                </div>
-                
-                <div class="social-login">
-                    <button type="button" class="social-btn google" onclick="socialLogin('google')">
-                        <i class="fab fa-google"></i>
-                        Google
-                    </button>
-                    <button type="button" class="social-btn facebook" onclick="socialLogin('facebook')">
-                        <i class="fab fa-facebook-f"></i>
-                        Facebook
-                    </button>
-                </div>
-            </form>
         </div>
     </div>
-</div>
-            
-            <!-- Register Form -->
-            <form id="registerForm" class="auth-form">
-                <div class="auth-header">
-                    <div class="auth-icon register">
-                        <i class="fas fa-user-plus"></i>
-                    </div>
-                    <h2 class="auth-title">建立新帳號</h2>
-                    <p class="auth-subtitle">開始您的專業文件之旅</p>
-                </div>
-                
-                <div class="form-control-custom">
-                    <input type="text" class="form-input-custom" id="registerName" placeholder=" " required>
-                    <label class="form-label-custom">姓名</label>
-                </div>
-                
-                <div class="form-control-custom">
-                    <input type="email" class="form-input-custom" id="registerEmail" placeholder=" " required>
-                    <label class="form-label-custom">電子郵件</label>
-                </div>
-                
-                <div class="form-control-custom">
-                    <input type="password" class="form-input-custom" id="registerPassword" placeholder=" " required>
-                    <label class="form-label-custom">密碼</label>
-                    <div class="password-strength" id="passwordStrength"></div>
-                </div>
-                
-                <div class="form-control-custom">
-                    <input type="password" class="form-input-custom" id="confirmPassword" placeholder=" " required>
-                    <label class="form-label-custom">確認密碼</label>
-                </div>
-                
-                <div class="terms-checkbox">
-                    <input type="checkbox" id="agreeTerms" required>
-                    <label for="agreeTerms">
-                        我同意 <a href="#" onclick="showTerms()">服務條款</a> 和 <a href="#" onclick="showPrivacy()">隱私政策</a>
-                    </label>
-                </div>
-                
-                <button type="submit" class="btn-auth-submit">
-                    <span>註冊</span>
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-
-    <div class="notification-container" id="notificationContainer"></div>
     
+    <div class="notification-container" id="notificationContainer"></div>
     <script>
-        // =============== GLOBAL STATE ===============
+        // Global State
         let currentUser = null;
         let isPremium = false;
         let documentData = {};
         let selectedDocType = null;
         
-        // =============== INITIALIZATION ===============
+        // Initialization
         document.addEventListener('DOMContentLoaded', function() {
             initializeApp();
             createParticles();
@@ -1754,25 +1406,18 @@
         });
         
         function initializeApp() {
-            // Set default date
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('startDate').value = today;
             
-            // Check auth status
             const savedUser = localStorage.getItem('docuUser');
             if (savedUser) {
                 currentUser = JSON.parse(savedUser);
                 updateUserInterface();
             }
             
-            // Scroll effect for navigation
             window.addEventListener('scroll', function() {
                 const nav = document.getElementById('navSystem');
-                if (window.scrollY > 50) {
-                    nav.classList.add('scrolled');
-                } else {
-                    nav.classList.remove('scrolled');
-                }
+                nav.classList.toggle('scrolled', window.scrollY > 50);
             });
         }
         
@@ -1782,8 +1427,7 @@
                 const particle = document.createElement('div');
                 particle.className = 'floating-particle';
                 particle.style.left = Math.random() * 100 + '%';
-                particle.style.width = Math.random() * 4 + 2 + 'px';
-                particle.style.height = particle.style.width;
+                particle.style.width = particle.style.height = Math.random() * 4 + 2 + 'px';
                 particle.style.background = `rgba(255, 184, 0, ${Math.random() * 0.5 + 0.1})`;
                 particle.style.borderRadius = '50%';
                 particle.style.animationDelay = Math.random() * 20 + 's';
@@ -1792,11 +1436,9 @@
             }
         }
         
-        // =============== NAVIGATION ===============
+        // Navigation
         function navigateHome() {
-            document.querySelectorAll('section').forEach(section => {
-                section.style.display = 'none';
-            });
+            document.querySelectorAll('section').forEach(s => s.style.display = 'none');
             document.getElementById('heroSection').style.display = 'flex';
         }
         
@@ -1807,22 +1449,19 @@
                 return;
             }
             
-            document.querySelectorAll('section').forEach(section => {
-                section.style.display = 'none';
-            });
-            document.getElementById('documentSection').style.display = 'block';
-            document.getElementById('documentSection').classList.add('active');
+            document.querySelectorAll('section').forEach(s => s.style.display = 'none');
+            const docSection = document.getElementById('documentSection');
+            docSection.style.display = 'block';
+            docSection.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         
-        // =============== CUSTOM SELECT IMPLEMENTATION ===============
+        // Custom Select
         function initCustomSelects() {
             const trigger = document.getElementById('docTypeTrigger');
             const options = document.querySelectorAll('.select-option');
             
-            trigger.addEventListener('click', function() {
-                this.classList.toggle('active');
-            });
+            trigger.addEventListener('click', () => trigger.classList.toggle('active'));
             
             options.forEach(option => {
                 option.addEventListener('click', function() {
@@ -1830,37 +1469,29 @@
                     const icon = this.dataset.icon;
                     const text = this.textContent.trim();
                     
-                    // Update display
                     document.getElementById('docTypeText').innerHTML = `<i class="fas ${icon}"></i> ${text}`;
                     document.getElementById('docType').value = value;
                     
-                    // Update selected state
                     options.forEach(opt => opt.classList.remove('selected'));
                     this.classList.add('selected');
-                    
-                    // Close dropdown
                     trigger.classList.remove('active');
                     
-                    // Update dynamic options
                     selectedDocType = value;
                     updateDynamicOptions(value);
                     updateProgress();
                 });
             });
             
-            // Close on outside click
-            document.addEventListener('click', function(e) {
+            document.addEventListener('click', e => {
                 if (!trigger.contains(e.target) && !e.target.closest('.select-dropdown')) {
                     trigger.classList.remove('active');
                 }
             });
         }
         
-        // =============== FORM VALIDATION ===============
+        // Form Validation
         function initFormValidation() {
-            const inputs = document.querySelectorAll('.form-input-custom');
-            
-            inputs.forEach(input => {
+            document.querySelectorAll('.form-input-custom').forEach(input => {
                 input.addEventListener('blur', () => validateInput(input));
                 input.addEventListener('input', () => {
                     validateInput(input);
@@ -1874,26 +1505,20 @@
             let isValid = true;
             let errorMessage = '';
             
-            // Required check
             if (input.hasAttribute('required') && !value) {
                 isValid = false;
                 errorMessage = '此欄位為必填';
             }
             
-            // Pattern check
             if (input.hasAttribute('pattern') && value) {
                 const pattern = new RegExp(input.getAttribute('pattern'));
                 if (!pattern.test(value)) {
                     isValid = false;
-                    if (input.id === 'companyId') {
-                        errorMessage = '統一編號格式錯誤 (8位數字)';
-                    } else if (input.id === 'counterpartyId') {
-                        errorMessage = '身分證字號格式錯誤';
-                    }
+                    errorMessage = input.id === 'companyId' ? '統一編號格式錯誤 (8位數字)' : 
+                                   input.id === 'counterpartyId' ? '身分證字號格式錯誤' : '格式錯誤';
                 }
             }
             
-            // Update UI
             if (!isValid && value) {
                 input.classList.add('input-error');
                 showInputError(input, errorMessage);
@@ -1906,41 +1531,29 @@
         }
         
         function showInputError(input, message) {
-            const existingError = input.parentElement.querySelector('.error-message');
-            if (existingError) {
-                existingError.textContent = message;
-            } else {
-                const error = document.createElement('div');
-                error.className = 'error-message';
-                error.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
-                input.parentElement.appendChild(error);
-            }
+            clearInputError(input);
+            const error = document.createElement('div');
+            error.className = 'error-message';
+            error.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
+            input.parentElement.appendChild(error);
         }
         
         function clearInputError(input) {
             const error = input.parentElement.querySelector('.error-message');
-            if (error) {
-                error.remove();
-            }
+            if (error) error.remove();
         }
         
-        // =============== PROGRESS TRACKING ===============
+        // Progress
         function updateProgress() {
             const requiredInputs = document.querySelectorAll('#documentForm [required]');
-            let filled = 0;
-            
-            requiredInputs.forEach(input => {
-                if (input.value.trim()) {
-                    filled++;
-                }
-            });
-            
+            const filled = Array.from(requiredInputs).filter(input => input.value.trim()).length;
             const progress = Math.round((filled / requiredInputs.length) * 100);
+            
             document.getElementById('progressBar').style.width = progress + '%';
             document.getElementById('progressText').textContent = `完成度：${progress}%`;
         }
         
-        // =============== DYNAMIC OPTIONS ===============
+        // Dynamic Options
         function updateDynamicOptions(docType) {
             const section = document.getElementById('optionsSection');
             const container = document.getElementById('dynamicOptions');
@@ -1953,175 +1566,49 @@
             section.style.display = 'block';
             const options = getDocumentOptions(docType);
             
-            let html = '';
-            options.forEach(option => {
-                html += `
-                    <label class="checkbox-custom">
-                        <input type="checkbox" id="${option.id}" name="docOption">
-                        <div class="checkbox-box">
-                            <svg class="checkbox-checkmark" viewBox="0 0 24 24">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </div>
-                        <div class="checkbox-content">
-                            <div class="checkbox-title">${option.title}</div>
-                            <div class="checkbox-description">${option.description}</div>
-                        </div>
-                    </label>
-                `;
-            });
-            
-            container.innerHTML = html;
+            container.innerHTML = options.map(option => `
+                <label class="checkbox-custom">
+                    <input type="checkbox" id="${option.id}" name="docOption">
+                    <div class="checkbox-box">
+                        <svg class="checkbox-checkmark" viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="checkbox-content">
+                        <div class="checkbox-title">${option.title}</div>
+                        <div class="checkbox-description">${option.description}</div>
+                    </div>
+                </label>
+            `).join('');
         }
         
         function getDocumentOptions(docType) {
             const optionsMap = {
                 employment: [
-                    {
-                        id: 'probation',
-                        title: '試用期條款',
-                        description: '依勞基法規定，最長不得超過3個月'
-                    },
-                    {
-                        id: 'overtime',
-                        title: '加班費計算',
-                        description: '依勞基法第24條規定計算加班費'
-                    },
-                    {
-                        id: 'bonus',
-                        title: '績效獎金制度',
-                        description: '包含年終獎金及績效獎金發放辦法'
-                    },
-                    {
-                        id: 'remote',
-                        title: '遠距工作條款',
-                        description: '允許彈性工作地點及遠端辦公'
-                    },
-                    {
-                        id: 'nda_included',
-                        title: '保密義務條款',
-                        description: '離職後2年內之保密義務'
-                    },
-                    {
-                        id: 'compete',
-                        title: '競業禁止條款',
-                        description: '需給予合理補償，最長2年'
-                    },
-                    {
-                        id: 'severance',
-                        title: '資遣費條款',
-                        description: '依勞基法第17條計算資遣費'
-                    },
-                    {
-                        id: 'training',
-                        title: '教育訓練條款',
-                        description: '包含訓練費用返還約定'
-                    }
+                    { id: 'probation', title: '試用期條款', description: '依勞基法規定，最長不得超過3個月' },
+                    { id: 'overtime', title: '加班費計算', description: '依勞基法第24條規定計算加班費' },
+                    { id: 'bonus', title: '績效獎金制度', description: '包含年終獎金及績效獎金發放辦法' },
+                    { id: 'remote', title: '遠距工作條款', description: '允許彈性工作地點及遠端辦公' }
                 ],
                 nda: [
-                    {
-                        id: 'mutual',
-                        title: '雙向保密協議',
-                        description: '雙方互負保密義務'
-                    },
-                    {
-                        id: 'penalty',
-                        title: '違約金條款',
-                        description: '違反保密義務之懲罰性賠償'
-                    },
-                    {
-                        id: 'duration5',
-                        title: '延長保密期限',
-                        description: '保密期限延長至5年'
-                    },
-                    {
-                        id: 'court',
-                        title: '管轄法院約定',
-                        description: '指定台北地方法院為管轄法院'
-                    },
-                    {
-                        id: 'disclosure',
-                        title: '允許特定揭露',
-                        description: '允許向關係企業或顧問揭露'
-                    },
-                    {
-                        id: 'return',
-                        title: '資料返還條款',
-                        description: '終止後返還所有機密資料'
-                    }
+                    { id: 'mutual', title: '雙向保密協議', description: '雙方互負保密義務' },
+                    { id: 'penalty', title: '違約金條款', description: '違反保密義務之懲罰性賠償' }
                 ],
                 service: [
-                    {
-                        id: 'warranty',
-                        title: '服務保固條款',
-                        description: '提供服務品質保證及保固期限'
-                    },
-                    {
-                        id: 'liability',
-                        title: '責任限制條款',
-                        description: '限制賠償責任上限'
-                    },
-                    {
-                        id: 'termination',
-                        title: '提前終止條款',
-                        description: '約定提前終止之條件及程序'
-                    },
-                    {
-                        id: 'ip_transfer',
-                        title: '智慧財產權轉讓',
-                        description: '工作成果之著作權歸屬'
-                    },
-                    {
-                        id: 'milestone',
-                        title: '里程碑付款',
-                        description: '分階段驗收及付款'
-                    },
-                    {
-                        id: 'sla',
-                        title: 'SLA服務水準',
-                        description: '服務水準協議及罰則'
-                    }
+                    { id: 'warranty', title: '服務保固條款', description: '提供服務品質保證及保固期限' },
+                    { id: 'milestone', title: '里程碑付款', description: '分階段驗收及付款' }
                 ],
                 rental: [
-                    {
-                        id: 'furnished',
-                        title: '包含傢俱設備',
-                        description: '租賃標的包含現有傢俱及家電'
-                    },
-                    {
-                        id: 'parking',
-                        title: '包含停車位',
-                        description: '含汽車停車位一個'
-                    },
-                    {
-                        id: 'pets',
-                        title: '允許飼養寵物',
-                        description: '允許飼養寵物但需負責清潔'
-                    },
-                    {
-                        id: 'early_termination',
-                        title: '提前解約條款',
-                        description: '提前終止租約之條件及賠償'
-                    },
-                    {
-                        id: 'rent_increase',
-                        title: '租金調整機制',
-                        description: '每年調整租金上限5%'
-                    },
-                    {
-                        id: 'sublease',
-                        title: '轉租條款',
-                        description: '經房東同意可轉租'
-                    }
+                    { id: 'furnished', title: '包含傢俱設備', description: '租賃標的包含現有傢俱及家電' },
+                    { id: 'parking', title: '包含停車位', description: '含汽車停車位一個' }
                 ]
             };
             
             return optionsMap[docType] || [];
         }
         
-        // =============== DOCUMENT GENERATION ===============
+        // Document Generation
         function generateDocument() {
-            // Validate all required fields
             const requiredInputs = document.querySelectorAll('#documentForm [required]');
             let isValid = true;
             
@@ -2137,7 +1624,6 @@
                 return;
             }
             
-            // Collect form data
             documentData = {
                 docType: document.getElementById('docType').value,
                 companyName: document.getElementById('companyName').value,
@@ -2154,19 +1640,14 @@
                 options: {}
             };
             
-            // Collect options
             document.querySelectorAll('input[name="docOption"]:checked').forEach(checkbox => {
                 documentData.options[checkbox.id] = true;
             });
             
-            // Generate content
             const content = generateDocumentContent(documentData);
             document.getElementById('documentPreview').innerHTML = content;
-            
-            // Update UI
             showNotification('success', '文件生成成功', '您的法律文件已成功生成');
             
-            // Check premium status
             if (!isPremium) {
                 document.getElementById('downloadBtn').innerHTML = '<i class="fas fa-lock"></i> 升級解鎖';
                 document.getElementById('downloadBtn').onclick = showPricing;
@@ -2174,1694 +1655,326 @@
         }
         
         function generateDocumentContent(data) {
-            const generators = {
-                employment: generateEmploymentContract,
-                nda: generateNDA,
-                service: generateServiceContract,
-                rental: generateRentalContract
+            const contractNumber = 'DOC' + Date.now();
+            const contractDate = new Date().toLocaleDateString('zh-TW');
+            const docTitles = {
+                employment: '勞動契約書',
+                nda: '保密協議書',
+                service: '服務合約書',
+                rental: '房屋租賃契約書'
             };
             
-            const generator = generators[data.docType];
-            return generator ? generator(data) : '<p>文件類型錯誤</p>';
+            return `
+                <article style="font-family: 'Noto Serif TC', serif; color: #1a1a1a; line-height: 2;">
+                    <header style="text-align: center; margin-bottom: 48px;">
+                        <h1 style="font-size: 32px; font-weight: 900; margin-bottom: 16px;">${docTitles[data.docType] || '契約書'}</h1>
+                        <div style="margin-top: 24px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
+                            <p>契約編號：${contractNumber}</p>
+                            <p>簽約日期：${contractDate}</p>
+                        </div>
+                    </header>
+                    
+                    <section style="margin-bottom: 40px;">
+                        <h2 style="font-size: 20px; font-weight: 700; border-bottom: 3px solid #333; padding-bottom: 8px; margin-bottom: 24px;">契約當事人</h2>
+                        
+                        <div style="background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 16px;">
+                            <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">甲方</h3>
+                            <p>名稱：${data.companyName}</p>
+                            <p>統一編號：${data.companyId}</p>
+                            <p>代表人：${data.companyRep}</p>
+                            <p>地址：${data.companyAddress}</p>
+                        </div>
+                        
+                        <div style="background: #fafafa; padding: 20px; border-radius: 8px;">
+                            <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">乙方</h3>
+                            <p>姓名：${data.counterpartyName}</p>
+                            <p>身分證字號：${data.counterpartyId}</p>
+                            <p>地址：${data.counterpartyAddress}</p>
+                            <p>電話：${data.counterpartyPhone}</p>
+                        </div>
+                    </section>
+                    
+                    <section style="margin-bottom: 40px;">
+                        <h2 style="font-size: 20px; font-weight: 700; border-bottom: 3px solid #333; padding-bottom: 8px; margin-bottom: 24px;">契約條款</h2>
+                        <p>茲因業務需要，雙方同意訂立本契約，並共同遵守相關條款...</p>
+                        ${data.amount ? `<p>約定金額：新台幣 ${data.amount} 元整</p>` : ''}
+                        <p>契約期間：自 ${formatDate(data.startDate)} 起${data.endDate ? ` 至 ${formatDate(data.endDate)} 止` : ''}</p>
+                    </section>
+                    
+                    <section style="margin-top: 80px;">
+                        <p style="text-align: center;">立契約書人</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px;">
+                            <div>
+                                <p>甲方：${data.companyName}</p>
+                                <p>代表人：${data.companyRep}</p>
+                                <p style="margin-top: 40px;">簽章：_______________</p>
+                            </div>
+                            <div>
+                                <p>乙方：${data.counterpartyName}</p>
+                                <p>身分證：${data.counterpartyId}</p>
+                                <p style="margin-top: 40px;">簽章：_______________</p>
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 60px;">中華民國 _____ 年 _____ 月 _____ 日</p>
+                    </section>
+                </article>
+            `;
         }
         
-        // Part 2 will contain all the document generation functions...
-        // =============== EMPLOYMENT CONTRACT GENERATOR ===============
-function generateEmploymentContract(data) {
-    const contractNumber = 'EC' + Date.now();
-    const contractDate = new Date().toLocaleDateString('zh-TW');
-    
-    return `
-        <article style="font-family: 'Noto Serif TC', serif; color: #1a1a1a; line-height: 2; max-width: 210mm; margin: 0 auto;">
-            <!-- Header -->
-            <header style="text-align: center; margin-bottom: 48px;">
-                <h1 style="font-size: 32px; font-weight: 900; margin-bottom: 16px;">勞動契約書</h1>
-                <p style="font-size: 18px; color: #666;">EMPLOYMENT CONTRACT</p>
-                <div style="margin-top: 24px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
-                    <p style="margin: 4px 0;">契約編號：${contractNumber}</p>
-                    <p style="margin: 4px 0;">簽約日期：${contractDate}</p>
-                </div>
-            </header>
-            
-            <!-- Parties -->
-            <section style="margin-bottom: 40px;">
-                <h2 style="font-size: 20px; font-weight: 700; border-bottom: 3px solid #333; padding-bottom: 8px; margin-bottom: 24px;">契約當事人</h2>
-                
-                <div style="background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 16px;">
-                    <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">甲方（雇主）</h3>
-                    <table style="width: 100%; line-height: 2;">
-                        <tr>
-                            <td style="width: 120px; font-weight: 600;">公司名稱：</td>
-                            <td>${data.companyName}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">統一編號：</td>
-                            <td>${data.companyId}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">負責人：</td>
-                            <td>${data.companyRep}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">公司地址：</td>
-                            <td>${data.companyAddress}</td>
-                        </tr>
-                    </table>
-                </div>
-                
-                <div style="background: #fafafa; padding: 20px; border-radius: 8px;">
-                    <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">乙方（受僱人）</h3>
-                    <table style="width: 100%; line-height: 2;">
-                        <tr>
-                            <td style="width: 120px; font-weight: 600;">姓名：</td>
-                            <td>${data.counterpartyName}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">身分證字號：</td>
-                            <td>${data.counterpartyId}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">戶籍地址：</td>
-                            <td>${data.counterpartyAddress}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">聯絡電話：</td>
-                            <td>${data.counterpartyPhone}</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-            
-            <!-- Agreement -->
-            <section style="margin-bottom: 40px;">
-                <p style="text-indent: 2em; text-align: justify;">
-                    茲因甲方業務需要，聘僱乙方擔任相關工作，雙方同意訂立勞動契約，並共同遵守下列各項條款：
-                </p>
-            </section>
-            
-            <!-- Terms -->
-            <section style="margin-bottom: 40px;">
-                <h2 style="font-size: 20px; font-weight: 700; border-bottom: 3px solid #333; padding-bottom: 8px; margin-bottom: 24px;">契約條款</h2>
-                
-                <!-- Article 1 -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第一條　工作內容及職務</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>乙方同意接受甲方僱用，職務名稱為：＿＿＿＿＿＿＿＿。</li>
-                        <li>工作內容：依甲方業務需要指派之相關工作。</li>
-                        <li>甲方得因業務需要，在不違反勞動契約之前提下，調整乙方之職務或工作內容。</li>
-                    </ol>
-                </article>
-                
-                <!-- Article 2 -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第二條　工作地點</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>乙方之工作地點為甲方之營業處所：${data.companyAddress}。</li>
-                        <li>甲方得因業務需要，派遣乙方至其他地點工作。</li>
-                        ${data.options.remote ? '<li>經雙方同意，乙方得採遠距工作模式，詳細規範另行約定。</li>' : ''}
-                    </ol>
-                </article>
-                
-                <!-- Article 3 -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第三條　工作時間</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>正常工作時間：每日不超過8小時，每週不超過40小時。</li>
-                        <li>工作時間：週一至週五，上午9時至下午6時（含休息時間1小時）。</li>
-                        <li>例假：每七日中應有二日之休息，其中一日為例假，一日為休息日。</li>
-                        <li>國定假日：依政府行政機關辦公日曆表出勤。</li>
-                    </ol>
-                </article>
-                
-                <!-- Article 4 - Salary -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第四條　工資</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>工資結構：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>月薪：新台幣 ${data.amount || '________'} 元整</li>
-                                <li>發薪日：每月5日（遇假日提前發放）</li>
-                                <li>給付方式：匯入乙方指定之金融機構帳戶</li>
-                            </ul>
-                        </li>
-                        <li>工資調整：依甲方薪資管理辦法及乙方工作績效評核結果辦理。</li>
-                        ${data.options.bonus ? '<li>績效獎金：依甲方績效獎金發放辦法另行計算。</li>' : ''}
-                    </ol>
-                </article>
-                
-                ${data.options.overtime ? `
-                <!-- Article 5 - Overtime -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第五條　延長工時及加班費</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>延長工作時間，應經勞雇雙方同意，並依下列標準加給工資：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>平日延長工作時間在2小時以內者，按平日每小時工資額加給三分之一以上。</li>
-                                <li>再延長工作時間在2小時以內者，按平日每小時工資額加給三分之二以上。</li>
-                                <li>休息日工作，依勞動基準法第24條第2項規定計算。</li>
-                            </ul>
-                        </li>
-                        <li>每月延長工作時間不得超過46小時。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                ${data.options.probation ? `
-                <!-- Article 6 - Probation -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第六條　試用期</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>試用期間為3個月，自到職日起算。</li>
-                        <li>試用期間工資同正式任用。</li>
-                        <li>試用期滿前，甲方應進行考核：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>考核合格者：正式任用</li>
-                                <li>考核不合格者：終止勞動契約，並依法發給資遣費</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                <!-- Article 7 - Insurance -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第七條　勞工保險及健康保險</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>甲方應於乙方到職當日為其辦理：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>勞工保險（含職業災害保險）</li>
-                                <li>全民健康保險</li>
-                                <li>勞工退休金提繳（提繳率6%）</li>
-                            </ul>
-                        </li>
-                        <li>保險費依相關法令規定之比例，由甲乙雙方分別負擔。</li>
-                    </ol>
-                </article>
-                
-                <!-- Article 8 - Leave -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第八條　請假規定</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>特別休假：依勞動基準法第38條規定辦理
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>六個月以上一年未滿：3日</li>
-                                <li>一年以上二年未滿：7日</li>
-                                <li>二年以上三年未滿：10日</li>
-                                <li>三年以上五年未滿：每年14日</li>
-                                <li>五年以上十年未滿：每年15日</li>
-                            </ul>
-                        </li>
-                        <li>其他假別：依勞工請假規則辦理。</li>
-                    </ol>
-                </article>
-                
-                ${data.options.nda_included ? `
-                <!-- Article 9 - Confidentiality -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第九條　保密義務</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>乙方對於任職期間知悉或持有甲方之營業秘密、技術資料、客戶資料等機密資訊，負有保密義務。</li>
-                        <li>未經甲方書面同意，不得洩漏、交付或以其他方式使第三人知悉。</li>
-                        <li>保密義務於離職後仍繼續有效，期間為2年。</li>
-                        <li>違反保密義務者，應負損害賠償責任。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                ${data.options.compete ? `
-                <!-- Article 10 - Non-compete -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第十條　競業禁止</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>約定事項：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>期間：離職後2年內</li>
-                                <li>地區：台灣地區</li>
-                                <li>職業活動範圍：與甲方業務相同或類似之事業</li>
-                            </ul>
-                        </li>
-                        <li>補償標準：競業禁止期間，甲方應按月給付乙方離職時月薪50%之補償金。</li>
-                        <li>違約處理：違反競業禁止約定者，應返還已領之補償金，並支付違約金。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                ${data.options.training ? `
-                <!-- Article 11 - Training -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第十一條　教育訓練</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>甲方得指派乙方參加與業務相關之教育訓練。</li>
-                        <li>訓練費用由甲方負擔，訓練期間視為正常上班。</li>
-                        <li>特殊訓練費用返還約定：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>費用超過新台幣3萬元之專業訓練</li>
-                                <li>訓練後服務未滿1年離職：返還全額訓練費用</li>
-                                <li>服務滿1年未滿2年離職：返還50%訓練費用</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                <!-- Article - Contract Period -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第十二條　契約期間</h3>
-                    <p style="padding-left: 24px;">
-                        本契約自民國 ${formatToROCDate(data.startDate)} 起生效，
-                        ${data.endDate ? `至民國 ${formatToROCDate(data.endDate)} 止。` : '為不定期契約。'}
-                    </p>
-                </article>
-                
-                <!-- Article - Termination -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第十三條　契約終止及資遣</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>終止契約應依勞動基準法第11條至第18條規定辦理。</li>
-                        <li>預告期間：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>繼續工作3個月以上1年未滿：於10日前預告</li>
-                                <li>繼續工作1年以上3年未滿：於20日前預告</li>
-                                <li>繼續工作3年以上：於30日前預告</li>
-                            </ul>
-                        </li>
-                        ${data.options.severance ? `
-                        <li>資遣費計算（依勞動基準法第17條）：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>適用勞動基準法退休金制度：每滿1年發給1個月平均工資</li>
-                                <li>適用勞工退休金條例：每滿1年發給0.5個月平均工資</li>
-                            </ul>
-                        </li>
-                        ` : ''}
-                    </ol>
-                </article>
-                
-                <!-- Article - Others -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第十四條　其他約定</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>本契約如有未盡事宜，依勞動基準法、勞工退休金條例及其他相關法令規定辦理。</li>
-                        <li>本契約之修改或變更，應經雙方書面同意。</li>
-                        <li>因本契約所生之爭議，雙方同意以台灣台北地方法院為第一審管轄法院。</li>
-                    </ol>
-                </article>
-            </section>
-            
-            <!-- Signature Section -->
-            <section style="margin-top: 80px; page-break-before: always;">
-                <h2 style="font-size: 20px; font-weight: 700; text-align: center; margin-bottom: 40px;">立契約書人</h2>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px;">
-                    <div>
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px;">甲方（雇主）</h3>
-                        <table style="width: 100%; line-height: 2.5;">
-                            <tr>
-                                <td>公司名稱：</td>
-                                <td>${data.companyName}</td>
-                            </tr>
-                            <tr>
-                                <td>統一編號：</td>
-                                <td>${data.companyId}</td>
-                            </tr>
-                            <tr>
-                                <td>負責人：</td>
-                                <td>${data.companyRep}</td>
-                            </tr>
-                            <tr>
-                                <td>簽章：</td>
-                                <td>
-                                    <div style="border-bottom: 1px solid #333; height: 40px;"></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    
-                    <div>
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px;">乙方（受僱人）</h3>
-                        <table style="width: 100%; line-height: 2.5;">
-                            <tr>
-                                <td>姓名：</td>
-                                <td>${data.counterpartyName}</td>
-                            </tr>
-                            <tr>
-                                <td>身分證字號：</td>
-                                <td>${data.counterpartyId}</td>
-                            </tr>
-                            <tr>
-                                <td>住址：</td>
-                                <td>${data.counterpartyAddress}</td>
-                            </tr>
-                            <tr>
-                                <td>簽章：</td>
-                                <td>
-                                    <div style="border-bottom: 1px solid #333; height: 40px;"></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 60px;">
-                    <p style="font-size: 16px;">中華民國　　　　　年　　　月　　　日</p>
-                </div>
-            </section>
-        </article>
-    `;
-}
-
-// =============== NDA GENERATOR ===============
-function generateNDA(data) {
-    const contractNumber = 'NDA' + Date.now();
-    const contractDate = new Date().toLocaleDateString('zh-TW');
-    
-    return `
-        <article style="font-family: 'Noto Serif TC', serif; color: #1a1a1a; line-height: 2; max-width: 210mm; margin: 0 auto;">
-            <!-- Header -->
-            <header style="text-align: center; margin-bottom: 48px;">
-                <h1 style="font-size: 32px; font-weight: 900; margin-bottom: 16px;">保密協議書</h1>
-                <p style="font-size: 18px; color: #666;">NON-DISCLOSURE AGREEMENT</p>
-                <div style="margin-top: 24px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
-                    <p style="margin: 4px 0;">協議編號：${contractNumber}</p>
-                    <p style="margin: 4px 0;">簽署日期：${contractDate}</p>
-                </div>
-            </header>
-            
-            <!-- Parties -->
-            <section style="margin-bottom: 40px;">
-                <h2 style="font-size: 20px; font-weight: 700; border-bottom: 3px solid #333; padding-bottom: 8px; margin-bottom: 24px;">協議雙方</h2>
-                
-                <div style="background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 16px;">
-                    <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">${data.options.mutual ? '第一方' : '揭露方'}（甲方）</h3>
-                    <table style="width: 100%; line-height: 2;">
-                        <tr><td style="width: 120px; font-weight: 600;">名稱：</td><td>${data.companyName}</td></tr>
-                        <tr><td style="font-weight: 600;">統一編號：</td><td>${data.companyId}</td></tr>
-                        <tr><td style="font-weight: 600;">代表人：</td><td>${data.companyRep}</td></tr>
-                        <tr><td style="font-weight: 600;">地址：</td><td>${data.companyAddress}</td></tr>
-                    </table>
-                </div>
-                
-                <div style="background: #fafafa; padding: 20px; border-radius: 8px;">
-                    <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">${data.options.mutual ? '第二方' : '接受方'}（乙方）</h3>
-                    <table style="width: 100%; line-height: 2;">
-                        <tr><td style="width: 120px; font-weight: 600;">姓名：</td><td>${data.counterpartyName}</td></tr>
-                        <tr><td style="font-weight: 600;">身分證字號：</td><td>${data.counterpartyId}</td></tr>
-                        <tr><td style="font-weight: 600;">地址：</td><td>${data.counterpartyAddress}</td></tr>
-                        <tr><td style="font-weight: 600;">電話：</td><td>${data.counterpartyPhone}</td></tr>
-                    </table>
-                </div>
-            </section>
-            
-            <!-- Preamble -->
-            <section style="margin-bottom: 40px;">
-                <h2 style="font-size: 20px; font-weight: 700; border-bottom: 3px solid #333; padding-bottom: 8px; margin-bottom: 24px;">前言</h2>
-                <p style="text-indent: 2em; text-align: justify;">
-                    鑒於${data.options.mutual ? '雙方' : '甲方與乙方'}為評估潛在之業務合作機會，
-                    ${data.options.mutual ? '需相互' : '甲方需向乙方'}揭露若干專有及機密資訊（以下稱「機密資訊」），
-                    為保護${data.options.mutual ? '雙方' : '甲方'}之機密資訊，雙方同意簽訂本保密協議書（以下稱「本協議」），
-                    並同意遵守下列條款：
-                </p>
-            </section>
-            
-            <!-- Terms -->
-            <section style="margin-bottom: 40px;">
-                <h2 style="font-size: 20px; font-weight: 700; border-bottom: 3px solid #333; padding-bottom: 8px; margin-bottom: 24px;">協議條款</h2>
-                
-                <!-- Article 1 -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第一條　機密資訊之定義</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>本協議所稱「機密資訊」係指${data.options.mutual ? '任一方向他方' : '甲方向乙方'}揭露之所有資訊，包括但不限於：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>營業秘密、商業計劃、市場策略、客戶名單、供應商資料</li>
-                                <li>技術資料、研發成果、產品設計、製程、配方、原始碼、演算法</li>
-                                <li>財務資訊、成本結構、定價策略、投資計劃</li>
-                                <li>人事資料、組織架構、薪資結構</li>
-                                <li>其他標示為「機密」、「專有」或依其性質應屬機密之資訊</li>
-                            </ul>
-                        </li>
-                        <li>機密資訊包括以口頭、書面、電子或其他形式揭露之資訊。</li>
-                        <li>口頭揭露之機密資訊，應於揭露後15日內以書面確認其機密性質。</li>
-                    </ol>
-                </article>
-                
-                <!-- Article 2 -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第二條　保密義務</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>${data.options.mutual ? '接受方' : '乙方'}同意：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>對機密資訊嚴格保密，不得向任何第三方揭露</li>
-                                <li>僅為評估或執行雙方合作目的使用機密資訊</li>
-                                <li>採取不低於保護自身機密資訊之合理注意程度保護機密資訊</li>
-                                <li>僅向有知悉必要之員工或顧問揭露，並確保其遵守保密義務</li>
-                            </ul>
-                        </li>
-                        <li>${data.options.mutual ? '接受方' : '乙方'}不得複製機密資訊，除非為合作目的所必需。</li>
-                        <li>${data.options.mutual ? '接受方' : '乙方'}不得對機密資訊進行反向工程、反編譯或反組譯。</li>
-                    </ol>
-                </article>
-                
-                <!-- Article 3 -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第三條　保密期限</h3>
-                    <p style="padding-left: 24px;">
-                        本協議之保密義務自簽署日起生效，並於機密資訊揭露後持續
-                        <strong>${data.options.duration5 ? '五(5)' : '三(3)'}</strong>年。
-                        但營業秘密之保密義務應持續至該資訊不再符合營業秘密之要件為止。
-                    </p>
-                </article>
-                
-                <!-- Article 4 - Exceptions -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第四條　保密義務之例外</h3>
-                    <p style="padding-left: 24px; margin-bottom: 12px;">下列資訊不受本協議保密義務之約束：</p>
-                    <ol style="padding-left: 48px; line-height: 2;">
-                        <li>揭露時已為公眾所知之資訊</li>
-                        <li>非因${data.options.mutual ? '接受方' : '乙方'}違反本協議而為公眾所知之資訊</li>
-                        <li>${data.options.mutual ? '接受方' : '乙方'}可證明於揭露前已知悉之資訊</li>
-                        <li>${data.options.mutual ? '接受方' : '乙方'}自無保密義務之第三方合法取得之資訊</li>
-                        <li>${data.options.mutual ? '接受方' : '乙方'}獨立開發且未使用機密資訊之成果</li>
-                        <li>依法律、法院命令或主管機關要求須揭露之資訊（但應事先通知${data.options.mutual ? '揭露方' : '甲方'}）</li>
-                    </ol>
-                </article>
-                
-                ${data.options.disclosure ? `
-                <!-- Article 5 - Permitted Disclosure -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第五條　允許之揭露</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>經${data.options.mutual ? '揭露方' : '甲方'}事先書面同意，${data.options.mutual ? '接受方' : '乙方'}得向下列對象揭露機密資訊：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>關係企業（持股超過50%之公司）</li>
-                                <li>專業顧問（律師、會計師等）</li>
-                            </ul>
-                        </li>
-                        <li>前項揭露應確保接受資訊者簽署相同保密條款。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                ${data.options.penalty ? `
-                <!-- Article 6 - Breach and Penalty -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第六條　違約責任</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>任一方違反本協議，應負下列責任：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>賠償他方因此所受之一切損害</li>
-                                <li>支付懲罰性違約金新台幣 ${data.amount || '1,000,000'} 元</li>
-                            </ul>
-                        </li>
-                        <li>違約金之支付不影響受害方請求實際損害賠償之權利。</li>
-                        <li>受害方得請求法院核發禁制令，禁止違約方繼續違約行為。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                ${data.options.return ? `
-                <!-- Article 7 - Return of Information -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第七條　資料返還</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>於下列情形，${data.options.mutual ? '接受方' : '乙方'}應立即返還或銷毀所有機密資訊：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>${data.options.mutual ? '揭露方' : '甲方'}書面要求時</li>
-                                <li>雙方合作評估終止時</li>
-                                <li>本協議終止時</li>
-                            </ul>
-                        </li>
-                        <li>返還或銷毀應包括所有複本、摘要、分析或衍生資料。</li>
-                        <li>應提供書面證明確認已完成返還或銷毀。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                <!-- Article - No License -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第八條　無授權條款</h3>
-                    <p style="padding-left: 24px;">
-                        本協議不授予${data.options.mutual ? '任一方' : '乙方'}任何智慧財產權或其他權利。
-                        所有機密資訊之權利仍歸${data.options.mutual ? '揭露方' : '甲方'}所有。
-                    </p>
-                </article>
-                
-                <!-- Article - No Obligation -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第九條　無合作義務</h3>
-                    <p style="padding-left: 24px;">
-                        本協議不構成雙方進行任何交易或合作之義務。任一方均得自由決定是否與他方進行合作。
-                    </p>
-                </article>
-                
-                ${data.options.court ? `
-                <!-- Article - Jurisdiction -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第十條　管轄法院</h3>
-                    <p style="padding-left: 24px;">
-                        因本協議所生之爭議，雙方同意以台灣台北地方法院為第一審管轄法院。
-                    </p>
-                </article>
-                ` : ''}
-                
-                <!-- Article - General -->
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第十一條　一般條款</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>本協議構成雙方就保密事項之完整協議，取代先前所有口頭或書面協議。</li>
-                        <li>本協議之修改或變更須經雙方書面同意。</li>
-                        <li>本協議任一條款無效時，不影響其他條款之效力。</li>
-                        <li>本協議準據法為中華民國法律。</li>
-                    </ol>
-                </article>
-            </section>
-            
-            <!-- Signature Section -->
-            <section style="margin-top: 80px; page-break-before: always;">
-                <h2 style="font-size: 20px; font-weight: 700; text-align: center; margin-bottom: 40px;">立協議書人</h2>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px;">
-                    <div>
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px;">甲方</h3>
-                        <table style="width: 100%; line-height: 2.5;">
-                            <tr>
-                                <td>名稱：</td>
-                                <td>${data.companyName}</td>
-                            </tr>
-                            <tr>
-                                <td>統一編號：</td>
-                                <td>${data.companyId}</td>
-                            </tr>
-                            <tr>
-                                <td>代表人：</td>
-                                <td>${data.companyRep}</td>
-                            </tr>
-                            <tr>
-                                <td>簽章：</td>
-                                <td>
-                                    <div style="border-bottom: 1px solid #333; height: 40px;"></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    
-                    <div>
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px;">乙方</h3>
-                        <table style="width: 100%; line-height: 2.5;">
-                            <tr>
-                                <td>姓名：</td>
-                                <td>${data.counterpartyName}</td>
-                            </tr>
-                            <tr>
-                                <td>身分證字號：</td>
-                                <td>${data.counterpartyId}</td>
-                            </tr>
-                            <tr>
-                                <td>地址：</td>
-                                <td>${data.counterpartyAddress}</td>
-                            </tr>
-                            <tr>
-                                <td>簽章：</td>
-                                <td>
-                                    <div style="border-bottom: 1px solid #333; height: 40px;"></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 60px;">
-                    <p style="font-size: 16px;">簽署日期：中華民國　　　　　年　　　月　　　日</p>
-                </div>
-            </section>
-        </article>
-    `;
-}
-
-// =============== SERVICE CONTRACT GENERATOR ===============
-function generateServiceContract(data) {
-    const contractNumber = 'SVC' + Date.now();
-    const contractDate = new Date().toLocaleDateString('zh-TW');
-    
-    return `
-        <article style="font-family: 'Noto Serif TC', serif; color: #1a1a1a; line-height: 2; max-width: 210mm; margin: 0 auto;">
-            <!-- Header -->
-            <header style="text-align: center; margin-bottom: 48px;">
-                <h1 style="font-size: 32px; font-weight: 900; margin-bottom: 16px;">服務合約書</h1>
-                <p style="font-size: 18px; color: #666;">SERVICE AGREEMENT</p>
-                <div style="margin-top: 24px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
-                    <p style="margin: 4px 0;">合約編號：${contractNumber}</p>
-                    <p style="margin: 4px 0;">簽約日期：${contractDate}</p>
-                </div>
-            </header>
-            
-            <!-- Parties -->
-            <section style="margin-bottom: 40px;">
-                <h2 style="font-size: 20px; font-weight: 700; border-bottom: 3px solid #333; padding-bottom: 8px; margin-bottom: 24px;">合約當事人</h2>
-                
-                <div style="background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 16px;">
-                    <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">委託方（甲方）</h3>
-                    <table style="width: 100%; line-height: 2;">
-                        <tr>
-                            <td style="width: 120px; font-weight: 600;">公司名稱：</td>
-                            <td>${data.companyName}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">統一編號：</td>
-                            <td>${data.companyId}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">負責人：</td>
-                            <td>${data.companyRep}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">地址：</td>
-                            <td>${data.companyAddress}</td>
-                        </tr>
-                    </table>
-                </div>
-                
-                <div style="background: #fafafa; padding: 20px; border-radius: 8px;">
-                    <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">服務提供方（乙方）</h3>
-                    <table style="width: 100%; line-height: 2;">
-                        <tr>
-                            <td style="width: 120px; font-weight: 600;">姓名/公司：</td>
-                            <td>${data.counterpartyName}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">身分證/統編：</td>
-                            <td>${data.counterpartyId}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">地址：</td>
-                            <td>${data.counterpartyAddress}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">聯絡電話：</td>
-                            <td>${data.counterpartyPhone}</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-            
-            <!-- Service Scope -->
-            <section style="margin-bottom: 40px;">
-                <h2 style="font-size: 20px; font-weight: 700; border-bottom: 3px solid #333; padding-bottom: 8px; margin-bottom: 24px;">服務內容</h2>
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第一條　服務範圍</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>乙方應依本合約約定，為甲方提供下列服務：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</li>
-                                <li>＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</li>
-                                <li>＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</li>
-                            </ul>
-                        </li>
-                        <li>服務地點：${data.companyAddress}</li>
-                        <li>服務方式：□到場服務 □遠端服務 □混合模式</li>
-                    </ol>
-                </article>
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第二條　服務期間</h3>
-                    <p style="padding-left: 24px;">
-                        服務期間自民國 ${formatToROCDate(data.startDate)} 起
-                        ${data.endDate ? `至民國 ${formatToROCDate(data.endDate)} 止` : '，期限另行約定'}。
-                    </p>
-                </article>
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第三條　服務費用及付款</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>服務費用：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>總價：新台幣 ${data.amount || '＿＿＿＿＿'} 元（含稅）</li>
-                                <li>計價方式：□總價承攬 □按時計酬 □按件計酬</li>
-                            </ul>
-                        </li>
-                        ${data.options.milestone ? `
-                        <li>里程碑付款：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>簽約時：30%</li>
-                                <li>期中驗收：40%</li>
-                                <li>完成驗收：30%</li>
-                            </ul>
-                        </li>
-                        ` : `
-                        <li>付款方式：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>□簽約時支付全額</li>
-                                <li>□完成後支付</li>
-                                <li>□按月支付</li>
-                            </ul>
-                        </li>
-                        `}
-                        <li>付款期限：收到發票後30日內</li>
-                    </ol>
-                </article>
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第四條　驗收標準</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>乙方應依約定時程交付服務成果。</li>
-                        <li>甲方應於收到服務成果後7日內進行驗收。</li>
-                        <li>驗收標準：符合本合約約定之服務內容及品質要求。</li>
-                        <li>如有瑕疵，乙方應於接獲通知後7日內改正。</li>
-                    </ol>
-                </article>
-                
-                ${data.options.warranty ? `
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第五條　服務保固</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>保固期間：自驗收合格日起6個月。</li>
-                        <li>保固範圍：服務成果之品質瑕疵。</li>
-                        <li>保固期間內，乙方應無償修正瑕疵。</li>
-                        <li>保固不包括因甲方使用不當或第三方因素造成之問題。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                ${data.options.liability ? `
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第六條　責任限制</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>乙方之賠償責任上限為本合約總價款之一倍。</li>
-                        <li>前項限制不適用於下列情形：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>故意或重大過失</li>
-                                <li>違反保密義務</li>
-                                <li>侵害智慧財產權</li>
-                            </ul>
-                        </li>
-                        <li>雙方均不對間接損害或衍生損害負責。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                ${data.options.termination ? `
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第七條　提前終止</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>有下列情形之一者，任一方得終止本合約：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>他方違約且經催告後7日內未改正</li>
-                                <li>他方停業、解散或有重大財務困難</li>
-                                <li>不可抗力事件持續超過30日</li>
-                            </ul>
-                        </li>
-                        <li>提前終止時，乙方已完成工作部分之報酬應按比例計算。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                ${data.options.ip_transfer ? `
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第八條　智慧財產權</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>服務成果之著作權歸屬：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>著作人格權：歸屬乙方</li>
-                                <li>著作財產權：自交付驗收合格時起轉讓予甲方</li>
-                            </ul>
-                        </li>
-                        <li>乙方保證服務成果未侵害第三人之智慧財產權。</li>
-                        <li>如有侵權情事，乙方應負完全賠償責任。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                ${data.options.sla ? `
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第九條　服務水準協議（SLA）</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>服務可用性：99.5%</li>
-                        <li>回應時間：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>緊急問題：2小時內</li>
-                                <li>一般問題：24小時內</li>
-                            </ul>
-                        </li>
-                        <li>未達服務水準之賠償：按未達標準時數計算，每小時扣減當月服務費1%。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第十條　保密義務</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>雙方對因本合約知悉他方之營業秘密負保密義務。</li>
-                        <li>保密期間：本合約有效期間及終止後2年。</li>
-                    </ol>
-                </article>
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第十一條　其他約定</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>本合約構成雙方完整之合意，取代先前一切口頭或書面協議。</li>
-                        <li>本合約之修改應以書面為之。</li>
-                        <li>本合約準據法為中華民國法律。</li>
-                        <li>因本合約所生爭議，雙方同意以台灣台北地方法院為第一審管轄法院。</li>
-                    </ol>
-                </article>
-            </section>
-            
-            <!-- Signature Section -->
-            <section style="margin-top: 80px; page-break-before: always;">
-                <h2 style="font-size: 20px; font-weight: 700; text-align: center; margin-bottom: 40px;">立契約書人</h2>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px;">
-                    <div>
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px;">委託方（甲方）</h3>
-                        <table style="width: 100%; line-height: 2.5;">
-                            <tr>
-                                <td>公司名稱：</td>
-                                <td>${data.companyName}</td>
-                            </tr>
-                            <tr>
-                                <td>統一編號：</td>
-                                <td>${data.companyId}</td>
-                            </tr>
-                            <tr>
-                                <td>代表人：</td>
-                                <td>${data.companyRep}</td>
-                            </tr>
-                            <tr>
-                                <td>簽章：</td>
-                                <td>
-                                    <div style="border-bottom: 1px solid #333; height: 40px;"></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    
-                    <div>
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px;">服務方（乙方）</h3>
-                        <table style="width: 100%; line-height: 2.5;">
-                            <tr>
-                                <td>姓名/公司：</td>
-                                <td>${data.counterpartyName}</td>
-                            </tr>
-                            <tr>
-                                <td>身分證/統編：</td>
-                                <td>${data.counterpartyId}</td>
-                            </tr>
-                            <tr>
-                                <td>簽章：</td>
-                                <td>
-                                    <div style="border-bottom: 1px solid #333; height: 40px;"></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 60px;">
-                    <p style="font-size: 16px;">簽約日期：中華民國　　　　　年　　　月　　　日</p>
-                </div>
-            </section>
-        </article>
-    `;
-}
-
-// =============== RENTAL CONTRACT GENERATOR ===============
-function generateRentalContract(data) {
-    const contractNumber = 'RNT' + Date.now();
-    const contractDate = new Date().toLocaleDateString('zh-TW');
-    
-    return `
-        <article style="font-family: 'Noto Serif TC', serif; color: #1a1a1a; line-height: 2; max-width: 210mm; margin: 0 auto;">
-            <!-- Header -->
-            <header style="text-align: center; margin-bottom: 48px;">
-                <h1 style="font-size: 32px; font-weight: 900; margin-bottom: 16px;">房屋租賃契約書</h1>
-                <p style="font-size: 18px; color: #666;">HOUSE RENTAL AGREEMENT</p>
-                <div style="margin-top: 24px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
-                    <p style="margin: 4px 0;">契約編號：${contractNumber}</p>
-                    <p style="margin: 4px 0;">簽約日期：${contractDate}</p>
-                </div>
-            </header>
-            
-            <!-- Parties -->
-            <section style="margin-bottom: 40px;">
-                <h2 style="font-size: 20px; font-weight: 700; border-bottom: 3px solid #333; padding-bottom: 8px; margin-bottom: 24px;">契約當事人</h2>
-                
-                <div style="background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 16px;">
-                    <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">出租人（甲方）</h3>
-                    <table style="width: 100%; line-height: 2;">
-                        <tr>
-                            <td style="width: 120px; font-weight: 600;">姓名/公司：</td>
-                            <td>${data.companyName}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">身分證/統編：</td>
-                            <td>${data.companyId}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">戶籍/地址：</td>
-                            <td>${data.companyAddress}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">聯絡電話：</td>
-                            <td>＿＿＿＿＿＿＿＿＿＿</td>
-                        </tr>
-                    </table>
-                </div>
-                
-                <div style="background: #fafafa; padding: 20px; border-radius: 8px;">
-                    <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">承租人（乙方）</h3>
-                    <table style="width: 100%; line-height: 2;">
-                        <tr>
-                            <td style="width: 120px; font-weight: 600;">姓名：</td>
-                            <td>${data.counterpartyName}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">身分證字號：</td>
-                            <td>${data.counterpartyId}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">戶籍地址：</td>
-                            <td>${data.counterpartyAddress}</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 600;">聯絡電話：</td>
-                            <td>${data.counterpartyPhone}</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-            
-            <!-- Rental Terms -->
-            <section style="margin-bottom: 40px;">
-                <h2 style="font-size: 20px; font-weight: 700; border-bottom: 3px solid #333; padding-bottom: 8px; margin-bottom: 24px;">租賃條款</h2>
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第一條　租賃標的</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>房屋地址：＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</li>
-                        <li>建物面積：＿＿＿坪（權狀面積）</li>
-                        <li>房屋格局：＿房＿廳＿衛</li>
-                        ${data.options.parking ? '<li>包含汽車停車位一個，編號：＿＿＿</li>' : ''}
-                        ${data.options.furnished ? '<li>包含現有傢俱及家電設備（詳如附件清單）</li>' : ''}
-                    </ol>
-                </article>
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第二條　租賃期間</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>租賃期間自民國 ${formatToROCDate(data.startDate)} 起，
-                            ${data.endDate ? `至民國 ${formatToROCDate(data.endDate)} 止。` : '為期一年。'}
-                        </li>
-                        <li>期滿前一個月，任一方未以書面表示終止，視為以相同條件續約一年。</li>
-                    </ol>
-                </article>
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第三條　租金及押金</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>月租金：新台幣 ${data.amount || '＿＿＿＿＿'} 元整</li>
-                        <li>押金：兩個月租金（依租賃住宅市場發展及管理條例，不得超過二個月租金之總額）</li>
-                        <li>租金支付方式：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>每月5日前支付當月租金</li>
-                                <li>匯款至甲方指定帳戶：＿＿＿＿＿＿＿＿＿＿</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </article>
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第四條　稅費負擔</h3>
-                    <table style="width: 100%; border-collapse: collapse;">
-                        <tr>
-                            <th style="border: 1px solid #ddd; padding: 8px; background: #f5f5f5; text-align: left;">項目</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; background: #f5f5f5;">甲方負擔</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; background: #f5f5f5;">乙方負擔</th>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">房屋稅</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">✓</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">地價稅</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">✓</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">水費</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">✓</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">電費</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">✓</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">瓦斯費</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">✓</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">管理費</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${data.options.furnished ? '✓' : ''}</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${data.options.furnished ? '' : '✓'}</td>
-                        </tr>
-                    </table>
-                </article>
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第五條　使用限制</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>租賃房屋僅供住家使用，不得供營業或違法使用。</li>
-                        <li>未經甲方書面同意，不得將房屋全部或一部轉租、出借或以其他方式供他人使用。</li>
-                        ${data.options.pets ? '<li>經甲方同意，乙方得飼養寵物，但須負責維護環境清潔，不得影響鄰居安寧。如造成房屋損害，應負賠償責任。</li>' : '<li>不得飼養寵物。</li>'}
-                        <li>不得存放危險物品或違禁物。</li>
-                        <li>不得擅自變更房屋結構、隔間或為重大裝潢。</li>
-                    </ol>
-                </article>
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第六條　修繕責任</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>房屋或附屬設備之修繕責任區分：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>房屋結構、管線等之修繕：由甲方負責</li>
-                                <li>消耗品（如燈泡、水龍頭墊片等）：由乙方負責</li>
-                            </ul>
-                        </li>
-                        <li>修繕期間影響居住者，租金應酌予減少。</li>
-                        <li>因乙方使用不當造成之損壞，修繕費用由乙方負擔。</li>
-                    </ol>
-                </article>
-                
-                ${data.options.early_termination ? `
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第七條　提前終止租約</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>租賃期間屆滿前，得提前終止租約之情形：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>雙方協議終止</li>
-                                <li>房屋毀損致不能達租賃之目的</li>
-                                <li>乙方死亡，繼承人得終止契約</li>
-                            </ul>
-                        </li>
-                        <li>乙方提前終止：應於一個月前書面通知甲方，押金不予返還作為違約金。</li>
-                        <li>甲方提前終止：除法定事由外，應於二個月前書面通知乙方，並賠償乙方一個月租金之金額。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                ${data.options.rent_increase ? `
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第八條　租金調整</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>租金調整時機：每次續約時得協議調整。</li>
-                        <li>調整幅度：每年調幅不得超過5%。</li>
-                        <li>甲方應於續約前兩個月書面通知調整事宜。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                ${data.options.sublease ? `
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第九條　轉租</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>乙方經甲方書面同意後，得將房屋全部或一部轉租他人。</li>
-                        <li>轉租後，乙方仍應對甲方負原租賃契約之責任。</li>
-                        <li>轉租期間不得超過原租賃契約之租期。</li>
-                    </ol>
-                </article>
-                ` : ''}
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第十條　契約終止及返還</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>租期屆滿或契約終止時，乙方應即將房屋返還甲方。</li>
-                        <li>返還時，房屋應保持原狀，但自然損耗不在此限。</li>
-                        <li>乙方遺留之物品，經甲方定期催告後未取回者，視為廢棄物，甲方得處理之。</li>
-                        <li>押金返還：
-                            <ul style="padding-left: 20px; margin-top: 8px;">
-                                <li>房屋點交完成無毀損</li>
-                                <li>無積欠租金、費用</li>
-                                <li>扣除應付費用後，餘額無息返還</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </article>
-                
-                <article style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 16px;">第十一條　其他約定</h3>
-                    <ol style="padding-left: 24px; line-height: 2;">
-                        <li>本契約應依租賃住宅市場發展及管理條例相關規定辦理公證。</li>
-                        <li>本契約如有未盡事宜，依民法、土地法、租賃住宅市場發展及管理條例等相關法令規定辦理。</li>
-                        <li>因本契約發生之爭議，雙方應本誠信原則協商解決。協商不成時，得向房屋所在地之調解委員會申請調解，或向法院起訴。</li>
-                    </ol>
-                </article>
-            </section>
-            
-            <!-- Signature Section -->
-            <section style="margin-top: 80px; page-break-before: always;">
-                <h2 style="font-size: 20px; font-weight: 700; text-align: center; margin-bottom: 40px;">立契約書人</h2>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px;">
-                    <div>
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px;">出租人（甲方）</h3>
-                        <table style="width: 100%; line-height: 2.5;">
-                            <tr>
-                                <td>姓名：</td>
-                                <td>${data.companyName}</td>
-                            </tr>
-                            <tr>
-                                <td>身分證字號：</td>
-                                <td>${data.companyId}</td>
-                            </tr>
-                            <tr>
-                                <td>戶籍地址：</td>
-                                <td>${data.companyAddress}</td>
-                            </tr>
-                            <tr>
-                                <td>簽章：</td>
-                                <td>
-                                    <div style="border-bottom: 1px solid #333; height: 40px;"></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    
-                    <div>
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 20px;">承租人（乙方）</h3>
-                        <table style="width: 100%; line-height: 2.5;">
-                            <tr>
-                                <td>姓名：</td>
-                                <td>${data.counterpartyName}</td>
-                            </tr>
-                            <tr>
-                                <td>身分證字號：</td>
-                                <td>${data.counterpartyId}</td>
-                            </tr>
-                            <tr>
-                                <td>戶籍地址：</td>
-                                <td>${data.counterpartyAddress}</td>
-                            </tr>
-                            <tr>
-                                <td>簽章：</td>
-                                <td>
-                                    <div style="border-bottom: 1px solid #333; height: 40px;"></div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 60px;">
-                    <p style="font-size: 16px;">簽約日期：中華民國　　　　　年　　　月　　　日</p>
-                </div>
-            </section>
-        </article>
-    `;
-}
-
-// =============== UTILITY FUNCTIONS ===============
-function formatToROCDate(dateString) {
-    if (!dateString) return '＿＿＿年＿＿月＿＿日';
-    const date = new Date(dateString);
-    const year = date.getFullYear() - 1911; // 轉換為民國年
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    return `${year}年${month}月${day}日`;
-}
-
-function resetForm() {
-    document.getElementById('documentForm').reset();
-    document.getElementById('optionsSection').style.display = 'none';
-    document.getElementById('documentPreview').innerHTML = `
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 600px; color: #999;">
-            <i class="fas fa-file-alt" style="font-size: 64px; margin-bottom: 24px; opacity: 0.3;"></i>
-            <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 12px; color: #666;">尚未生成文件</h3>
-            <p style="color: #999;">請填寫左側表單資訊並點擊「生成文件」</p>
-        </div>
-    `;
-    updateProgress();
-    showNotification('info', '表單已重置', '所有欄位已清空');
-}
-
-function printDocument() {
-    window.print();
-}
-
-function downloadPDF() {
-    if (!isPremium) {
-        showNotification('error', '需要專業版', '請升級至專業版以下載PDF文件');
-        showPricing();
-        return;
-    }
-    
-    const element = document.getElementById('documentPreview');
-    const opt = {
-        margin: 10,
-        filename: `document_${Date.now()}.pdf`,
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { 
-            scale: 2,
-            useCORS: true,
-            letterRendering: true,
-            logging: false
-        },
-        jsPDF: { 
-            unit: 'mm', 
-            format: 'a4', 
-            orientation: 'portrait',
-            compress: true
-        },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-    };
-    
-    // Show loading
-    showNotification('info', '正在生成PDF', '請稍候...');
-    
-    html2pdf().set(opt).from(element).save().then(() => {
-        showNotification('success', 'PDF下載成功', '文件已保存至您的下載資料夾');
-    }).catch(error => {
-        console.error('PDF generation error:', error);
-        showNotification('error', 'PDF生成失敗', '請重試或聯繫客服');
-    });
-}
-
-// =============== NOTIFICATION SYSTEM ===============
-function showNotification(type, title, message) {
-    const container = document.getElementById('notificationContainer');
-    const id = 'notification-' + Date.now();
-    
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.id = id;
-    
-    const iconMap = {
-        success: 'fa-check-circle',
-        error: 'fa-exclamation-circle',
-        info: 'fa-info-circle',
-        warning: 'fa-exclamation-triangle'
-    };
-    
-    notification.innerHTML = `
-        <div class="notification-icon">
-            <i class="fas ${iconMap[type]}"></i>
-        </div>
-        <div class="notification-content">
-            <div class="notification-title">${title}</div>
-            ${message ? `<div class="notification-message">${message}</div>` : ''}
-        </div>
-    `;
-    
-    container.appendChild(notification);
-    
-    // Trigger animation
-    setTimeout(() => {
-        notification.classList.add('show');
-    }, 10);
-    
-    // Auto remove
-    setTimeout(() => {
-        notification.classList.remove('show');
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
-    }, 4000);
-}
-
-// =============== USER INTERFACE UPDATES ===============
-function updateUserInterface() {
-    if (currentUser) {
-        document.getElementById('guestNav').style.display = 'none';
-        document.getElementById('userNav').style.display = 'flex';
+        function formatDate(dateString) {
+            if (!dateString) return '____年__月__日';
+            const date = new Date(dateString);
+            return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+        }
         
-        // Create user menu
-        document.getElementById('userNav').innerHTML = `
-            <div class="user-menu" onclick="toggleUserDropdown()">
-                <div class="user-avatar">${currentUser.name ? currentUser.name.charAt(0).toUpperCase() : 'U'}</div>
-                <span class="user-name">${currentUser.name || 'User'}</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="user-dropdown" id="userDropdown">
-                <div class="user-dropdown-item" onclick="showProfile()">
-                    <i class="fas fa-user"></i>
-                    個人資料
+        function resetForm() {
+            document.getElementById('documentForm').reset();
+            document.getElementById('optionsSection').style.display = 'none';
+            document.getElementById('documentPreview').innerHTML = `
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 600px; color: #999;">
+                    <i class="fas fa-file-alt" style="font-size: 64px; margin-bottom: 24px; opacity: 0.3;"></i>
+                    <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 12px; color: #666;">尚未生成文件</h3>
+                    <p style="color: #999;">請填寫左側表單資訊並點擊「生成文件」</p>
                 </div>
-                <div class="user-dropdown-item" onclick="showHistory()">
-                    <i class="fas fa-history"></i>
-                    文件記錄
-                </div>
-                ${!isPremium ? `
-                <div class="user-dropdown-item" onclick="showPricing()">
-                    <i class="fas fa-crown" style="color: var(--accent-gold);"></i>
-                    升級專業版
-                </div>
-                ` : ''}
-                <div style="border-top: 1px solid var(--glass-border); margin: 8px 0;"></div>
-                <div class="user-dropdown-item" onclick="logout()">
-                    <i class="fas fa-sign-out-alt"></i>
-                    登出
-                </div>
-            </div>
-        `;
-    } else {
-        document.getElementById('guestNav').style.display = 'flex';
-        document.getElementById('userNav').style.display = 'none';
-    }
-}
-
-// 切換登入/註冊標籤
-function switchTab(tab) {
-    const loginTab = document.getElementById('loginTab');
-    const registerTab = document.getElementById('registerTab');
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
-    
-    if (tab === 'login') {
-        loginTab.classList.add('active');
-        registerTab.classList.remove('active');
-        loginForm.classList.add('active');
-        registerForm.classList.remove('active');
-    } else {
-        loginTab.classList.remove('active');
-        registerTab.classList.add('active');
-        loginForm.classList.remove('active');
-        registerForm.classList.add('active');
-    }
-}
-
-// 關閉認證視窗
-function closeAuthModal() {
-    document.getElementById('authModal').style.display = 'none';
-}
-
-// 顯示忘記密碼
-function showForgotPassword() {
-    // 實作忘記密碼功能
-    alert('忘記密碼功能');
-    return false;
-}
-
-// 社交登入
-function socialLogin(provider) {
-    // 實作社交登入功能
-    console.log('Social login with:', provider);
-}
-
-// 顯示服務條款
-function showTerms() {
-    // 實作顯示服務條款
-    alert('服務條款');
-    return false;
-}
-
-// 顯示隱私政策
-function showPrivacy() {
-    // 實作顯示隱私政策
-    alert('隱私政策');
-    return false;
-}
-
-// 處理登入表單提交
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // 實作登入邏輯
-    console.log('Login submitted');
-});
-
-// 處理註冊表單提交
-document.getElementById('registerForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // 實作註冊邏輯
-    const password = document.getElementById('registerPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    
-    if (password !== confirmPassword) {
-        alert('密碼不相符！');
-        return;
-    }
-    
-    console.log('Register submitted');
-});
-
-function toggleUserDropdown() {
-    const dropdown = document.getElementById('userDropdown');
-    dropdown.classList.toggle('active');
-}
-
-function logout() {
-    if (confirm('確定要登出嗎？')) {
-        currentUser = null;
-        isPremium = false;
-        localStorage.removeItem('docuUser');
-        updateUserInterface();
-        navigateHome();
-        showNotification('success', '已成功登出', '感謝您的使用');
-    }
-}
-
-// =============== PLACEHOLDER FUNCTIONS ===============
-function showFeatures() {
-    showNotification('info', '功能開發中', '功能特色頁面即將推出');
-}
-
-function showLogin() {
-    document.getElementById('authModal').classList.add('active');
-    switchTab('login');
-}
-
-function showPricing() {
-    // Simulate upgrade
-    if (confirm('升級至專業版 (NT$199/月)？\n\n✓ 無限制下載PDF\n✓ 所有進階功能\n✓ 優先客戶支援')) {
-        if (currentUser) {
-            currentUser.isPremium = true;
-            isPremium = true;
-            localStorage.setItem('docuUser', JSON.stringify(currentUser));
-            updateUserInterface();
-            showNotification('success', '升級成功', '您現在是專業版用戶');
-            
-            // Update download button if on document page
-            const downloadBtn = document.getElementById('downloadBtn');
-            if (downloadBtn) {
-                downloadBtn.innerHTML = '<i class="fas fa-download"></i> 下載 PDF';
-                downloadBtn.onclick = downloadPDF;
+            `;
+            updateProgress();
+            showNotification('info', '表單已重置', '所有欄位已清空');
+        }
+        
+        function printDocument() {
+            window.print();
+        }
+        
+        function downloadPDF() {
+            if (!isPremium) {
+                showNotification('error', '需要專業版', '請升級至專業版以下載PDF文件');
+                showPricing();
+                return;
             }
-        } else {
-            showNotification('error', '請先登入', '升級需要先登入帳號');
-            showLogin();
-        }
-    }
-}
-
-function showProfile() {
-    showNotification('info', '功能開發中', '個人資料管理即將推出');
-}
-
-function showHistory() {
-    showNotification('info', '功能開發中', '文件歷史記錄即將推出');
-}
-
-function showDemo() {
-    showNotification('info', '功能開發中', '示範影片準備中');
-}
-
-// =============== EVENT LISTENERS ===============
-function setupEventListeners() {
-    // Close dropdowns on outside click
-    document.addEventListener('click', function(e) {
-        // User dropdown
-        const userMenu = document.querySelector('.user-menu');
-        const userDropdown = document.getElementById('userDropdown');
-        if (userDropdown && !userMenu?.contains(e.target)) {
-            userDropdown.classList.remove('active');
-        }
-    });
-    
-    // Form validation on submit
-    document.getElementById('documentForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        generateDocument();
-    });
-
-    // =============== AUTH SYSTEM FUNCTIONS ===============
-function closeAuthModal() {
-    document.getElementById('authModal').classList.remove('active');
-}
-
-function switchTab(tab) {
-    // Update tabs
-    document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
-    
-    if (tab === 'login') {
-        document.getElementById('loginTab').classList.add('active');
-        document.getElementById('loginForm').classList.add('active');
-    } else {
-        document.getElementById('registerTab').classList.add('active');
-        document.getElementById('registerForm').classList.add('active');
-    }
-}
-
-// Login form handler
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-    const rememberMe = document.getElementById('rememberMe').checked;
-    
-    // Simulate login validation
-    if (email && password) {
-        // Get stored users or use demo data
-        const users = JSON.parse(localStorage.getItem('docuUsers')) || [];
-        const user = users.find(u => u.email === email && u.password === password);
-        
-        if (user || password === 'demo123') { // Allow demo login
-            currentUser = user || {
-                id: Date.now(),
-                name: email.split('@')[0],
-                email: email,
-                isPremium: false,
-                joinDate: new Date().toISOString()
+            
+            const element = document.getElementById('documentPreview');
+            const opt = {
+                margin: 10,
+                filename: `document_${Date.now()}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
             
-            if (rememberMe) {
-                localStorage.setItem('docuUser', JSON.stringify(currentUser));
+            showNotification('info', '正在生成PDF', '請稍候...');
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                showNotification('success', 'PDF下載成功', '文件已保存至您的下載資料夾');
+            }).catch(() => {
+                showNotification('error', 'PDF生成失敗', '請重試或聯繫客服');
+            });
+        }
+        
+        // Notification System
+        function showNotification(type, title, message) {
+            const container = document.getElementById('notificationContainer');
+            const id = 'notification-' + Date.now();
+            
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.id = id;
+            
+            const iconMap = {
+                success: 'fa-check-circle',
+                error: 'fa-exclamation-circle',
+                info: 'fa-info-circle',
+                warning: 'fa-exclamation-triangle'
+            };
+            
+            notification.innerHTML = `
+                <div class="notification-icon">
+                    <i class="fas ${iconMap[type]}"></i>
+                </div>
+                <div class="notification-content">
+                    <div class="notification-title">${title}</div>
+                    ${message ? `<div class="notification-message">${message}</div>` : ''}
+                </div>
+            `;
+            
+            container.appendChild(notification);
+            
+            setTimeout(() => notification.classList.add('show'), 10);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 4000);
+        }
+        
+        // User Interface Updates
+        function updateUserInterface() {
+            if (currentUser) {
+                document.getElementById('guestNav').style.display = 'none';
+                document.getElementById('userNav').style.display = 'flex';
+                document.getElementById('userNav').innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 16px; cursor: pointer;" onclick="logout()">
+                        <div style="width: 40px; height: 40px; background: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary-900);">
+                            ${currentUser.name ? currentUser.name.charAt(0).toUpperCase() : 'U'}
+                        </div>
+                        <span style="font-weight: 600;">${currentUser.name || 'User'}</span>
+                        <button class="btn-custom btn-glass" onclick="logout()">登出</button>
+                    </div>
+                `;
             } else {
-                sessionStorage.setItem('docuUser', JSON.stringify(currentUser));
+                document.getElementById('guestNav').style.display = 'flex';
+                document.getElementById('userNav').style.display = 'none';
             }
+        }
+        
+        // Auth Functions
+        function switchTab(tab) {
+            document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
             
-            isPremium = currentUser.isPremium;
-            updateUserInterface();
-            closeAuthModal();
-            showNotification('success', '登入成功', `歡迎回來，${currentUser.name}`);
+            if (tab === 'login') {
+                document.getElementById('loginTab').classList.add('active');
+                document.getElementById('loginForm').classList.add('active');
+            } else {
+                document.getElementById('registerTab').classList.add('active');
+                document.getElementById('registerForm').classList.add('active');
+            }
+        }
+        
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.remove('active');
+        }
+        
+        function showLogin() {
+            document.getElementById('authModal').classList.add('active');
+            switchTab('login');
+        }
+        
+        function logout() {
+            if (confirm('確定要登出嗎？')) {
+                currentUser = null;
+                isPremium = false;
+                localStorage.removeItem('docuUser');
+                updateUserInterface();
+                navigateHome();
+                showNotification('success', '已成功登出', '感謝您的使用');
+            }
+        }
+        
+        // Form Handlers
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Navigate to document section if not already there
-            if (document.getElementById('documentSection').style.display !== 'block') {
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            if (email && password) {
+                currentUser = {
+                    id: Date.now(),
+                    name: email.split('@')[0],
+                    email: email,
+                    isPremium: false
+                };
+                
+                localStorage.setItem('docuUser', JSON.stringify(currentUser));
+                updateUserInterface();
+                closeAuthModal();
+                showNotification('success', '登入成功', `歡迎回來，${currentUser.name}`);
                 startDocument();
             }
-        } else {
-            showNotification('error', '登入失敗', '電子郵件或密碼錯誤');
+        });
+        
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                showNotification('error', '密碼不符', '兩次輸入的密碼不相同');
+                return;
+            }
+            
+            currentUser = {
+                id: Date.now(),
+                name: name,
+                email: email,
+                isPremium: false
+            };
+            
+            localStorage.setItem('docuUser', JSON.stringify(currentUser));
+            updateUserInterface();
+            closeAuthModal();
+            showNotification('success', '註冊成功', '歡迎加入 DOCU！');
+        });
+        
+        // Placeholder Functions
+        function showFeatures() {
+            showNotification('info', '功能開發中', '功能特色頁面即將推出');
         }
-    }
-});
-
-// Register form handler
-document.getElementById('registerForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('registerName').value;
-    const email = document.getElementById('registerEmail').value;
-    const password = document.getElementById('registerPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    const agreeTerms = document.getElementById('agreeTerms').checked;
-    
-    // Validation
-    if (password !== confirmPassword) {
-        showNotification('error', '密碼不符', '兩次輸入的密碼不相同');
-        return;
-    }
-    
-    if (password.length < 6) {
-        showNotification('error', '密碼太短', '密碼至少需要6個字元');
-        return;
-    }
-    
-    if (!agreeTerms) {
-        showNotification('error', '請同意條款', '您需要同意服務條款才能註冊');
-        return;
-    }
-    
-    // Check if email already exists
-    const users = JSON.parse(localStorage.getItem('docuUsers')) || [];
-    if (users.find(u => u.email === email)) {
-        showNotification('error', '註冊失敗', '此電子郵件已被使用');
-        return;
-    }
-    
-    // Create new user
-    const newUser = {
-        id: Date.now(),
-        name: name,
-        email: email,
-        password: password, // In production, this should be hashed
-        isPremium: false,
-        joinDate: new Date().toISOString()
-    };
-    
-    users.push(newUser);
-    localStorage.setItem('docuUsers', JSON.stringify(users));
-    
-    // Auto login
-    currentUser = newUser;
-    localStorage.setItem('docuUser', JSON.stringify(currentUser));
-    updateUserInterface();
-    closeAuthModal();
-    showNotification('success', '註冊成功', '歡迎加入 DOCU！');
-    
-    // Show welcome tutorial or guide
-    setTimeout(() => {
-        showNotification('info', '新手提示', '點擊「開始製作文件」來創建您的第一份專業文件');
-    }, 2000);
-});
-
-// Password strength checker
-document.getElementById('registerPassword')?.addEventListener('input', function(e) {
-    const password = e.target.value;
-    const strengthBar = document.getElementById('passwordStrength');
-    
-    if (password.length === 0) {
-        strengthBar.className = 'password-strength';
-    } else if (password.length < 6) {
-        strengthBar.className = 'password-strength weak';
-    } else if (password.length < 10 || !/[A-Z]/.test(password) || !/[0-9]/.test(password)) {
-        strengthBar.className = 'password-strength medium';
-    } else {
-        strengthBar.className = 'password-strength strong';
-    }
-});
-
-// Social login handlers
-function socialLogin(provider) {
-    showNotification('info', '功能開發中', `${provider} 登入功能即將推出`);
-}
-
-function showForgotPassword() {
-    showNotification('info', '忘記密碼', '請聯繫客服協助重設密碼');
-}
-
-function showTerms() {
-    showNotification('info', '服務條款', '服務條款頁面開發中');
-}
-
-function showPrivacy() {
-    showNotification('info', '隱私政策', '隱私政策頁面開發中');
-}
-
-// Check for saved session on page load
-document.addEventListener('DOMContentLoaded', function() {
-    const savedUser = localStorage.getItem('docuUser') || sessionStorage.getItem('docuUser');
-    if (savedUser) {
-        currentUser = JSON.parse(savedUser);
-        isPremium = currentUser.isPremium;
-        updateUserInterface();
-    }
-});
-
-// Close modal on background click
-document.getElementById('authModal')?.addEventListener('click', function(e) {
-    if (e.target === this) {
-        closeAuthModal();
-    }
-});
-}
-
-// Initialize particles and other effects when DOM is loaded
-window.addEventListener('DOMContentLoaded', function() {
-    // Any additional initialization can go here
-});
+        
+        function showPricing() {
+            if (confirm('升級至專業版 (NT$199/月)？\n\n✓ 無限制下載PDF\n✓ 所有進階功能\n✓ 優先客戶支援')) {
+                if (currentUser) {
+                    currentUser.isPremium = true;
+                    isPremium = true;
+                    localStorage.setItem('docuUser', JSON.stringify(currentUser));
+                    updateUserInterface();
+                    showNotification('success', '升級成功', '您現在是專業版用戶');
+                    
+                    const downloadBtn = document.getElementById('downloadBtn');
+                    if (downloadBtn) {
+                        downloadBtn.innerHTML = '<i class="fas fa-download"></i> 下載 PDF';
+                        downloadBtn.onclick = downloadPDF;
+                    }
+                } else {
+                    showNotification('error', '請先登入', '升級需要先登入帳號');
+                    showLogin();
+                }
+            }
+        }
+        
+        function showDemo() {
+            showNotification('info', '功能開發中', '示範影片準備中');
+        }
+        
+        function showForgotPassword() {
+            showNotification('info', '忘記密碼', '請聯繫客服協助重設密碼');
+        }
+        
+        function showTerms() {
+            showNotification('info', '服務條款', '服務條款頁面開發中');
+        }
+        
+        function showPrivacy() {
+            showNotification('info', '隱私政策', '隱私政策頁面開發中');
+        }
+        
+        function socialLogin(provider) {
+            showNotification('info', '功能開發中', `${provider} 登入功能即將推出`);
+        }
+        
+        // Event Listeners
+        function setupEventListeners() {
+            document.addEventListener('click', function(e) {
+                const userDropdown = document.getElementById('userDropdown');
+                if (userDropdown && !e.target.closest('.user-menu')) {
+                    userDropdown.classList.remove('active');
+                }
+            });
+            
+            document.getElementById('documentForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                generateDocument();
+            });
+            
+            document.getElementById('authModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeAuthModal();
+                }
+            });
+        }
     </script>
 </body>
 </html>
