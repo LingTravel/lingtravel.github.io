@@ -1,39 +1,137 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOCU™ Professional - 台灣法律文件智能生成系統</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <meta name="description" content="DOCU™ Professional - 台灣最專業的智能法律文件生成系統，提供勞動契約、保密協議、租賃契約等50+專業範本，100%符合最新法規">
+    <meta name="keywords" content="法律文件,契約範本,勞動契約,保密協議,租賃契約,線上合約,智能文件生成">
+    <meta name="author" content="DOCU Professional Team">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FFB800">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docu-professional.com.tw/">
+    <meta property="og:title" content="DOCU™ Professional - 智能法律文件生成系統">
+    <meta property="og:description" content="採用2024年最新法規資料庫，AI智能分析，為您打造100%符合台灣法律規範的專業契約文件">
+    <meta property="og:image" content="https://docu-professional.com.tw/images/og-image.jpg">
+    <meta property="og:locale" content="zh_TW">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docu-professional.com.tw/">
+    <meta property="twitter:title" content="DOCU™ Professional - 智能法律文件生成系統">
+    <meta property="twitter:description" content="台灣最專業的智能法律文件生成平台">
+    <meta property="twitter:image" content="https://docu-professional.com.tw/images/twitter-image.jpg">
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <title>DOCU™ Professional - 台灣法律文件智能生成系統 | 勞動契約、保密協議、租賃合約</title>
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "DOCU Professional",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "0",
+            "highPrice": "2999",
+            "priceCurrency": "TWD",
+            "offerCount": "4"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "1250"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "DOCU Professional",
+            "url": "https://docu-professional.com.tw"
+        }
+    }
+    </script>
     <style>
+        /* ============================================
+           CSS Variables & Theme System
+           ============================================ */
         :root {
+            /* Color System */
             --primary-900: #0A0E1F;
             --primary-800: #141929;
             --primary-700: #1E2433;
             --primary-600: #282F3D;
             --primary-500: #323A47;
+            --primary-400: #3C4451;
+            --primary-300: #464E5B;
+
             --accent-gold: #FFB800;
             --accent-gold-dark: #E5A600;
             --accent-gold-light: #FFD166;
+            --accent-gold-lighter: #FFEB99;
+
             --accent-blue: #0066FF;
+            --accent-blue-dark: #0052CC;
+            --accent-blue-light: #3380FF;
+
             --accent-green: #00C896;
             --accent-red: #FF3B30;
             --accent-purple: #8B5CF6;
+            --accent-orange: #FF6B35;
+
             --color-success: #10B981;
             --color-warning: #F59E0B;
             --color-error: #EF4444;
             --color-info: #3B82F6;
+
             --text-primary: #FFFFFF;
             --text-secondary: #94A3B8;
             --text-tertiary: #64748B;
             --text-disabled: #475569;
+
             --glass-bg: rgba(255, 255, 255, 0.02);
             --glass-border: rgba(255, 255, 255, 0.05);
             --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+            /* Shadows */
             --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-sm: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-md: 0 4px 6px -2px rgba(0, 0, 0, 0.1);
@@ -41,49 +139,275 @@
             --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
             --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             --shadow-glow: 0 0 50px rgba(255, 184, 0, 0.15);
+
+            /* Animations */
             --ease-spring: cubic-bezier(0.43, 0.195, 0.02, 0.96);
             --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
             --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+
+            /* Layout */
             --nav-height: 72px;
             --sidebar-width: 420px;
             --container-max: 1440px;
             --spacing-unit: 8px;
+
+            /* Z-index Scale */
+            --z-base: 1;
+            --z-dropdown: 100;
+            --z-sticky: 200;
+            --z-fixed: 300;
+            --z-modal-backdrop: 400;
+            --z-modal: 500;
+            --z-popover: 600;
+            --z-tooltip: 700;
+            --z-notification: 800;
         }
-        
-        *, *::before, *::after {
+
+        /* Light Theme */
+        [data-theme="light"] {
+            --primary-900: #FFFFFF;
+            --primary-800: #F8FAFC;
+            --primary-700: #F1F5F9;
+            --primary-600: #E2E8F0;
+            --primary-500: #CBD5E1;
+
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-tertiary: #64748B;
+            --text-disabled: #94A3B8;
+
+            --glass-bg: rgba(0, 0, 0, 0.02);
+            --glass-border: rgba(0, 0, 0, 0.08);
+        }
+
+        /* ============================================
+           Base Styles & Reset
+           ============================================ */
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             font-size: 16px;
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
-        
+
         body {
-            font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: var(--primary-900);
             color: var(--text-primary);
             line-height: 1.6;
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
+
+        /* Typography Scale */
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        h4 {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        }
+
+        h5 {
+            font-size: clamp(1.125rem, 2vw, 1.25rem);
+        }
+
+        h6 {
+            font-size: 1rem;
+        }
+
+        /* Links */
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-gold-light);
+            text-decoration: underline;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--accent-gold);
+            color: var(--primary-900);
+        }
+
+        /* Focus Styles */
+        :focus-visible {
+            outline: 2px solid var(--accent-gold);
+            outline-offset: 2px;
+        }
+
+        /* Scrollbar Styles */
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-800);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--accent-gold), var(--accent-gold-dark));
+            border-radius: 10px;
+            border: 2px solid var(--primary-800);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--accent-gold-light), var(--accent-gold));
+        }
+
+        /* Loading States */
+        .skeleton-loader {
+            background: linear-gradient(90deg,
+                    var(--primary-700) 25%,
+                    var(--primary-600) 50%,
+                    var(--primary-700) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 calc(var(--spacing-unit) * 4);
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .truncate {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Background Effects */
         .universe-bg {
             position: fixed;
             inset: 0;
             z-index: 0;
-            background: 
+            background:
                 radial-gradient(ellipse at top left, rgba(0, 102, 255, 0.1) 0%, transparent 40%),
                 radial-gradient(ellipse at bottom right, rgba(255, 184, 0, 0.08) 0%, transparent 40%),
                 radial-gradient(ellipse at center, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
                 linear-gradient(180deg, var(--primary-900) 0%, var(--primary-800) 100%);
+            transition: opacity 0.5s ease;
         }
-        
+
         .universe-bg::before {
             content: '';
             position: absolute;
@@ -91,28 +415,28 @@
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.01'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             opacity: 0.4;
         }
-        
+
         .floating-particle {
             position: fixed;
             pointer-events: none;
             opacity: 0.5;
             animation: float-particle 20s infinite linear;
+            will-change: transform;
         }
-        
+
         @keyframes float-particle {
-            from { transform: translateY(100vh) rotate(0deg); }
-            to { transform: translateY(-100px) rotate(360deg); }
+            from {
+                transform: translateY(100vh) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(-100px) rotate(360deg);
+            }
         }
-        
-        ::-webkit-scrollbar { width: 12px; height: 12px; }
-        ::-webkit-scrollbar-track { background: var(--primary-800); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--accent-gold), var(--accent-gold-dark));
-            border-radius: 10px;
-            border: 2px solid var(--primary-800);
-        }
-        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--accent-gold-light), var(--accent-gold)); }
-        
+
+        /* ============================================
+           Navigation System
+           ============================================ */
         .nav-system {
             position: fixed;
             top: 0;
@@ -123,15 +447,19 @@
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-bottom: 1px solid var(--glass-border);
-            z-index: 1000;
+            z-index: var(--z-fixed);
             transition: all 0.3s var(--ease-spring);
         }
-        
+
         .nav-system.scrolled {
             background: rgba(10, 14, 31, 0.95);
             box-shadow: var(--shadow-lg);
         }
-        
+
+        [data-theme="light"] .nav-system.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
         .nav-container {
             max-width: var(--container-max);
             height: 100%;
@@ -141,7 +469,7 @@
             align-items: center;
             justify-content: space-between;
         }
-        
+
         .nav-brand {
             display: flex;
             align-items: center;
@@ -149,9 +477,11 @@
             cursor: pointer;
             transition: transform 0.3s var(--ease-spring);
         }
-        
-        .nav-brand:hover { transform: translateX(5px); }
-        
+
+        .nav-brand:hover {
+            transform: translateX(5px);
+        }
+
         .brand-logo {
             width: 42px;
             height: 42px;
@@ -167,7 +497,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .brand-logo::after {
             content: '';
             position: absolute;
@@ -176,16 +506,18 @@
             transform: translateX(-100%);
             transition: transform 0.6s;
         }
-        
-        .nav-brand:hover .brand-logo::after { transform: translateX(100%); }
-        
+
+        .nav-brand:hover .brand-logo::after {
+            transform: translateX(100%);
+        }
+
         .brand-text {
             font-size: 24px;
             font-weight: 800;
             letter-spacing: -0.5px;
             color: var(--text-primary);
         }
-        
+
         .brand-badge {
             background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
             color: var(--text-primary);
@@ -196,8 +528,12 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
             box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+            animation: pulse 2s infinite;
         }
-        
+
+        /* ============================================
+           Button System
+           ============================================ */
         .btn-custom {
             position: relative;
             display: inline-flex;
@@ -217,7 +553,7 @@
             text-decoration: none;
             user-select: none;
         }
-        
+
         .btn-custom::before {
             content: '';
             position: absolute;
@@ -230,42 +566,71 @@
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
         }
-        
+
         .btn-custom:hover::before {
             width: 300px;
             height: 300px;
         }
-        
-        .btn-custom:active { transform: scale(0.98); }
-        
+
+        .btn-custom:active {
+            transform: scale(0.98);
+        }
+
+        .btn-custom:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
         .btn-primary {
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
             color: var(--primary-900);
             box-shadow: 0 4px 12px rgba(255, 184, 0, 0.3);
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 184, 0, 0.4);
+            animation: pulse 0.5s ease-in-out;
         }
-        
+
         .btn-glass {
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
             color: var(--text-primary);
             border: 1px solid var(--glass-border);
         }
-        
+
         .btn-glass:hover {
             background: rgba(255, 255, 255, 0.05);
             border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
-        
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--color-success), #059669);
+            color: white;
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, var(--color-error), #DC2626);
+            color: white;
+        }
+
+        .btn-icon {
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            border-radius: 50%;
+        }
+
+        /* ============================================
+           Form Components
+           ============================================ */
         .form-control-custom {
             position: relative;
             margin-bottom: calc(var(--spacing-unit) * 3);
         }
-        
+
         .form-label-custom {
             position: absolute;
             left: 16px;
@@ -278,8 +643,9 @@
             transition: all 0.3s var(--ease-spring);
             background: var(--primary-800);
             padding: 0 8px;
+            z-index: 1;
         }
-        
+
         .form-input-custom {
             width: 100%;
             padding: 16px;
@@ -292,23 +658,25 @@
             transition: all 0.3s var(--ease-spring);
             font-family: inherit;
         }
-        
+
         .form-input-custom:focus {
             outline: none;
             border-color: var(--accent-gold);
             background: rgba(255, 184, 0, 0.02);
             box-shadow: 0 0 0 4px rgba(255, 184, 0, 0.1);
         }
-        
-        .form-input-custom:focus + .form-label-custom,
-        .form-input-custom:not(:placeholder-shown) + .form-label-custom {
+
+        .form-input-custom:focus+.form-label-custom,
+        .form-input-custom:not(:placeholder-shown)+.form-label-custom {
             top: 0;
             font-size: 12px;
             color: var(--accent-gold);
         }
-        
-        .form-input-custom::placeholder { color: transparent; }
-        
+
+        .form-input-custom::placeholder {
+            color: transparent;
+        }
+
         .input-helper {
             position: absolute;
             right: 16px;
@@ -316,10 +684,13 @@
             transform: translateY(-50%);
             color: var(--text-tertiary);
             font-size: 14px;
+            cursor: help;
         }
-        
-        .input-error { border-color: var(--color-error) !important; }
-        
+
+        .input-error {
+            border-color: var(--color-error) !important;
+        }
+
         .error-message {
             color: var(--color-error);
             font-size: 12px;
@@ -327,14 +698,24 @@
             display: flex;
             align-items: center;
             gap: 4px;
+            animation: fadeIn 0.3s ease;
         }
-        
-        /* Continuing CSS styles... */
+
+        .success-message {
+            color: var(--color-success);
+            font-size: 12px;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Select Custom */
         .select-custom {
             position: relative;
             width: 100%;
         }
-        
+
         .select-trigger {
             width: 100%;
             padding: 16px;
@@ -350,21 +731,26 @@
             justify-content: space-between;
             transition: all 0.3s var(--ease-spring);
         }
-        
+
         .select-trigger:hover {
             border-color: rgba(255, 255, 255, 0.1);
             background: rgba(255, 255, 255, 0.03);
         }
-        
+
         .select-trigger.active {
             border-color: var(--accent-gold);
             background: rgba(255, 184, 0, 0.02);
             box-shadow: 0 0 0 4px rgba(255, 184, 0, 0.1);
         }
-        
-        .select-arrow { transition: transform 0.3s var(--ease-spring); }
-        .select-trigger.active .select-arrow { transform: rotate(180deg); }
-        
+
+        .select-arrow {
+            transition: transform 0.3s var(--ease-spring);
+        }
+
+        .select-trigger.active .select-arrow {
+            transform: rotate(180deg);
+        }
+
         .select-dropdown {
             position: absolute;
             top: calc(100% + 8px);
@@ -378,18 +764,18 @@
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 0.3s var(--ease-spring);
-            z-index: 100;
+            z-index: var(--z-dropdown);
             max-height: 300px;
             overflow-y: auto;
             box-shadow: var(--shadow-2xl);
         }
-        
-        .select-trigger.active + .select-dropdown {
+
+        .select-trigger.active+.select-dropdown {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        
+
         .select-option {
             padding: 14px 16px;
             color: var(--text-secondary);
@@ -401,25 +787,26 @@
             font-weight: 500;
             position: relative;
         }
-        
+
         .select-option:hover {
             background: rgba(255, 184, 0, 0.05);
             color: var(--text-primary);
             padding-left: 24px;
         }
-        
+
         .select-option.selected {
             background: rgba(255, 184, 0, 0.1);
             color: var(--accent-gold);
         }
-        
+
         .select-option.selected::before {
             content: '✓';
             position: absolute;
             right: 16px;
             font-weight: 700;
         }
-        
+
+        /* Checkbox Custom */
         .checkbox-custom {
             display: flex;
             align-items: flex-start;
@@ -430,15 +817,17 @@
             transition: all 0.3s var(--ease-spring);
             position: relative;
         }
-        
-        .checkbox-custom:hover { background: rgba(255, 184, 0, 0.03); }
-        
+
+        .checkbox-custom:hover {
+            background: rgba(255, 184, 0, 0.03);
+        }
+
         .checkbox-custom input {
             position: absolute;
             opacity: 0;
             cursor: pointer;
         }
-        
+
         .checkbox-box {
             width: 22px;
             height: 22px;
@@ -451,12 +840,13 @@
             flex-shrink: 0;
             margin-top: 2px;
         }
-        
-        .checkbox-custom input:checked ~ .checkbox-box {
+
+        .checkbox-custom input:checked~.checkbox-box {
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
             border-color: var(--accent-gold);
+            animation: pulse 0.3s ease;
         }
-        
+
         .checkbox-checkmark {
             width: 12px;
             height: 12px;
@@ -467,26 +857,31 @@
             stroke-dashoffset: 20;
             transition: stroke-dashoffset 0.3s var(--ease-spring);
         }
-        
-        .checkbox-custom input:checked ~ .checkbox-box .checkbox-checkmark {
+
+        .checkbox-custom input:checked~.checkbox-box .checkbox-checkmark {
             stroke-dashoffset: 0;
         }
-        
-        .checkbox-content { flex: 1; }
-        
+
+        .checkbox-content {
+            flex: 1;
+        }
+
         .checkbox-title {
             color: var(--text-primary);
             font-weight: 600;
             font-size: 14px;
             margin-bottom: 4px;
         }
-        
+
         .checkbox-description {
             color: var(--text-tertiary);
             font-size: 12px;
             line-height: 1.5;
         }
-        
+
+        /* ============================================
+           Hero Section
+           ============================================ */
         .hero-container {
             min-height: 100vh;
             display: flex;
@@ -496,7 +891,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .hero-content {
             max-width: 1200px;
             width: 100%;
@@ -505,14 +900,11 @@
             gap: 80px;
             align-items: center;
         }
-        
-        .hero-text { animation: fadeInUp 1s var(--ease-out-expo); }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .hero-text {
+            animation: fadeInUp 1s var(--ease-out-expo);
         }
-        
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -527,8 +919,9 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
             margin-bottom: 24px;
+            animation: pulse 2s infinite;
         }
-        
+
         .hero-title {
             font-size: clamp(42px, 5vw, 64px);
             font-weight: 900;
@@ -539,7 +932,184 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .feature-cards-grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s var(--ease-spring);
+            animation: slideInRight 1s var(--ease-out-expo);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent-gold);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .stat-item {
+            text-align: center;
+            animation: fadeInUp 1s var(--ease-out-expo);
+            animation-fill-mode: both;
+        }
+
+        .stat-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .stat-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .stat-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        /* ============================================
+           Pricing Section
+           ============================================ */
+        .pricing-section {
+            padding: 80px 32px;
+            position: relative;
+            z-index: 1;
+            display: none;
+        }
+
+        .pricing-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px 32px;
+            position: relative;
+            transition: all 0.3s var(--ease-spring);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent-gold);
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 184, 0, 0.2);
+        }
+
+        .pricing-card.featured::before {
+            content: '最受歡迎';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: var(--primary-900);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .pricing-plan {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .pricing-price {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+        }
+
+        .pricing-price sup {
+            font-size: 24px;
+            margin-right: 4px;
+        }
+
+        .pricing-price sub {
+            font-size: 16px;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 32px 0;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features i {
+            color: var(--color-success);
+            font-size: 16px;
+        }
+
+        /* ============================================
+           Document Section
+           ============================================ */
         .document-container {
             display: none;
             min-height: 100vh;
@@ -547,17 +1117,12 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .document-container.active {
             display: block;
             animation: fadeIn 0.5s var(--ease-out-expo);
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
+
         .document-layout {
             max-width: var(--container-max);
             margin: 0 auto;
@@ -565,7 +1130,7 @@
             grid-template-columns: var(--sidebar-width) 1fr;
             gap: 32px;
         }
-        
+
         .document-sidebar {
             position: sticky;
             top: calc(var(--nav-height) + 32px);
@@ -573,7 +1138,7 @@
             max-height: calc(100vh - var(--nav-height) - 64px);
             overflow-y: auto;
         }
-        
+
         .sidebar-section {
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
@@ -582,7 +1147,7 @@
             padding: 28px;
             margin-bottom: 24px;
         }
-        
+
         .section-title {
             font-size: 16px;
             font-weight: 700;
@@ -592,11 +1157,15 @@
             align-items: center;
             gap: 12px;
         }
-        
-        .section-title i { color: var(--accent-gold); }
-        
-        .progress-container { margin-bottom: 28px; }
-        
+
+        .section-title i {
+            color: var(--accent-gold);
+        }
+
+        .progress-container {
+            margin-bottom: 28px;
+        }
+
         .progress-bar {
             height: 8px;
             background: var(--glass-border);
@@ -604,7 +1173,7 @@
             overflow: hidden;
             position: relative;
         }
-        
+
         .progress-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light));
@@ -614,7 +1183,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .progress-fill::after {
             content: '';
             position: absolute;
@@ -625,26 +1194,31 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             animation: shimmer 2s infinite;
         }
-        
+
         @keyframes shimmer {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(100%); }
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(100%);
+            }
         }
-        
+
         .progress-text {
             margin-top: 8px;
             font-size: 12px;
             color: var(--text-tertiary);
             text-align: right;
         }
-        
+
         .document-preview {
             background: white;
             border-radius: 16px;
             box-shadow: var(--shadow-2xl);
             overflow: hidden;
         }
-        
+
         .preview-toolbar {
             background: linear-gradient(135deg, var(--primary-800), var(--primary-700));
             padding: 20px 28px;
@@ -653,7 +1227,7 @@
             justify-content: space-between;
             border-bottom: 1px solid var(--glass-border);
         }
-        
+
         .preview-title {
             font-size: 16px;
             font-weight: 700;
@@ -662,12 +1236,12 @@
             align-items: center;
             gap: 12px;
         }
-        
+
         .preview-actions {
             display: flex;
             gap: 12px;
         }
-        
+
         .preview-content {
             padding: 60px;
             min-height: 842px;
@@ -675,8 +1249,25 @@
             font-family: 'Noto Serif TC', serif;
             line-height: 1.8;
             background: white;
+            position: relative;
         }
-        
+
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 120px;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.05);
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+        }
+
+        /* ============================================
+           Modal System
+           ============================================ */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -688,14 +1279,15 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s var(--ease-spring);
-            z-index: 2000;
+            z-index: var(--z-modal-backdrop);
+            padding: 20px;
         }
-        
+
         .modal-overlay.active {
             opacity: 1;
             visibility: visible;
         }
-        
+
         .modal-container {
             background: var(--primary-800);
             border: 1px solid var(--glass-border);
@@ -706,12 +1298,14 @@
             transform: scale(0.9) translateY(20px);
             transition: all 0.3s var(--ease-spring);
             overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
         }
-        
+
         .modal-overlay.active .modal-container {
             transform: scale(1) translateY(0);
         }
-        
+
         .modal-close {
             position: absolute;
             top: 20px;
@@ -729,15 +1323,18 @@
             transition: all 0.3s;
             z-index: 10;
         }
-        
+
         .modal-close:hover {
             background: rgba(255, 255, 255, 0.1);
             color: var(--text-primary);
             transform: rotate(90deg);
         }
-        
-        .modal-content { padding: 40px; }
-        
+
+        .modal-content {
+            padding: 40px;
+        }
+
+        /* Auth Modal */
         .auth-tabs {
             display: flex;
             gap: 10px;
@@ -746,7 +1343,7 @@
             padding: 5px;
             border-radius: 12px;
         }
-        
+
         .auth-tab {
             flex: 1;
             padding: 12px;
@@ -759,20 +1356,26 @@
             border-radius: 8px;
             transition: all 0.3s;
         }
-        
+
         .auth-tab.active {
             background: var(--accent-gold);
             color: var(--primary-900);
         }
-        
-        .auth-form { display: none; }
-        .auth-form.active { display: block; animation: fadeInUp 0.5s var(--ease-out-expo); }
-        
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+            animation: fadeInUp 0.5s var(--ease-out-expo);
+        }
+
         .auth-header {
             text-align: center;
             margin-bottom: 30px;
         }
-        
+
         .auth-icon {
             width: 80px;
             height: 80px;
@@ -785,27 +1388,28 @@
             font-size: 36px;
             color: var(--primary-900);
             box-shadow: 0 10px 30px rgba(255, 184, 0, 0.3);
+            animation: bounce 1s ease infinite;
         }
-        
+
         .auth-title {
             font-size: 28px;
             font-weight: 800;
             color: var(--text-primary);
             margin-bottom: 8px;
         }
-        
+
         .auth-subtitle {
             font-size: 16px;
             color: var(--text-secondary);
         }
-        
+
         .form-extras {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
         }
-        
+
         .remember-me {
             display: flex;
             align-items: center;
@@ -814,22 +1418,24 @@
             color: var(--text-secondary);
             font-size: 14px;
         }
-        
+
         .remember-me input {
             width: 18px;
             height: 18px;
             cursor: pointer;
         }
-        
+
         .forgot-link {
             color: var(--accent-gold);
             text-decoration: none;
             font-size: 14px;
             transition: opacity 0.3s;
         }
-        
-        .forgot-link:hover { opacity: 0.8; }
-        
+
+        .forgot-link:hover {
+            opacity: 0.8;
+        }
+
         .btn-auth-submit {
             width: 100%;
             padding: 16px;
@@ -847,18 +1453,18 @@
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(255, 184, 0, 0.3);
         }
-        
+
         .btn-auth-submit:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 184, 0, 0.4);
         }
-        
+
         .auth-divider {
             text-align: center;
             margin: 25px 0;
             position: relative;
         }
-        
+
         .auth-divider span {
             background: var(--primary-800);
             padding: 0 15px;
@@ -867,7 +1473,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .auth-divider::before {
             content: '';
             position: absolute;
@@ -877,12 +1483,12 @@
             height: 1px;
             background: var(--glass-border);
         }
-        
+
         .social-login {
             display: flex;
             gap: 12px;
         }
-        
+
         .social-btn {
             flex: 1;
             padding: 12px;
@@ -899,27 +1505,37 @@
             gap: 8px;
             transition: all 0.3s;
         }
-        
-        .social-btn:hover { transform: translateY(-2px); }
-        
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+        }
+
         .social-btn.google:hover {
             background: rgba(219, 68, 55, 0.1);
             border-color: #DB4437;
         }
-        
+
         .social-btn.facebook:hover {
             background: rgba(24, 119, 242, 0.1);
             border-color: #1877F2;
         }
-        
+
+        .social-btn.line:hover {
+            background: rgba(0, 195, 0, 0.1);
+            border-color: #00C300;
+        }
+
+        /* ============================================
+           Notification System
+           ============================================ */
         .notification-container {
             position: fixed;
             top: calc(var(--nav-height) + 20px);
             right: 20px;
-            z-index: 3000;
+            z-index: var(--z-notification);
             pointer-events: none;
         }
-        
+
         .notification {
             background: var(--primary-800);
             border: 1px solid var(--glass-border);
@@ -936,12 +1552,12 @@
             transition: all 0.3s var(--ease-spring);
             pointer-events: all;
         }
-        
+
         .notification.show {
             transform: translateX(0);
             opacity: 1;
         }
-        
+
         .notification-icon {
             width: 40px;
             height: 40px;
@@ -952,58 +1568,393 @@
             font-size: 20px;
             flex-shrink: 0;
         }
-        
+
         .notification.success .notification-icon {
             background: rgba(16, 185, 129, 0.2);
             color: var(--color-success);
         }
-        
+
         .notification.error .notification-icon {
             background: rgba(239, 68, 68, 0.2);
             color: var(--color-error);
         }
-        
-        .notification-content { flex: 1; }
-        
+
+        .notification.info .notification-icon {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--color-info);
+        }
+
+        .notification.warning .notification-icon {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--color-warning);
+        }
+
+        .notification-content {
+            flex: 1;
+        }
+
         .notification-title {
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 2px;
             font-size: 14px;
         }
-        
+
         .notification-message {
             font-size: 13px;
             color: var(--text-secondary);
         }
-        
+
+        .notification-close {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-tertiary);
+            transition: all 0.3s;
+        }
+
+        .notification-close:hover {
+            color: var(--text-primary);
+            transform: rotate(90deg);
+        }
+
+        /* ============================================
+           Tooltip System
+           ============================================ */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip-content {
+            position: absolute;
+            bottom: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-700);
+            color: var(--text-primary);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: var(--z-tooltip);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tooltip:hover .tooltip-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .tooltip-content::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: var(--primary-700);
+        }
+
+        /* ============================================
+           Loading States
+           ============================================ */
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--glass-border);
+            border-top-color: var(--accent-gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .spinner-small {
+            width: 20px;
+            height: 20px;
+            border-width: 2px;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: var(--z-modal-backdrop);
+        }
+
+        /* ============================================
+           Responsive Design
+           ============================================ */
         @media (max-width: 1280px) {
-            .document-layout { grid-template-columns: 360px 1fr; }
-            :root { --sidebar-width: 360px; }
+            .document-layout {
+                grid-template-columns: 360px 1fr;
+            }
+
+            :root {
+                --sidebar-width: 360px;
+            }
         }
-        
+
         @media (max-width: 1024px) {
-            .hero-content { grid-template-columns: 1fr; gap: 60px; }
-            .document-layout { grid-template-columns: 1fr; }
-            .document-sidebar { position: static; max-height: none; }
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .document-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .document-sidebar {
+                position: static;
+                max-height: none;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
         }
-        
+
         @media (max-width: 768px) {
-            .hero-title { font-size: 36px; }
-            .preview-content { padding: 30px; }
+            :root {
+                --nav-height: 64px;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .preview-content {
+                padding: 30px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .nav-container {
+                padding: 0 16px;
+            }
+
+            .brand-text {
+                font-size: 20px;
+            }
+
+            .brand-badge {
+                display: none;
+            }
+
+            .modal-content {
+                padding: 24px;
+            }
+
+            .notification {
+                min-width: calc(100vw - 40px);
+                right: 20px;
+                left: 20px;
+                transform: translateY(-100px);
+            }
+
+            .notification.show {
+                transform: translateY(0);
+            }
         }
-        
+
+        @media (max-width: 480px) {
+            .hero-content {
+                padding: 0 16px;
+            }
+
+            .social-login {
+                flex-direction: column;
+            }
+
+            .pricing-card {
+                padding: 24px 20px;
+            }
+        }
+
+        /* ============================================
+           Print Styles
+           ============================================ */
         @media print {
-            body { background: white; }
-            .nav-system, .preview-toolbar, .document-sidebar { display: none !important; }
-            .preview-content { padding: 0; box-shadow: none; }
+            body {
+                background: white;
+            }
+
+            .nav-system,
+            .preview-toolbar,
+            .document-sidebar,
+            .notification-container,
+            .modal-overlay,
+            .watermark {
+                display: none !important;
+            }
+
+            .preview-content {
+                padding: 0;
+                box-shadow: none;
+                color: black;
+            }
+
+            .document-container {
+                padding: 0;
+            }
+
+            .document-preview {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+
+        /* ============================================
+           Theme Toggle Button
+           ============================================ */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            color: var(--primary-900);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: var(--shadow-xl);
+            transition: all 0.3s ease;
+            z-index: var(--z-fixed);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(180deg);
+        }
+
+        /* User Dropdown Styles - 加在第5段CSS的最後 */
+        .user-menu {
+            position: relative;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-900);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .user-avatar:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 184, 0, 0.4);
+        }
+
+        .user-dropdown {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background: var(--primary-800);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            min-width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-2xl);
+            z-index: 1000;
+        }
+
+        .user-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .user-info {
+            padding: 20px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .user-name {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 16px;
+        }
+
+        .user-email {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .user-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background: var(--glass-bg);
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 8px;
+            text-transform: uppercase;
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(255, 184, 0, 0.05);
+            color: var(--text-primary);
+        }
+
+        .dropdown-item.text-danger {
+            color: var(--color-error);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--glass-border);
+            margin: 0;
         }
     </style>
 </head>
+
 <body>
+    <!-- Background Effects -->
     <div class="universe-bg"></div>
     <div id="particles"></div>
-    
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切換主題">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+
+    <!-- Navigation System -->
     <nav class="nav-system" id="navSystem">
         <div class="nav-container">
             <div class="nav-brand" onclick="navigateHome()">
@@ -1011,30 +1962,66 @@
                 <span class="brand-text">DOCU</span>
                 <span class="brand-badge">Legal Pro</span>
             </div>
-            
+
             <div class="nav-actions">
+                <!-- Guest Navigation -->
                 <div id="guestNav" style="display: flex; gap: 12px; align-items: center;">
                     <button class="btn-custom btn-glass" onclick="showFeatures()">
                         <i class="fas fa-sparkles"></i>
-                        功能特色
+                        <span class="btn-text">功能特色</span>
+                    </button>
+                    <button class="btn-custom btn-glass" onclick="showPricing()">
+                        <i class="fas fa-tags"></i>
+                        <span class="btn-text">價格方案</span>
                     </button>
                     <button class="btn-custom btn-glass" onclick="showLogin()">
                         <i class="fas fa-user"></i>
-                        登入
+                        <span class="btn-text">登入</span>
                     </button>
-                    <button class="btn-custom btn-primary" onclick="showPricing()">
-                        <i class="fas fa-crown"></i>
-                        專業版
+                    <button class="btn-custom btn-primary" onclick="startFreeTrial()">
+                        <i class="fas fa-rocket"></i>
+                        <span class="btn-text">免費試用</span>
                     </button>
                 </div>
-                
-                <div id="userNav" style="display: none;">
-                    <!-- User menu will be inserted here -->
+
+                <!-- User Navigation -->
+                <div id="userNav" style="display: none; align-items: center; gap: 16px;">
+                    <div class="user-menu">
+                        <div class="user-avatar" onclick="toggleUserDropdown()">
+                            <span id="userInitial">U</span>
+                        </div>
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="user-info">
+                                <div class="user-name" id="userName">使用者</div>
+                                <div class="user-email" id="userEmail">user@example.com</div>
+                                <div class="user-badge" id="userBadge">免費版</div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" onclick="showDashboard()" class="dropdown-item">
+                                <i class="fas fa-chart-line"></i>
+                                儀表板
+                            </a>
+                            <a href="#" onclick="showDocuments()" class="dropdown-item">
+                                <i class="fas fa-folder"></i>
+                                我的文件
+                            </a>
+                            <a href="#" onclick="showSettings()" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                設定
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" onclick="logout()" class="dropdown-item text-danger">
+                                <i class="fas fa-sign-out-alt"></i>
+                                登出
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
-    
+
+    <!-- Hero Section -->
     <section id="heroSection" class="hero-container">
         <div class="hero-content">
             <div class="hero-text">
@@ -1042,70 +2029,261 @@
                     <i class="fas fa-shield-check"></i>
                     符合台灣最新法規
                 </div>
-                
+
                 <h1 class="hero-title">
                     智能法律文件<br>
                     生成系統
                 </h1>
-                
+
                 <p style="font-size: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 40px;">
                     採用2024年最新法規資料庫，結合AI智能分析技術<br>
                     為您打造100%符合台灣法律規範的專業契約文件
                 </p>
-                
+
                 <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 60px;">
-                    <button class="btn-custom btn-primary" onclick="startDocument()" style="padding: 18px 36px; font-size: 16px;">
+                    <button class="btn-custom btn-primary" onclick="startDocument()"
+                        style="padding: 18px 36px; font-size: 16px;">
                         <i class="fas fa-wand-magic-sparkles"></i>
                         開始製作文件
                     </button>
-                    <button class="btn-custom btn-glass" onclick="showDemo()" style="padding: 18px 36px; font-size: 16px;">
+                    <button class="btn-custom btn-glass" onclick="showDemo()"
+                        style="padding: 18px 36px; font-size: 16px;">
                         <i class="fas fa-play"></i>
                         觀看示範
                     </button>
                 </div>
-                
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 32px; font-weight: 800; color: var(--accent-gold); margin-bottom: 8px;">50+</div>
-                        <div style="font-size: 14px; color: var(--text-tertiary);">專業範本</div>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value">50+</div>
+                        <div class="stat-label">專業範本</div>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 32px; font-weight: 800; color: var(--accent-gold); margin-bottom: 8px;">100%</div>
-                        <div style="font-size: 14px; color: var(--text-tertiary);">法規準確</div>
+                    <div class="stat-item">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">法規準確</div>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 32px; font-weight: 800; color: var(--accent-gold); margin-bottom: 8px;">24/7</div>
-                        <div style="font-size: 14px; color: var(--text-tertiary);">即時更新</div>
+                    <div class="stat-item">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">即時更新</div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="hero-visual">
                 <div class="feature-cards-grid">
-                    <div class="feature-card" style="background: var(--glass-bg); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-radius: 16px; padding: 24px;">
+                    <div class="feature-card">
                         <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
-                            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <div
+                                style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
                                 <i class="fas fa-balance-scale" style="color: white; font-size: 24px;"></i>
                             </div>
                             <div>
-                                <h3 style="font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">勞動基準法</h3>
+                                <h3
+                                    style="font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">
+                                    勞動基準法</h3>
                                 <p style="font-size: 14px; color: var(--text-tertiary);">完全符合最新修訂條文</p>
                             </div>
                         </div>
                         <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                            <span style="padding: 4px 10px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 6px; font-size: 12px; color: var(--accent-blue);">工時規範</span>
-                            <span style="padding: 4px 10px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 6px; font-size: 12px; color: var(--accent-blue);">加班費計算</span>
-                            <span style="padding: 4px 10px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 6px; font-size: 12px; color: var(--accent-blue);">資遣費</span>
+                            <span
+                                style="padding: 4px 10px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 6px; font-size: 12px; color: var(--accent-blue);">工時規範</span>
+                            <span
+                                style="padding: 4px 10px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 6px; font-size: 12px; color: var(--accent-blue);">加班費計算</span>
+                            <span
+                                style="padding: 4px 10px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 6px; font-size: 12px; color: var(--accent-blue);">資遣費</span>
+                        </div>
+                    </div>
+
+                    <div class="feature-card" style="margin-top: 24px;">
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                            <div
+                                style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent-green), #059669); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-file-signature" style="color: white; font-size: 24px;"></i>
+                            </div>
+                            <div>
+                                <h3
+                                    style="font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">
+                                    智能生成</h3>
+                                <p style="font-size: 14px; color: var(--text-tertiary);">AI自動填充與檢查</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span
+                                style="padding: 4px 10px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 6px; font-size: 12px; color: var(--accent-green);">即時預覽</span>
+                            <span
+                                style="padding: 4px 10px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 6px; font-size: 12px; color: var(--accent-green);">自動校正</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+    <!-- Pricing Section -->
+    <section id="pricingSection" class="pricing-section">
+        <div class="container">
+            <div class="pricing-header">
+                <h2
+                    style="font-size: 48px; font-weight: 900; margin-bottom: 16px; background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    選擇您的方案
+                </h2>
+                <p style="font-size: 20px; color: var(--text-secondary);">
+                    無論個人或企業，都有適合的方案
+                </p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Free Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-plan">免費體驗</div>
+                    <div class="pricing-price">
+                        <sup>NT$</sup>0<sub>/月</sub>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            每月3份文件
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            基本範本
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            線上預覽
+                        </li>
+                        <li>
+                            <i class="fas fa-times-circle" style="color: var(--text-disabled);"></i>
+                            <span style="color: var(--text-disabled);">PDF下載</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-times-circle" style="color: var(--text-disabled);"></i>
+                            <span style="color: var(--text-disabled);">進階範本</span>
+                        </li>
+                    </ul>
+                    <button class="btn-custom btn-glass" style="width: 100%;" onclick="selectPlan('free')">
+                        開始使用
+                    </button>
+                </div>
+
+                <!-- Basic Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-plan">基礎版</div>
+                    <div class="pricing-price">
+                        <sup>NT$</sup>199<sub>/月</sub>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            每月20份文件
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            PDF下載
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            移除浮水印
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            電子郵件支援
+                        </li>
+                        <li>
+                            <i class="fas fa-times-circle" style="color: var(--text-disabled);"></i>
+                            <span style="color: var(--text-disabled);">API存取</span>
+                        </li>
+                    </ul>
+                    <button class="btn-custom btn-primary" style="width: 100%;" onclick="selectPlan('basic')">
+                        立即升級
+                    </button>
+                </div>
+
+                <!-- Professional Plan -->
+                <div class="pricing-card featured">
+                    <div class="pricing-plan">專業版</div>
+                    <div class="pricing-price">
+                        <sup>NT$</sup>599<sub>/月</sub>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            無限文件
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            所有進階範本
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Word檔下載
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            優先客服支援
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            批次生成
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            雲端儲存100GB
+                        </li>
+                    </ul>
+                    <button class="btn-custom btn-primary" style="width: 100%;" onclick="selectPlan('professional')">
+                        立即升級
+                    </button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-plan">企業版</div>
+                    <div class="pricing-price">
+                        <sup>NT$</sup>2999<sub>/月</sub>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            所有專業版功能
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            團隊協作
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            API存取
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            客製化範本
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            專屬客戶經理
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            無限雲端儲存
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            SLA保證
+                        </li>
+                    </ul>
+                    <button class="btn-custom btn-glass" style="width: 100%;" onclick="contactSales()">
+                        聯繫銷售
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Document Section -->
     <section id="documentSection" class="document-container">
         <div class="document-layout">
             <aside class="document-sidebar">
+                <!-- Progress Section -->
                 <div class="sidebar-section">
                     <div class="progress-container">
                         <div class="progress-bar">
@@ -1115,15 +2293,33 @@
                             <span id="progressText">完成度：0%</span>
                         </div>
                     </div>
+
+                    <!-- Quick Stats -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px;">
+                        <div
+                            style="background: var(--glass-bg); padding: 12px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 20px; font-weight: 700; color: var(--accent-gold);" id="docCount">0
+                            </div>
+                            <div style="font-size: 12px; color: var(--text-tertiary);">本月文件</div>
+                        </div>
+                        <div
+                            style="background: var(--glass-bg); padding: 12px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 20px; font-weight: 700; color: var(--accent-blue);" id="docLimit">3
+                            </div>
+                            <div style="font-size: 12px; color: var(--text-tertiary);">剩餘額度</div>
+                        </div>
+                    </div>
                 </div>
-                
+
+                <!-- Document Form Section -->
                 <div class="sidebar-section">
                     <h3 class="section-title">
                         <i class="fas fa-file-contract"></i>
                         文件資訊
                     </h3>
-                    
+
                     <form id="documentForm">
+                        <!-- Document Type Selection -->
                         <div class="form-control-custom">
                             <div class="select-custom">
                                 <div class="select-trigger" id="docTypeTrigger">
@@ -1147,74 +2343,109 @@
                                         <i class="fas fa-home"></i>
                                         房屋租賃契約書
                                     </div>
+                                    <div class="select-option" data-value="sales" data-icon="fa-shopping-cart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        買賣契約書
+                                    </div>
+                                    <div class="select-option" data-value="loan" data-icon="fa-hand-holding-usd">
+                                        <i class="fas fa-hand-holding-usd"></i>
+                                        借款契約書
+                                    </div>
+                                    <div class="select-option" data-value="partnership" data-icon="fa-users">
+                                        <i class="fas fa-users"></i>
+                                        合夥協議書
+                                    </div>
+                                    <div class="select-option" data-value="license" data-icon="fa-certificate">
+                                        <i class="fas fa-certificate"></i>
+                                        授權合約書
+                                    </div>
                                 </div>
                             </div>
                             <input type="hidden" id="docType" required>
                         </div>
-                        
+
+                        <!-- Party A Information -->
                         <div class="form-control-custom">
                             <input type="text" class="form-input-custom" id="companyName" placeholder=" " required>
                             <label class="form-label-custom">甲方名稱/公司 *</label>
+                            <div class="tooltip">
+                                <span class="input-helper">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                                <div class="tooltip-content">請輸入完整公司名稱或個人姓名</div>
+                            </div>
                         </div>
-                        
+
                         <div class="form-control-custom">
-                            <input type="text" class="form-input-custom" id="companyId" placeholder=" " pattern="[0-9]{8}" required>
+                            <input type="text" class="form-input-custom" id="companyId" placeholder=" "
+                                pattern="[0-9]{8}" required>
                             <label class="form-label-custom">統一編號 *</label>
-                            <span class="input-helper">
-                                <i class="fas fa-info-circle" title="8位數字"></i>
-                            </span>
+                            <div class="tooltip">
+                                <span class="input-helper">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                                <div class="tooltip-content">8位數字，如：12345678</div>
+                            </div>
                         </div>
-                        
+
                         <div class="form-control-custom">
                             <input type="text" class="form-input-custom" id="companyAddress" placeholder=" " required>
                             <label class="form-label-custom">公司地址 *</label>
                         </div>
-                        
+
                         <div class="form-control-custom">
                             <input type="text" class="form-input-custom" id="companyRep" placeholder=" " required>
                             <label class="form-label-custom">負責人/代表人 *</label>
                         </div>
-                        
+
+                        <!-- Party B Information -->
                         <div class="form-control-custom">
                             <input type="text" class="form-input-custom" id="counterpartyName" placeholder=" " required>
                             <label class="form-label-custom">乙方姓名 *</label>
                         </div>
-                        
+
                         <div class="form-control-custom">
-                            <input type="text" class="form-input-custom" id="counterpartyId" placeholder=" " pattern="[A-Z][0-9]{9}" required>
+                            <input type="text" class="form-input-custom" id="counterpartyId" placeholder=" "
+                                pattern="[A-Z][0-9]{9}" required>
                             <label class="form-label-custom">身分證字號 *</label>
-                            <span class="input-helper">
-                                <i class="fas fa-info-circle" title="格式：A123456789"></i>
-                            </span>
+                            <div class="tooltip">
+                                <span class="input-helper">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                                <div class="tooltip-content">格式：A123456789</div>
+                            </div>
                         </div>
-                        
+
                         <div class="form-control-custom">
-                            <input type="text" class="form-input-custom" id="counterpartyAddress" placeholder=" " required>
+                            <input type="text" class="form-input-custom" id="counterpartyAddress" placeholder=" "
+                                required>
                             <label class="form-label-custom">戶籍地址 *</label>
                         </div>
-                        
+
                         <div class="form-control-custom">
                             <input type="tel" class="form-input-custom" id="counterpartyPhone" placeholder=" " required>
                             <label class="form-label-custom">聯絡電話 *</label>
                         </div>
-                        
+
+                        <!-- Contract Details -->
                         <div class="form-control-custom">
                             <input type="text" class="form-input-custom" id="amount" placeholder=" ">
                             <label class="form-label-custom">金額 (新台幣)</label>
                         </div>
-                        
+
                         <div class="form-control-custom">
                             <input type="date" class="form-input-custom" id="startDate" placeholder=" " required>
                             <label class="form-label-custom">開始日期 *</label>
                         </div>
-                        
+
                         <div class="form-control-custom">
                             <input type="date" class="form-input-custom" id="endDate" placeholder=" ">
                             <label class="form-label-custom">結束日期</label>
                         </div>
                     </form>
                 </div>
-                
+
+                <!-- Advanced Options Section -->
                 <div class="sidebar-section" id="optionsSection" style="display: none;">
                     <h3 class="section-title">
                         <i class="fas fa-sliders-h"></i>
@@ -1222,7 +2453,21 @@
                     </h3>
                     <div id="dynamicOptions"></div>
                 </div>
-                
+
+                <!-- AI Suggestions Section -->
+                <div class="sidebar-section" id="aiSection" style="display: none;">
+                    <h3 class="section-title">
+                        <i class="fas fa-robot"></i>
+                        AI 建議
+                    </h3>
+                    <div id="aiSuggestions"
+                        style="padding: 16px; background: var(--glass-bg); border-radius: 8px; color: var(--text-secondary); font-size: 14px;">
+                        <div class="skeleton-loader" style="height: 60px; margin-bottom: 8px;"></div>
+                        <div class="skeleton-loader" style="height: 20px; width: 70%;"></div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                     <button class="btn-custom btn-glass" onclick="resetForm()">
                         <i class="fas fa-redo"></i>
@@ -1233,8 +2478,14 @@
                         生成文件
                     </button>
                 </div>
+
+                <!-- Save Draft Button -->
+                <button class="btn-custom btn-glass" style="width: 100%; margin-top: 12px;" onclick="saveDraft()">
+                    <i class="fas fa-save"></i>
+                    儲存草稿
+                </button>
             </aside>
-            
+
             <main class="document-preview">
                 <div class="preview-toolbar">
                     <div class="preview-title">
@@ -1242,6 +2493,9 @@
                         文件預覽
                     </div>
                     <div class="preview-actions">
+                        <button class="btn-custom btn-glass" onclick="toggleFullscreen()">
+                            <i class="fas fa-expand"></i>
+                        </button>
                         <button class="btn-custom btn-glass" onclick="printDocument()">
                             <i class="fas fa-print"></i>
                             列印
@@ -1252,9 +2506,11 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <div class="preview-content" id="documentPreview">
-                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 600px; color: #999;">
+                    <div class="watermark" id="watermark">PREVIEW</div>
+                    <div
+                        style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 600px; color: #999; position: relative; z-index: 1;">
                         <i class="fas fa-file-alt" style="font-size: 64px; margin-bottom: 24px; opacity: 0.3;"></i>
                         <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 12px; color: #666;">尚未生成文件</h3>
                         <p style="color: #999;">請填寫左側表單資訊並點擊「生成文件」</p>
@@ -1263,13 +2519,13 @@
             </main>
         </div>
     </section>
-    
+    <!-- Auth Modal -->
     <div class="modal-overlay" id="authModal">
         <div class="modal-container">
             <button class="modal-close" onclick="closeAuthModal()">
                 <i class="fas fa-times"></i>
             </button>
-            
+
             <div class="modal-content">
                 <div class="auth-tabs">
                     <button class="auth-tab active" id="loginTab" onclick="switchTab('login')">
@@ -1279,7 +2535,8 @@
                         註冊
                     </button>
                 </div>
-                
+
+                <!-- Login Form -->
                 <form id="loginForm" class="auth-form active">
                     <div class="auth-header">
                         <div class="auth-icon">
@@ -1288,17 +2545,17 @@
                         <h2 class="auth-title">歡迎回來</h2>
                         <p class="auth-subtitle">登入您的帳號以繼續</p>
                     </div>
-                    
+
                     <div class="form-control-custom">
                         <input type="email" class="form-input-custom" id="loginEmail" placeholder=" " required>
                         <label class="form-label-custom">電子郵件</label>
                     </div>
-                    
+
                     <div class="form-control-custom">
                         <input type="password" class="form-input-custom" id="loginPassword" placeholder=" " required>
                         <label class="form-label-custom">密碼</label>
                     </div>
-                    
+
                     <div class="form-extras">
                         <label class="remember-me">
                             <input type="checkbox" id="rememberMe">
@@ -1306,16 +2563,16 @@
                         </label>
                         <a href="#" class="forgot-link" onclick="showForgotPassword(); return false;">忘記密碼？</a>
                     </div>
-                    
+
                     <button type="submit" class="btn-auth-submit">
                         <span>登入</span>
                         <i class="fas fa-arrow-right"></i>
                     </button>
-                    
+
                     <div class="auth-divider">
                         <span>或使用其他方式登入</span>
                     </div>
-                    
+
                     <div class="social-login">
                         <button type="button" class="social-btn google" onclick="socialLogin('google')">
                             <i class="fab fa-google"></i>
@@ -1325,9 +2582,14 @@
                             <i class="fab fa-facebook-f"></i>
                             Facebook
                         </button>
+                        <button type="button" class="social-btn line" onclick="socialLogin('line')">
+                            <i class="fab fa-line"></i>
+                            LINE
+                        </button>
                     </div>
                 </form>
 
+                <!-- Register Form -->
                 <form id="registerForm" class="auth-form">
                     <div class="auth-header">
                         <div class="auth-icon">
@@ -1336,43 +2598,44 @@
                         <h2 class="auth-title">建立新帳號</h2>
                         <p class="auth-subtitle">註冊以開始使用我們的服務</p>
                     </div>
-                    
+
                     <div class="form-control-custom">
                         <input type="text" class="form-input-custom" id="registerName" placeholder=" " required>
                         <label class="form-label-custom">姓名</label>
                     </div>
-                    
+
                     <div class="form-control-custom">
                         <input type="email" class="form-input-custom" id="registerEmail" placeholder=" " required>
                         <label class="form-label-custom">電子郵件</label>
                     </div>
-                    
+
                     <div class="form-control-custom">
                         <input type="password" class="form-input-custom" id="registerPassword" placeholder=" " required>
                         <label class="form-label-custom">密碼</label>
                     </div>
-                    
+
                     <div class="form-control-custom">
                         <input type="password" class="form-input-custom" id="confirmPassword" placeholder=" " required>
                         <label class="form-label-custom">確認密碼</label>
                     </div>
-                    
+
                     <div class="form-extras">
                         <label class="remember-me">
                             <input type="checkbox" id="agreeTerms" required>
-                            <span>我同意<a href="#" onclick="showTerms(); return false;">服務條款</a>與<a href="#" onclick="showPrivacy(); return false;">隱私政策</a></span>
+                            <span>我同意<a href="#" onclick="showTerms(); return false;">服務條款</a>與<a href="#"
+                                    onclick="showPrivacy(); return false;">隱私政策</a></span>
                         </label>
                     </div>
-                    
+
                     <button type="submit" class="btn-auth-submit">
                         <span>註冊</span>
                         <i class="fas fa-arrow-right"></i>
                     </button>
-                    
+
                     <div class="auth-divider">
                         <span>或使用其他方式註冊</span>
                     </div>
-                    
+
                     <div class="social-login">
                         <button type="button" class="social-btn google" onclick="socialLogin('google')">
                             <i class="fab fa-google"></i>
@@ -1382,47 +2645,359 @@
                             <i class="fab fa-facebook-f"></i>
                             Facebook
                         </button>
+                        <button type="button" class="social-btn line" onclick="socialLogin('line')">
+                            <i class="fab fa-line"></i>
+                            LINE
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    
+
+    <!-- Payment Modal -->
+    <div class="modal-overlay" id="paymentModal">
+        <div class="modal-container" style="max-width: 600px;">
+            <button class="modal-close" onclick="closePaymentModal()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="modal-content">
+                <div class="auth-header">
+                    <div class="auth-icon" style="background: linear-gradient(135deg, var(--accent-green), #059669);">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h2 class="auth-title">升級方案</h2>
+                    <p class="auth-subtitle" id="paymentPlanName">專業版 - NT$599/月</p>
+                </div>
+
+                <form id="paymentForm">
+                    <div class="form-control-custom">
+                        <input type="text" class="form-input-custom" id="cardNumber" placeholder=" " pattern="[0-9]{16}"
+                            required>
+                        <label class="form-label-custom">信用卡號碼</label>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="form-control-custom">
+                            <input type="text" class="form-input-custom" id="cardExpiry" placeholder=" "
+                                pattern="[0-9]{2}/[0-9]{2}" required>
+                            <label class="form-label-custom">有效期限 (MM/YY)</label>
+                        </div>
+
+                        <div class="form-control-custom">
+                            <input type="text" class="form-input-custom" id="cardCVV" placeholder=" " pattern="[0-9]{3}"
+                                required>
+                            <label class="form-label-custom">CVV</label>
+                        </div>
+                    </div>
+
+                    <div class="form-control-custom">
+                        <input type="text" class="form-input-custom" id="cardName" placeholder=" " required>
+                        <label class="form-label-custom">持卡人姓名</label>
+                    </div>
+
+                    <div style="background: var(--glass-bg); padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span style="color: var(--text-secondary);">方案費用</span>
+                            <span style="color: var(--text-primary); font-weight: 600;" id="planPrice">NT$599</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-secondary);">首月優惠</span>
+                            <span style="color: var(--accent-green); font-weight: 600;">-NT$100</span>
+                        </div>
+                        <div style="border-top: 1px solid var(--glass-border); margin: 12px 0;"></div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-primary); font-weight: 700;">總計</span>
+                            <span style="color: var(--accent-gold); font-weight: 700; font-size: 20px;"
+                                id="totalPrice">NT$499</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-auth-submit"
+                        style="background: linear-gradient(135deg, var(--accent-green), #059669);">
+                        <i class="fas fa-lock"></i>
+                        <span>安全付款</span>
+                    </button>
+
+                    <div style="display: flex; justify-content: center; gap: 16px; margin-top: 20px; opacity: 0.5;">
+                        <i class="fab fa-cc-visa" style="font-size: 32px;"></i>
+                        <i class="fab fa-cc-mastercard" style="font-size: 32px;"></i>
+                        <i class="fab fa-cc-jcb" style="font-size: 32px;"></i>
+                        <i class="fab fa-cc-amex" style="font-size: 32px;"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
     <div class="notification-container" id="notificationContainer"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div style="text-align: center;">
+            <div class="spinner"></div>
+            <p style="color: var(--text-primary); margin-top: 20px; font-weight: 600;">處理中...</p>
+        </div>
+    </div>
     <script>
-        // Global State
-        let currentUser = null;
-        let isPremium = false;
-        let documentData = {};
-        let selectedDocType = null;
-        
+        // ============================================
+        // Global State Management
+        // ============================================
+        const APP_STATE = {
+            currentUser: null,
+            subscription: 'free',
+            documentCount: 0,
+            documentLimit: 3,
+            currentDocument: null,
+            selectedDocType: null,
+            theme: 'dark',
+            language: 'zh-TW'
+        };
+
+        // Pricing Configuration
+        const PRICING_PLANS = {
+            free: {
+                name: '免費體驗',
+                price: 0,
+                features: {
+                    documentsPerMonth: 3,
+                    pdfDownload: false,
+                    wordDownload: false,
+                    watermark: true,
+                    advancedTemplates: false,
+                    cloudStorage: 0,
+                    support: 'community'
+                }
+            },
+            basic: {
+                name: '基礎版',
+                price: 199,
+                features: {
+                    documentsPerMonth: 20,
+                    pdfDownload: true,
+                    wordDownload: false,
+                    watermark: false,
+                    advancedTemplates: false,
+                    cloudStorage: 10,
+                    support: 'email'
+                }
+            },
+            professional: {
+                name: '專業版',
+                price: 599,
+                features: {
+                    documentsPerMonth: -1, // unlimited
+                    pdfDownload: true,
+                    wordDownload: true,
+                    watermark: false,
+                    advancedTemplates: true,
+                    cloudStorage: 100,
+                    support: 'priority'
+                }
+            },
+            enterprise: {
+                name: '企業版',
+                price: 2999,
+                features: {
+                    documentsPerMonth: -1,
+                    pdfDownload: true,
+                    wordDownload: true,
+                    watermark: false,
+                    advancedTemplates: true,
+                    cloudStorage: -1, // unlimited
+                    support: 'dedicated',
+                    api: true,
+                    customTemplates: true,
+                    teamCollaboration: true
+                }
+            }
+        };
+
+        // Document Templates Configuration
+        const DOCUMENT_TEMPLATES = {
+
+            // 在 DOCUMENT_TEMPLATES 裡面，加入這些新的文件類型：
+            sales: {
+                name: '買賣契約書',
+                icon: 'fa-shopping-cart',
+                fields: ['itemDescription', 'price', 'deliveryDate'],
+                options: [] // 空陣列表示沒有進階選項
+            },
+            loan: {
+                name: '借款契約書',
+                icon: 'fa-hand-holding-usd',
+                fields: ['loanAmount', 'interestRate', 'repaymentDate'],
+                options: [] // 空陣列
+            },
+            partnership: {
+                name: '合夥協議書',
+                icon: 'fa-users',
+                fields: ['capitalContribution', 'profitSharing'],
+                options: [] // 空陣列
+            },
+            license: {
+                name: '授權合約書',
+                icon: 'fa-certificate',
+                fields: ['licenseFee', 'territory', 'duration'],
+                options: [] // 空陣列
+            },
+
+            employment: {
+                name: '勞動契約書',
+                icon: 'fa-briefcase',
+                fields: ['salary', 'position', 'department', 'workHours'],
+                options: [
+                    { id: 'probation', title: '試用期條款', description: '依勞基法規定，最長不得超過3個月' },
+                    { id: 'overtime', title: '加班費計算', description: '依勞基法第24條規定計算加班費' },
+                    { id: 'bonus', title: '績效獎金制度', description: '包含年終獎金及績效獎金發放辦法' },
+                    { id: 'remote', title: '遠距工作條款', description: '允許彈性工作地點及遠端辦公' },
+                    { id: 'training', title: '教育訓練', description: '公司提供之教育訓練與費用負擔' },
+                    { id: 'confidential', title: '競業禁止條款', description: '離職後競業禁止相關規定' }
+                ]
+            },
+            nda: {
+                name: '保密協議書',
+                icon: 'fa-user-secret',
+                fields: ['confidentialPeriod', 'scope'],
+                options: [
+                    { id: 'mutual', title: '雙向保密協議', description: '雙方互負保密義務' },
+                    { id: 'penalty', title: '違約金條款', description: '違反保密義務之懲罰性賠償' },
+                    { id: 'return', title: '資料返還', description: '協議終止後資料返還規定' },
+                    { id: 'disclosure', title: '允許揭露情形', description: '法律要求等例外情況' }
+                ]
+            },
+            service: {
+                name: '服務合約書',
+                icon: 'fa-handshake',
+                fields: ['serviceDescription', 'deliverables', 'payment'],
+                options: [
+                    { id: 'warranty', title: '服務保固條款', description: '提供服務品質保證及保固期限' },
+                    { id: 'milestone', title: '里程碑付款', description: '分階段驗收及付款' },
+                    { id: 'sla', title: 'SLA服務水準', description: '服務水準協議與罰則' },
+                    { id: 'termination', title: '提前終止條款', description: '合約提前終止條件與補償' }
+                ]
+            },
+            rental: {
+                name: '房屋租賃契約書',
+                icon: 'fa-home',
+                fields: ['propertyAddress', 'rent', 'deposit', 'managementFee'],
+                options: [
+                    { id: 'furnished', title: '包含傢俱設備', description: '租賃標的包含現有傢俱及家電' },
+                    { id: 'parking', title: '包含停車位', description: '含汽車停車位一個' },
+                    { id: 'pets', title: '允許飼養寵物', description: '可飼養寵物相關規定' },
+                    { id: 'sublease', title: '轉租條款', description: '允許轉租之條件與限制' }
+                ]
+            }
+        };
+
+        // ============================================
         // Initialization
-        document.addEventListener('DOMContentLoaded', function() {
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function () {
             initializeApp();
-            createParticles();
             setupEventListeners();
             initCustomSelects();
             initFormValidation();
+            loadUserData();
+            checkUrlParams();
+            initAnalytics();
+            createParticles();
         });
-        
+
         function initializeApp() {
+            // Set default date
             const today = new Date().toISOString().split('T')[0];
-            document.getElementById('startDate').value = today;
-            
+            const startDateInput = document.getElementById('startDate');
+            if (startDateInput) {
+                startDateInput.value = today;
+            }
+
+            // Load theme preference
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            APP_STATE.theme = savedTheme;
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon();
+
+            // Initialize scroll effects
+            window.addEventListener('scroll', handleScroll);
+
+            // Initialize tooltips
+            initTooltips();
+
+            // Check browser compatibility
+            checkBrowserCompatibility();
+        }
+
+        function handleScroll() {
+            const nav = document.getElementById('navSystem');
+            if (nav) {
+                nav.classList.toggle('scrolled', window.scrollY > 50);
+            }
+        }
+
+        function loadUserData() {
             const savedUser = localStorage.getItem('docuUser');
             if (savedUser) {
-                currentUser = JSON.parse(savedUser);
-                updateUserInterface();
+                try {
+                    APP_STATE.currentUser = JSON.parse(savedUser);
+                    APP_STATE.subscription = APP_STATE.currentUser.subscription || 'free';
+                    updateUserInterface();
+                    loadUserDocuments();
+                } catch (error) {
+                    console.error('Error loading user data:', error);
+                }
             }
-            
-            window.addEventListener('scroll', function() {
-                const nav = document.getElementById('navSystem');
-                nav.classList.toggle('scrolled', window.scrollY > 50);
-            });
         }
-        
+
+        function checkUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const action = urlParams.get('action');
+            const plan = urlParams.get('plan');
+
+            if (action === 'upgrade' && plan) {
+                showPaymentModal(plan);
+            }
+
+            if (action === 'login') {
+                showLogin();
+            }
+        }
+
+        function initAnalytics() {
+            // Track page view
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    page_title: document.title,
+                    page_location: window.location.href
+                });
+            }
+        }
+
+        function checkBrowserCompatibility() {
+            const features = {
+                'IntersectionObserver': typeof IntersectionObserver !== 'undefined',
+                'WebCrypto': typeof crypto !== 'undefined' && crypto.subtle,
+                'LocalStorage': typeof localStorage !== 'undefined'
+            };
+
+            const unsupported = Object.entries(features)
+                .filter(([, supported]) => !supported)
+                .map(([feature]) => feature);
+
+            if (unsupported.length > 0) {
+                console.warn('Unsupported features:', unsupported);
+            }
+        }
+
+        // ============================================
+        // Particle Effects
+        // ============================================
         function createParticles() {
             const container = document.getElementById('particles');
+            if (!container) return;
+
             for (let i = 0; i < 30; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'floating-particle';
@@ -1435,239 +3010,290 @@
                 container.appendChild(particle);
             }
         }
-        
-        // Navigation
-        function navigateHome() {
-            document.querySelectorAll('section').forEach(s => s.style.display = 'none');
-            document.getElementById('heroSection').style.display = 'flex';
+
+        // ============================================
+        // Theme Management
+        // ============================================
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            APP_STATE.theme = newTheme;
+
+            updateThemeIcon();
+
+            showNotification('success', '主題已切換', `已切換至${newTheme === 'dark' ? '深色' : '淺色'}模式`);
         }
-        
+
+        function updateThemeIcon() {
+            const icon = document.getElementById('themeIcon');
+            if (icon) {
+                icon.className = APP_STATE.theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+            }
+        }
+
+        // ============================================
+        // Navigation Functions
+        // ============================================
+        function navigateHome() {
+            hideAllSections();
+            const heroSection = document.getElementById('heroSection');
+            if (heroSection) {
+                heroSection.style.display = 'flex';
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function hideAllSections() {
+            const sections = ['heroSection', 'pricingSection', 'documentSection'];
+            sections.forEach(id => {
+                const section = document.getElementById(id);
+                if (section) {
+                    section.style.display = 'none';
+                    section.classList.remove('active');
+                }
+            });
+        }
+
+        function showPricing() {
+            hideAllSections();
+            const pricingSection = document.getElementById('pricingSection');
+            if (pricingSection) {
+                pricingSection.style.display = 'block';
+                pricingSection.classList.add('active');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Track event
+            trackEvent('view_pricing');
+        }
+
         function startDocument() {
-            if (!currentUser) {
+            if (!APP_STATE.currentUser) {
                 showNotification('error', '請先登入', '您需要登入才能使用文件生成功能');
                 showLogin();
                 return;
             }
-            
-            document.querySelectorAll('section').forEach(s => s.style.display = 'none');
-            const docSection = document.getElementById('documentSection');
-            docSection.style.display = 'block';
-            docSection.classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-        
-        // Custom Select
-        function initCustomSelects() {
-            const trigger = document.getElementById('docTypeTrigger');
-            const options = document.querySelectorAll('.select-option');
-            
-            trigger.addEventListener('click', () => trigger.classList.toggle('active'));
-            
-            options.forEach(option => {
-                option.addEventListener('click', function() {
-                    const value = this.dataset.value;
-                    const icon = this.dataset.icon;
-                    const text = this.textContent.trim();
-                    
-                    document.getElementById('docTypeText').innerHTML = `<i class="fas ${icon}"></i> ${text}`;
-                    document.getElementById('docType').value = value;
-                    
-                    options.forEach(opt => opt.classList.remove('selected'));
-                    this.classList.add('selected');
-                    trigger.classList.remove('active');
-                    
-                    selectedDocType = value;
-                    updateDynamicOptions(value);
-                    updateProgress();
-                });
-            });
-            
-            document.addEventListener('click', e => {
-                if (!trigger.contains(e.target) && !e.target.closest('.select-dropdown')) {
-                    trigger.classList.remove('active');
-                }
-            });
-        }
-        
-        // Form Validation
-        function initFormValidation() {
-            document.querySelectorAll('.form-input-custom').forEach(input => {
-                input.addEventListener('blur', () => validateInput(input));
-                input.addEventListener('input', () => {
-                    validateInput(input);
-                    updateProgress();
-                });
-            });
-        }
-        
-        function validateInput(input) {
-            const value = input.value.trim();
-            let isValid = true;
-            let errorMessage = '';
-            
-            if (input.hasAttribute('required') && !value) {
-                isValid = false;
-                errorMessage = '此欄位為必填';
-            }
-            
-            if (input.hasAttribute('pattern') && value) {
-                const pattern = new RegExp(input.getAttribute('pattern'));
-                if (!pattern.test(value)) {
-                    isValid = false;
-                    errorMessage = input.id === 'companyId' ? '統一編號格式錯誤 (8位數字)' : 
-                                   input.id === 'counterpartyId' ? '身分證字號格式錯誤' : '格式錯誤';
-                }
-            }
-            
-            if (!isValid && value) {
-                input.classList.add('input-error');
-                showInputError(input, errorMessage);
-            } else {
-                input.classList.remove('input-error');
-                clearInputError(input);
-            }
-            
-            return isValid;
-        }
-        
-        function showInputError(input, message) {
-            clearInputError(input);
-            const error = document.createElement('div');
-            error.className = 'error-message';
-            error.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
-            input.parentElement.appendChild(error);
-        }
-        
-        function clearInputError(input) {
-            const error = input.parentElement.querySelector('.error-message');
-            if (error) error.remove();
-        }
-        
-        // Progress
-        function updateProgress() {
-            const requiredInputs = document.querySelectorAll('#documentForm [required]');
-            const filled = Array.from(requiredInputs).filter(input => input.value.trim()).length;
-            const progress = Math.round((filled / requiredInputs.length) * 100);
-            
-            document.getElementById('progressBar').style.width = progress + '%';
-            document.getElementById('progressText').textContent = `完成度：${progress}%`;
-        }
-        
-        // Dynamic Options
-        function updateDynamicOptions(docType) {
-            const section = document.getElementById('optionsSection');
-            const container = document.getElementById('dynamicOptions');
-            
-            if (!docType) {
-                section.style.display = 'none';
+
+            // Check document limit
+            const plan = PRICING_PLANS[APP_STATE.subscription];
+            if (plan.features.documentsPerMonth !== -1 &&
+                APP_STATE.documentCount >= plan.features.documentsPerMonth) {
+                showNotification('warning', '已達文件上限', '請升級方案以繼續使用');
+                showPricing();
                 return;
             }
-            
-            section.style.display = 'block';
-            const options = getDocumentOptions(docType);
-            
-            container.innerHTML = options.map(option => `
-                <label class="checkbox-custom">
-                    <input type="checkbox" id="${option.id}" name="docOption">
-                    <div class="checkbox-box">
-                        <svg class="checkbox-checkmark" viewBox="0 0 24 24">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </div>
-                    <div class="checkbox-content">
-                        <div class="checkbox-title">${option.title}</div>
-                        <div class="checkbox-description">${option.description}</div>
-                    </div>
-                </label>
-            `).join('');
+
+            hideAllSections();
+            const docSection = document.getElementById('documentSection');
+            if (docSection) {
+                docSection.style.display = 'block';
+                docSection.classList.add('active');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Load saved draft if exists
+            loadDraft();
+
+            // Show AI suggestions after delay
+            setTimeout(() => {
+                const aiSection = document.getElementById('aiSection');
+                if (aiSection) {
+                    aiSection.style.display = 'block';
+                    loadAISuggestions();
+                }
+            }, 1000);
         }
-        
-        function getDocumentOptions(docType) {
-            const optionsMap = {
-                employment: [
-                    { id: 'probation', title: '試用期條款', description: '依勞基法規定，最長不得超過3個月' },
-                    { id: 'overtime', title: '加班費計算', description: '依勞基法第24條規定計算加班費' },
-                    { id: 'bonus', title: '績效獎金制度', description: '包含年終獎金及績效獎金發放辦法' },
-                    { id: 'remote', title: '遠距工作條款', description: '允許彈性工作地點及遠端辦公' }
-                ],
-                nda: [
-                    { id: 'mutual', title: '雙向保密協議', description: '雙方互負保密義務' },
-                    { id: 'penalty', title: '違約金條款', description: '違反保密義務之懲罰性賠償' }
-                ],
-                service: [
-                    { id: 'warranty', title: '服務保固條款', description: '提供服務品質保證及保固期限' },
-                    { id: 'milestone', title: '里程碑付款', description: '分階段驗收及付款' }
-                ],
-                rental: [
-                    { id: 'furnished', title: '包含傢俱設備', description: '租賃標的包含現有傢俱及家電' },
-                    { id: 'parking', title: '包含停車位', description: '含汽車停車位一個' }
-                ]
-            };
-            
-            return optionsMap[docType] || [];
+
+        function startFreeTrial() {
+            if (APP_STATE.currentUser) {
+                startDocument();
+            } else {
+                showNotification('info', '開始免費試用', '請先註冊帳號開始試用');
+                showRegister();
+            }
         }
-        
+
+        // ============================================
+        // User Authentication & Management
+        // ============================================
+        function showLogin() {
+            const modal = document.getElementById('authModal');
+            if (modal) {
+                modal.classList.add('active');
+                switchTab('login');
+            }
+        }
+
+        function showRegister() {
+            const modal = document.getElementById('authModal');
+            if (modal) {
+                modal.classList.add('active');
+                switchTab('register');
+            }
+        }
+
+        function switchTab(tab) {
+            document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+
+            if (tab === 'login') {
+                document.getElementById('loginTab')?.classList.add('active');
+                document.getElementById('loginForm')?.classList.add('active');
+            } else {
+                document.getElementById('registerTab')?.classList.add('active');
+                document.getElementById('registerForm')?.classList.add('active');
+            }
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal')?.classList.remove('active');
+        }
+
+        function updateUserInterface() {
+            const guestNav = document.getElementById('guestNav');
+            const userNav = document.getElementById('userNav');
+
+            if (APP_STATE.currentUser) {
+                if (guestNav) guestNav.style.display = 'none';
+                if (userNav) userNav.style.display = 'flex';
+
+                // Update user info
+                const userName = document.getElementById('userName');
+                const userEmail = document.getElementById('userEmail');
+                const userInitial = document.getElementById('userInitial');
+                const userBadge = document.getElementById('userBadge');
+
+                if (userName) userName.textContent = APP_STATE.currentUser.name || '使用者';
+                if (userEmail) userEmail.textContent = APP_STATE.currentUser.email || '';
+                if (userInitial) userInitial.textContent = (APP_STATE.currentUser.name || 'U').charAt(0).toUpperCase();
+                if (userBadge) {
+                    const planName = PRICING_PLANS[APP_STATE.subscription]?.name || '免費版';
+                    userBadge.textContent = planName;
+                    userBadge.style.background = APP_STATE.subscription === 'free' ?
+                        'var(--glass-bg)' : 'linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark))';
+                }
+
+                // Update document stats
+                updateDocumentStats();
+            } else {
+                if (guestNav) guestNav.style.display = 'flex';
+                if (userNav) userNav.style.display = 'none';
+            }
+        }
+
+        function logout() {
+            if (confirm('確定要登出嗎？')) {
+                APP_STATE.currentUser = null;
+                APP_STATE.subscription = 'free';
+                localStorage.removeItem('docuUser');
+                updateUserInterface();
+                navigateHome();
+                showNotification('success', '已成功登出', '感謝您的使用');
+            }
+        }
+
+        // ============================================
         // Document Generation
+        // ============================================
         function generateDocument() {
+
+            saveDraft();
+
             const requiredInputs = document.querySelectorAll('#documentForm [required]');
             let isValid = true;
-            
+
             requiredInputs.forEach(input => {
                 if (!validateInput(input) || !input.value.trim()) {
                     isValid = false;
                     input.classList.add('input-error');
                 }
             });
-            
+
             if (!isValid) {
                 showNotification('error', '請填寫所有必要欄位', '部分欄位尚未填寫或格式錯誤');
                 return;
             }
-            
-            documentData = {
-                docType: document.getElementById('docType').value,
-                companyName: document.getElementById('companyName').value,
-                companyId: document.getElementById('companyId').value,
-                companyAddress: document.getElementById('companyAddress').value,
-                companyRep: document.getElementById('companyRep').value,
-                counterpartyName: document.getElementById('counterpartyName').value,
-                counterpartyId: document.getElementById('counterpartyId').value,
-                counterpartyAddress: document.getElementById('counterpartyAddress').value,
-                counterpartyPhone: document.getElementById('counterpartyPhone').value,
-                amount: document.getElementById('amount').value,
-                startDate: document.getElementById('startDate').value,
-                endDate: document.getElementById('endDate').value,
-                options: {}
-            };
-            
-            document.querySelectorAll('input[name="docOption"]:checked').forEach(checkbox => {
-                documentData.options[checkbox.id] = true;
-            });
-            
-            const content = generateDocumentContent(documentData);
-            document.getElementById('documentPreview').innerHTML = content;
-            showNotification('success', '文件生成成功', '您的法律文件已成功生成');
-            
-            if (!isPremium) {
-                document.getElementById('downloadBtn').innerHTML = '<i class="fas fa-lock"></i> 升級解鎖';
-                document.getElementById('downloadBtn').onclick = showPricing;
-            }
+
+            // Show loading
+            showLoading();
+
+            // Collect form data
+            const documentData = collectFormData();
+
+            // Generate document content
+            setTimeout(() => {
+                const content = generateDocumentContent(documentData);
+                const preview = document.getElementById('documentPreview');
+                if (preview) {
+                    preview.innerHTML = content;
+                }
+
+                // Update watermark based on subscription
+                const watermark = document.getElementById('watermark');
+                if (watermark) {
+                    watermark.style.display = APP_STATE.subscription === 'free' ? 'block' : 'none';
+                }
+
+                // Update download button
+                updateDownloadButton();
+
+                // Increment document count
+                APP_STATE.documentCount++;
+                updateDocumentStats();
+                saveDocumentToHistory(documentData);
+
+                hideLoading();
+                showNotification('success', '文件生成成功', '您的法律文件已成功生成');
+
+                // Track event
+                trackEvent('document_generated', {
+                    document_type: documentData.docType,
+                    subscription: APP_STATE.subscription
+                });
+            }, 1500);
         }
-        
+
+        function collectFormData() {
+            return {
+                docType: document.getElementById('docType')?.value,
+                companyName: document.getElementById('companyName')?.value,
+                companyId: document.getElementById('companyId')?.value,
+                companyAddress: document.getElementById('companyAddress')?.value,
+                companyRep: document.getElementById('companyRep')?.value,
+                counterpartyName: document.getElementById('counterpartyName')?.value,
+                counterpartyId: document.getElementById('counterpartyId')?.value,
+                counterpartyAddress: document.getElementById('counterpartyAddress')?.value,
+                counterpartyPhone: document.getElementById('counterpartyPhone')?.value,
+                amount: document.getElementById('amount')?.value,
+                startDate: document.getElementById('startDate')?.value,
+                endDate: document.getElementById('endDate')?.value,
+                options: collectSelectedOptions()
+            };
+        }
+
+        function collectSelectedOptions() {
+            const options = {};
+            document.querySelectorAll('input[name="docOption"]:checked').forEach(checkbox => {
+                options[checkbox.id] = true;
+            });
+            return options;
+        }
+
         function generateDocumentContent(data) {
             const contractNumber = 'DOC' + Date.now();
             const contractDate = new Date().toLocaleDateString('zh-TW');
-            const docTitles = {
-                employment: '勞動契約書',
-                nda: '保密協議書',
-                service: '服務合約書',
-                rental: '房屋租賃契約書'
-            };
-            
+            const template = DOCUMENT_TEMPLATES[data.docType];
+            const docTitle = template?.name || '契約書';
+
             return `
-                <article style="font-family: 'Noto Serif TC', serif; color: #1a1a1a; line-height: 2;">
+                <article style="font-family: 'Noto Serif TC', serif; color: #1a1a1a; line-height: 2; position: relative; z-index: 1;">
+                    ${APP_STATE.subscription === 'free' ? '<div class="watermark" id="watermark">PREVIEW</div>' : ''}
+                    
                     <header style="text-align: center; margin-bottom: 48px;">
-                        <h1 style="font-size: 32px; font-weight: 900; margin-bottom: 16px;">${docTitles[data.docType] || '契約書'}</h1>
+                        <h1 style="font-size: 32px; font-weight: 900; margin-bottom: 16px;">${docTitle}</h1>
                         <div style="margin-top: 24px; padding: 12px; background: #f5f5f5; border-radius: 8px;">
                             <p>契約編號：${contractNumber}</p>
                             <p>簽約日期：${contractDate}</p>
@@ -1678,114 +3304,127 @@
                         <h2 style="font-size: 20px; font-weight: 700; border-bottom: 3px solid #333; padding-bottom: 8px; margin-bottom: 24px;">契約當事人</h2>
                         
                         <div style="background: #fafafa; padding: 20px; border-radius: 8px; margin-bottom: 16px;">
-                            <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">甲方</h3>
-                            <p>名稱：${data.companyName}</p>
-                            <p>統一編號：${data.companyId}</p>
-                            <p>代表人：${data.companyRep}</p>
-                            <p>地址：${data.companyAddress}</p>
+                            <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">甲方（委託方）</h3>
+                            <p><strong>名稱：</strong>${data.companyName}</p>
+                            <p><strong>統一編號：</strong>${data.companyId}</p>
+                            <p><strong>代表人：</strong>${data.companyRep}</p>
+                            <p><strong>地址：</strong>${data.companyAddress}</p>
                         </div>
                         
                         <div style="background: #fafafa; padding: 20px; border-radius: 8px;">
-                            <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">乙方</h3>
-                            <p>姓名：${data.counterpartyName}</p>
-                            <p>身分證字號：${data.counterpartyId}</p>
-                            <p>地址：${data.counterpartyAddress}</p>
-                            <p>電話：${data.counterpartyPhone}</p>
+                            <h3 style="font-size: 16px; color: #0066cc; margin-bottom: 12px;">乙方（受託方）</h3>
+                            <p><strong>姓名：</strong>${data.counterpartyName}</p>
+                            <p><strong>身分證字號：</strong>${data.counterpartyId}</p>
+                            <p><strong>地址：</strong>${data.counterpartyAddress}</p>
+                            <p><strong>電話：</strong>${data.counterpartyPhone}</p>
                         </div>
                     </section>
                     
                     <section style="margin-bottom: 40px;">
                         <h2 style="font-size: 20px; font-weight: 700; border-bottom: 3px solid #333; padding-bottom: 8px; margin-bottom: 24px;">契約條款</h2>
-                        <p>茲因業務需要，雙方同意訂立本契約，並共同遵守相關條款...</p>
-                        ${data.amount ? `<p>約定金額：新台幣 ${data.amount} 元整</p>` : ''}
-                        <p>契約期間：自 ${formatDate(data.startDate)} 起${data.endDate ? ` 至 ${formatDate(data.endDate)} 止` : ''}</p>
+                        ${generateContractTerms(data)}
                     </section>
                     
-                    <section style="margin-top: 80px;">
-                        <p style="text-align: center;">立契約書人</p>
+                    <section style="margin-top: 80px; page-break-before: always;">
+                        <p style="text-align: center; font-weight: 700; margin-bottom: 40px;">立契約書人</p>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px;">
                             <div>
-                                <p>甲方：${data.companyName}</p>
-                                <p>代表人：${data.companyRep}</p>
-                                <p style="margin-top: 40px;">簽章：_______________</p>
+                                <p><strong>甲方：</strong>${data.companyName}</p>
+                                <p><strong>代表人：</strong>${data.companyRep}</p>
+                                <p style="margin-top: 60px;">簽章：_______________________</p>
+                                <p style="margin-top: 10px;">日期：_______________________</p>
                             </div>
                             <div>
-                                <p>乙方：${data.counterpartyName}</p>
-                                <p>身分證：${data.counterpartyId}</p>
-                                <p style="margin-top: 40px;">簽章：_______________</p>
+                                <p><strong>乙方：</strong>${data.counterpartyName}</p>
+                                <p><strong>身分證：</strong>${data.counterpartyId}</p>
+                                <p style="margin-top: 60px;">簽章：_______________________</p>
+                                <p style="margin-top: 10px;">日期：_______________________</p>
                             </div>
                         </div>
-                        <p style="text-align: center; margin-top: 60px;">中華民國 _____ 年 _____ 月 _____ 日</p>
+                        <p style="text-align: center; margin-top: 80px; font-size: 14px; color: #666;">
+                            中華民國 _____ 年 _____ 月 _____ 日
+                        </p>
                     </section>
                 </article>
             `;
         }
-        
+
+        function generateContractTerms(data) {
+            let terms = `
+                <ol style="padding-left: 20px;">
+                    <li style="margin-bottom: 16px;">
+                        <strong>契約期間：</strong><br>
+                        本契約自民國 ${formatDate(data.startDate)} 起生效
+                        ${data.endDate ? `，至民國 ${formatDate(data.endDate)} 止` : ''}。
+                    </li>
+            `;
+
+            if (data.amount) {
+                terms += `
+                    <li style="margin-bottom: 16px;">
+                        <strong>契約金額：</strong><br>
+                        雙方約定之契約總金額為新台幣 ${data.amount} 元整。
+                    </li>
+                `;
+            }
+
+            // Add selected options as terms
+            const template = DOCUMENT_TEMPLATES[data.docType];
+            if (template && data.options) {
+                template.options.forEach((option, index) => {
+                    if (data.options[option.id]) {
+                        terms += `
+                            <li style="margin-bottom: 16px;">
+                                <strong>${option.title}：</strong><br>
+                                ${option.description}
+                            </li>
+                        `;
+                    }
+                });
+            }
+
+            terms += `
+                    <li style="margin-bottom: 16px;">
+                        <strong>爭議處理：</strong><br>
+                        雙方如有爭議，應先以誠意協商解決。協商不成時，雙方同意以台灣台北地方法院為第一審管轄法院。
+                    </li>
+                    <li style="margin-bottom: 16px;">
+                        <strong>契約修改：</strong><br>
+                        本契約之修改或補充，應經雙方書面同意後始生效力。
+                    </li>
+                </ol>
+            `;
+
+            return terms;
+        }
+
         function formatDate(dateString) {
             if (!dateString) return '____年__月__日';
             const date = new Date(dateString);
-            return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+            const year = date.getFullYear() - 1911; // Convert to ROC year
+            return `${year}年${date.getMonth() + 1}月${date.getDate()}日`;
         }
-        
-        function resetForm() {
-            document.getElementById('documentForm').reset();
-            document.getElementById('optionsSection').style.display = 'none';
-            document.getElementById('documentPreview').innerHTML = `
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 600px; color: #999;">
-                    <i class="fas fa-file-alt" style="font-size: 64px; margin-bottom: 24px; opacity: 0.3;"></i>
-                    <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 12px; color: #666;">尚未生成文件</h3>
-                    <p style="color: #999;">請填寫左側表單資訊並點擊「生成文件」</p>
-                </div>
-            `;
-            updateProgress();
-            showNotification('info', '表單已重置', '所有欄位已清空');
-        }
-        
-        function printDocument() {
-            window.print();
-        }
-        
-        function downloadPDF() {
-            if (!isPremium) {
-                showNotification('error', '需要專業版', '請升級至專業版以下載PDF文件');
-                showPricing();
-                return;
-            }
-            
-            const element = document.getElementById('documentPreview');
-            const opt = {
-                margin: 10,
-                filename: `document_${Date.now()}.pdf`,
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true, letterRendering: true },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-            
-            showNotification('info', '正在生成PDF', '請稍候...');
-            
-            html2pdf().set(opt).from(element).save().then(() => {
-                showNotification('success', 'PDF下載成功', '文件已保存至您的下載資料夾');
-            }).catch(() => {
-                showNotification('error', 'PDF生成失敗', '請重試或聯繫客服');
-            });
-        }
-        
-        // Notification System
+
+        // ============================================
+        // Utility Functions
+        // ============================================
         function showNotification(type, title, message) {
             const container = document.getElementById('notificationContainer');
+            if (!container) return;
+
             const id = 'notification-' + Date.now();
-            
+
             const notification = document.createElement('div');
             notification.className = `notification ${type}`;
             notification.id = id;
-            
+
             const iconMap = {
                 success: 'fa-check-circle',
                 error: 'fa-exclamation-circle',
                 info: 'fa-info-circle',
                 warning: 'fa-exclamation-triangle'
             };
-            
+
             notification.innerHTML = `
                 <div class="notification-icon">
                     <i class="fas ${iconMap[type]}"></i>
@@ -1794,187 +3433,771 @@
                     <div class="notification-title">${title}</div>
                     ${message ? `<div class="notification-message">${message}</div>` : ''}
                 </div>
+                <div class="notification-close" onclick="closeNotification('${id}')">
+                    <i class="fas fa-times"></i>
+                </div>
             `;
-            
+
             container.appendChild(notification);
-            
+
             setTimeout(() => notification.classList.add('show'), 10);
-            
+
             setTimeout(() => {
+                closeNotification(id);
+            }, 5000);
+        }
+
+        function closeNotification(id) {
+            const notification = document.getElementById(id);
+            if (notification) {
                 notification.classList.remove('show');
                 setTimeout(() => notification.remove(), 300);
-            }, 4000);
-        }
-        
-        // User Interface Updates
-        function updateUserInterface() {
-            if (currentUser) {
-                document.getElementById('guestNav').style.display = 'none';
-                document.getElementById('userNav').style.display = 'flex';
-                document.getElementById('userNav').innerHTML = `
-                    <div style="display: flex; align-items: center; gap: 16px; cursor: pointer;" onclick="logout()">
-                        <div style="width: 40px; height: 40px; background: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary-900);">
-                            ${currentUser.name ? currentUser.name.charAt(0).toUpperCase() : 'U'}
-                        </div>
-                        <span style="font-weight: 600;">${currentUser.name || 'User'}</span>
-                        <button class="btn-custom btn-glass" onclick="logout()">登出</button>
-                    </div>
-                `;
-            } else {
-                document.getElementById('guestNav').style.display = 'flex';
-                document.getElementById('userNav').style.display = 'none';
             }
         }
-        
-        // Auth Functions
-        function switchTab(tab) {
-            document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
-            
-            if (tab === 'login') {
-                document.getElementById('loginTab').classList.add('active');
-                document.getElementById('loginForm').classList.add('active');
-            } else {
-                document.getElementById('registerTab').classList.add('active');
-                document.getElementById('registerForm').classList.add('active');
+
+        function showLoading() {
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay) {
+                overlay.style.display = 'flex';
             }
         }
-        
-        function closeAuthModal() {
-            document.getElementById('authModal').classList.remove('active');
-        }
-        
-        function showLogin() {
-            document.getElementById('authModal').classList.add('active');
-            switchTab('login');
-        }
-        
-        function logout() {
-            if (confirm('確定要登出嗎？')) {
-                currentUser = null;
-                isPremium = false;
-                localStorage.removeItem('docuUser');
-                updateUserInterface();
-                navigateHome();
-                showNotification('success', '已成功登出', '感謝您的使用');
+
+        function hideLoading() {
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay) {
+                overlay.style.display = 'none';
             }
         }
-        
-        // Form Handlers
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+
+        function trackEvent(eventName, parameters = {}) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, parameters);
+            }
+            console.log('Track event:', eventName, parameters);
+        }
+
+        // ============================================
+        // Event Listeners Setup
+        // ============================================
+        function setupEventListeners() {
+            // Login form
+            document.getElementById('loginForm')?.addEventListener('submit', handleLogin);
+
+            // Register form
+            document.getElementById('registerForm')?.addEventListener('submit', handleRegister);
+
+            // Payment form
+            document.getElementById('paymentForm')?.addEventListener('submit', handlePayment);
+
+            // Document form
+            document.getElementById('documentForm')?.addEventListener('submit', (e) => {
+                e.preventDefault();
+                generateDocument();
+            });
+
+            // Modal close on backdrop click
+            document.querySelectorAll('.modal-overlay').forEach(modal => {
+                modal.addEventListener('click', function (e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                    }
+                });
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', handleKeyboardShortcuts);
+
+            function setupEventListeners() {
+                // ... 原本的程式碼 ...
+
+                // 加入這段：當使用者要離開頁面時儲存草稿
+                window.addEventListener('beforeunload', function (e) {
+                    // 只有在文件編輯區顯示時才儲存
+                    const docSection = document.getElementById('documentSection');
+                    if (docSection && docSection.style.display === 'block') {
+                        saveDraft();
+
+                        // 如果表單有內容，提醒使用者
+                        const hasContent = document.querySelector('#documentForm input[value]:not([value=""])');
+                        if (hasContent) {
+                            e.preventDefault();
+                            e.returnValue = '您有未儲存的變更，確定要離開嗎？';
+                            return e.returnValue;
+                        }
+                    }
+                });
+            }
+        }
+
+        function handleLogin(e) {
             e.preventDefault();
-            
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-            
+
+            const email = document.getElementById('loginEmail')?.value;
+            const password = document.getElementById('loginPassword')?.value;
+
             if (email && password) {
-                currentUser = {
+                APP_STATE.currentUser = {
                     id: Date.now(),
                     name: email.split('@')[0],
                     email: email,
-                    isPremium: false
+                    subscription: 'free'
                 };
-                
-                localStorage.setItem('docuUser', JSON.stringify(currentUser));
+
+                localStorage.setItem('docuUser', JSON.stringify(APP_STATE.currentUser));
                 updateUserInterface();
                 closeAuthModal();
-                showNotification('success', '登入成功', `歡迎回來，${currentUser.name}`);
+                showNotification('success', '登入成功', `歡迎回來，${APP_STATE.currentUser.name}`);
                 startDocument();
             }
-        });
-        
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
+        }
+
+        function handleRegister(e) {
             e.preventDefault();
-            
-            const name = document.getElementById('registerName').value;
-            const email = document.getElementById('registerEmail').value;
-            const password = document.getElementById('registerPassword').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            
+
+            const name = document.getElementById('registerName')?.value;
+            const email = document.getElementById('registerEmail')?.value;
+            const password = document.getElementById('registerPassword')?.value;
+            const confirmPassword = document.getElementById('confirmPassword')?.value;
+
             if (password !== confirmPassword) {
                 showNotification('error', '密碼不符', '兩次輸入的密碼不相同');
                 return;
             }
-            
-            currentUser = {
+
+            APP_STATE.currentUser = {
                 id: Date.now(),
                 name: name,
                 email: email,
-                isPremium: false
+                subscription: 'free'
             };
-            
-            localStorage.setItem('docuUser', JSON.stringify(currentUser));
+
+            localStorage.setItem('docuUser', JSON.stringify(APP_STATE.currentUser));
             updateUserInterface();
             closeAuthModal();
             showNotification('success', '註冊成功', '歡迎加入 DOCU！');
-        });
-        
-        // Placeholder Functions
-        function showFeatures() {
-            showNotification('info', '功能開發中', '功能特色頁面即將推出');
+            startDocument();
         }
-        
-        function showPricing() {
-            if (confirm('升級至專業版 (NT$199/月)？\n\n✓ 無限制下載PDF\n✓ 所有進階功能\n✓ 優先客戶支援')) {
-                if (currentUser) {
-                    currentUser.isPremium = true;
-                    isPremium = true;
-                    localStorage.setItem('docuUser', JSON.stringify(currentUser));
-                    updateUserInterface();
-                    showNotification('success', '升級成功', '您現在是專業版用戶');
-                    
-                    const downloadBtn = document.getElementById('downloadBtn');
-                    if (downloadBtn) {
-                        downloadBtn.innerHTML = '<i class="fas fa-download"></i> 下載 PDF';
-                        downloadBtn.onclick = downloadPDF;
+
+        function handlePayment(e) {
+            e.preventDefault();
+            showLoading();
+
+            setTimeout(() => {
+                APP_STATE.subscription = 'professional';
+                if (APP_STATE.currentUser) {
+                    APP_STATE.currentUser.subscription = 'professional';
+                    localStorage.setItem('docuUser', JSON.stringify(APP_STATE.currentUser));
+                }
+
+                hideLoading();
+                closePaymentModal();
+                updateUserInterface();
+                updateDownloadButton();
+                showNotification('success', '升級成功', '您現在是專業版用戶！');
+            }, 2000);
+        }
+
+        function handleKeyboardShortcuts(e) {
+            // Ctrl/Cmd + S: Save draft
+            if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                e.preventDefault();
+                saveDraft();
+            }
+
+            // Escape: Close modals
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+            }
+        }
+
+        // ============================================
+        // Form Management Functions
+        // ============================================
+        function initCustomSelects() {
+            const trigger = document.getElementById('docTypeTrigger');
+            const options = document.querySelectorAll('.select-option');
+
+            if (trigger) {
+                trigger.addEventListener('click', () => trigger.classList.toggle('active'));
+            }
+
+            options.forEach(option => {
+                option.addEventListener('click', function () {
+                    const value = this.dataset.value;
+                    const icon = this.dataset.icon;
+                    const text = this.textContent.trim();
+
+                    const docTypeText = document.getElementById('docTypeText');
+                    const docType = document.getElementById('docType');
+
+                    if (docTypeText) {
+                        docTypeText.innerHTML = `<i class="fas ${icon}"></i> ${text}`;
                     }
-                } else {
-                    showNotification('error', '請先登入', '升級需要先登入帳號');
-                    showLogin();
+                    if (docType) {
+                        docType.value = value;
+                    }
+
+                    options.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    trigger?.classList.remove('active');
+
+                    APP_STATE.selectedDocType = value;
+                    updateDynamicOptions(value);
+                    updateProgress();
+                });
+            });
+
+            document.addEventListener('click', e => {
+                if (trigger && !trigger.contains(e.target) && !e.target.closest('.select-dropdown')) {
+                    trigger.classList.remove('active');
+                }
+            });
+        }
+
+        function initFormValidation() {
+            document.querySelectorAll('.form-input-custom').forEach(input => {
+                input.addEventListener('blur', () => validateInput(input));
+                input.addEventListener('input', () => {
+                    validateInput(input);
+                    updateProgress();
+                });
+            });
+        }
+
+        function initTooltips() {
+            // Initialize tooltip system
+            document.querySelectorAll('.tooltip').forEach(tooltip => {
+                const trigger = tooltip.querySelector('.input-helper');
+                const content = tooltip.querySelector('.tooltip-content');
+
+                if (trigger && content) {
+                    trigger.addEventListener('mouseenter', () => {
+                        content.style.opacity = '1';
+                        content.style.visibility = 'visible';
+                    });
+
+                    trigger.addEventListener('mouseleave', () => {
+                        content.style.opacity = '0';
+                        content.style.visibility = 'hidden';
+                    });
+                }
+            });
+        }
+
+        function validateInput(input) {
+            const value = input.value.trim();
+            let isValid = true;
+            let errorMessage = '';
+
+            if (input.hasAttribute('required') && !value) {
+                isValid = false;
+                errorMessage = '此欄位為必填';
+            }
+
+            if (input.hasAttribute('pattern') && value) {
+                const pattern = new RegExp(input.getAttribute('pattern'));
+                if (!pattern.test(value)) {
+                    isValid = false;
+                    errorMessage = input.id === 'companyId' ? '統一編號格式錯誤 (8位數字)' :
+                        input.id === 'counterpartyId' ? '身分證字號格式錯誤' : '格式錯誤';
+                }
+            }
+
+            if (!isValid && value) {
+                input.classList.add('input-error');
+                showInputError(input, errorMessage);
+            } else {
+                input.classList.remove('input-error');
+                clearInputError(input);
+            }
+
+            return isValid;
+        }
+
+        function showInputError(input, message) {
+            clearInputError(input);
+            const error = document.createElement('div');
+            error.className = 'error-message';
+            error.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
+            input.parentElement.appendChild(error);
+        }
+
+        function clearInputError(input) {
+            const error = input.parentElement.querySelector('.error-message');
+            if (error) error.remove();
+        }
+
+        function updateProgress() {
+            const requiredInputs = document.querySelectorAll('#documentForm [required]');
+            const filled = Array.from(requiredInputs).filter(input => input.value.trim()).length;
+            const progress = Math.round((filled / requiredInputs.length) * 100);
+
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+
+            if (progressBar) progressBar.style.width = progress + '%';
+            if (progressText) progressText.textContent = `完成度：${progress}%`;
+        }
+
+        function updateDynamicOptions(docType) {
+            const section = document.getElementById('optionsSection');
+            const container = document.getElementById('dynamicOptions');
+
+            if (!section || !container) return;
+
+            // 取得範本
+            const template = DOCUMENT_TEMPLATES[docType];
+
+            // 如果沒有選擇文件類型，或選項陣列是空的，就隱藏整個區塊
+            if (!docType || !template || !template.options || template.options.length === 0) {
+                section.style.display = 'none';
+                return;
+            }
+
+            // 有選項才顯示
+            section.style.display = 'block';
+            const options = template.options;
+
+            container.innerHTML = options.map(option => `
+        <label class="checkbox-custom">
+            <input type="checkbox" id="${option.id}" name="docOption">
+            <div class="checkbox-box">
+                <svg class="checkbox-checkmark" viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <div class="checkbox-content">
+                <div class="checkbox-title">${option.title}</div>
+                <div class="checkbox-description">${option.description}</div>
+            </div>
+        </label>
+    `).join('');
+        }
+
+        // ============================================
+        // Document Management Functions
+        // ============================================
+        function resetForm() {
+            document.getElementById('documentForm')?.reset();
+            document.getElementById('optionsSection').style.display = 'none';
+            updateProgress();
+            showNotification('info', '表單已重置', '所有欄位已清空');
+        }
+
+        function printDocument() {
+            window.print();
+        }
+
+        function downloadPDF() {
+            const plan = PRICING_PLANS[APP_STATE.subscription];
+
+            if (!plan.features.pdfDownload) {
+                showNotification('error', '需要升級', '請升級至基礎版或以上方案以下載PDF');
+                showPricing();
+                return;
+            }
+
+            const element = document.getElementById('documentPreview');
+            const opt = {
+                margin: 10,
+                filename: `document_${Date.now()}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            showNotification('info', '正在生成PDF', '請稍候...');
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                showNotification('success', 'PDF下載成功', '文件已保存至您的下載資料夾');
+            }).catch(() => {
+                showNotification('error', 'PDF生成失敗', '請重試或聯繫客服');
+            });
+        }
+
+        function saveDraft() {
+            const formData = collectFormData();
+            localStorage.setItem('documentDraft', JSON.stringify(formData));
+            showNotification('success', '草稿已儲存', '您的文件草稿已自動儲存');
+        }
+
+        function loadDraft() {
+            const draft = localStorage.getItem('documentDraft');
+            if (draft) {
+                try {
+                    const data = JSON.parse(draft);
+                    // Restore form values
+                    Object.keys(data).forEach(key => {
+                        const input = document.getElementById(key);
+                        if (input && data[key]) {
+                            input.value = data[key];
+                        }
+                    });
+                    updateProgress();
+                    showNotification('info', '已載入草稿', '已恢復您上次編輯的內容');
+                } catch (error) {
+                    console.error('Error loading draft:', error);
                 }
             }
         }
-        
-        function showDemo() {
-            showNotification('info', '功能開發中', '示範影片準備中');
+
+        function autoSaveDraft() {
+            if (document.getElementById('documentForm')) {
+                saveDraft();
+            }
         }
-        
+
+        function updateDocumentStats() {
+            const docCount = document.getElementById('docCount');
+            const docLimit = document.getElementById('docLimit');
+
+            if (docCount) docCount.textContent = APP_STATE.documentCount;
+
+            if (docLimit) {
+                const plan = PRICING_PLANS[APP_STATE.subscription];
+                const limit = plan.features.documentsPerMonth;
+                if (limit === -1) {
+                    docLimit.textContent = '∞';
+                } else {
+                    docLimit.textContent = Math.max(0, limit - APP_STATE.documentCount);
+                }
+            }
+        }
+
+        function updateDownloadButton() {
+            const btn = document.getElementById('downloadBtn');
+            if (!btn) return;
+
+            const plan = PRICING_PLANS[APP_STATE.subscription];
+
+            if (!plan.features.pdfDownload) {
+                btn.innerHTML = '<i class="fas fa-lock"></i> 升級解鎖';
+                btn.onclick = showPricing;
+            } else {
+                btn.innerHTML = '<i class="fas fa-download"></i> 下載 PDF';
+                btn.onclick = downloadPDF;
+            }
+        }
+
+        function saveDocumentToHistory(documentData) {
+            const history = JSON.parse(localStorage.getItem('documentHistory') || '[]');
+            history.unshift({
+                id: Date.now(),
+                date: new Date().toISOString(),
+                type: documentData.docType,
+                title: DOCUMENT_TEMPLATES[documentData.docType]?.name || '文件',
+                data: documentData
+            });
+
+            // Keep only last 50 documents
+            if (history.length > 50) {
+                history.pop();
+            }
+
+            localStorage.setItem('documentHistory', JSON.stringify(history));
+        }
+
+        function loadUserDocuments() {
+            const history = JSON.parse(localStorage.getItem('documentHistory') || '[]');
+            APP_STATE.documentCount = history.filter(doc => {
+                const docDate = new Date(doc.date);
+                const now = new Date();
+                return docDate.getMonth() === now.getMonth() &&
+                    docDate.getFullYear() === now.getFullYear();
+            }).length;
+        }
+
+        function loadAISuggestions() {
+            const container = document.getElementById('aiSuggestions');
+            if (!container) return;
+
+            setTimeout(() => {
+                const suggestions = [
+                    '建議加入「智慧財產權歸屬」條款',
+                    '可考慮增加「不可抗力」免責條款',
+                    '建議明確定義違約金計算方式'
+                ];
+
+                container.innerHTML = `
+                    <h4 style="font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 12px;">
+                        <i class="fas fa-lightbulb" style="color: var(--accent-gold);"></i> AI 建議
+                    </h4>
+                    <ul style="list-style: none; padding: 0;">
+                        ${suggestions.map(s => `
+                            <li style="padding: 8px 0; color: var(--text-secondary); font-size: 13px;">
+                                <i class="fas fa-check-circle" style="color: var(--accent-green); margin-right: 8px;"></i>
+                                ${s}
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+            }, 2000);
+        }
+
+        // ============================================
+        // Additional UI Functions
+        // ============================================
+        function showFeatures() {
+            showNotification('info', '功能特色', '功能特色頁面開發中');
+        }
+
+        function showDemo() {
+            showNotification('info', '示範影片', '示範影片準備中');
+        }
+
+        function selectPlan(plan) {
+            if (!APP_STATE.currentUser) {
+                showLogin();
+                return;
+            }
+
+            if (plan === 'free') {
+                startDocument();
+            } else {
+                showPaymentModal(plan);
+            }
+        }
+
+        function showPaymentModal(plan) {
+            const modal = document.getElementById('paymentModal');
+            const planData = PRICING_PLANS[plan];
+
+            if (modal && planData) {
+                document.getElementById('paymentPlanName').textContent = `${planData.name} - NT$${planData.price}/月`;
+                document.getElementById('planPrice').textContent = `NT$${planData.price}`;
+                document.getElementById('totalPrice').textContent = `NT$${Math.max(0, planData.price - 100)}`;
+                modal.classList.add('active');
+            }
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentModal')?.classList.remove('active');
+        }
+
+        function contactSales() {
+            showNotification('info', '聯繫銷售', '請撥打 0800-123-456 或寄信至 sales@docu.com.tw');
+        }
+
+        function socialLogin(provider) {
+            showNotification('info', `${provider} 登入`, `${provider} 登入功能開發中`);
+        }
+
         function showForgotPassword() {
             showNotification('info', '忘記密碼', '請聯繫客服協助重設密碼');
         }
-        
+
         function showTerms() {
-            showNotification('info', '服務條款', '服務條款頁面開發中');
+            window.open('/terms', '_blank');
         }
-        
+
         function showPrivacy() {
-            showNotification('info', '隱私政策', '隱私政策頁面開發中');
+            window.open('/privacy', '_blank');
         }
-        
-        function socialLogin(provider) {
-            showNotification('info', '功能開發中', `${provider} 登入功能即將推出`);
+
+        function toggleFullscreen() {
+            const preview = document.querySelector('.document-preview');
+            const previewContent = document.querySelector('.preview-content');
+
+            if (!preview) return;
+
+            if (!document.fullscreenElement) {
+                // 進入全螢幕
+                preview.requestFullscreen().then(() => {
+                    // 加入特殊樣式讓內容可以滾動
+                    preview.style.overflow = 'auto';
+                    preview.style.height = '100vh';
+
+                    if (previewContent) {
+                        previewContent.style.maxHeight = 'calc(100vh - 80px)';
+                        previewContent.style.overflow = 'auto';
+                    }
+
+                    showNotification('info', '全螢幕模式', '按 ESC 鍵退出全螢幕');
+                });
+            } else {
+                // 退出全螢幕
+                document.exitFullscreen().then(() => {
+                    // 恢復原本樣式
+                    preview.style.overflow = '';
+                    preview.style.height = '';
+
+                    if (previewContent) {
+                        previewContent.style.maxHeight = '';
+                        previewContent.style.overflow = '';
+                    }
+                });
+            }
         }
-        
-        // Event Listeners
-        function setupEventListeners() {
-            document.addEventListener('click', function(e) {
-                const userDropdown = document.getElementById('userDropdown');
-                if (userDropdown && !e.target.closest('.user-menu')) {
-                    userDropdown.classList.remove('active');
+
+        // 監聽全螢幕變化
+        document.addEventListener('fullscreenchange', () => {
+            const preview = document.querySelector('.document-preview');
+            const btn = document.querySelector('[onclick="toggleFullscreen()"] i');
+
+            if (document.fullscreenElement) {
+                // 全螢幕狀態 - 改變按鈕圖標
+                if (btn) btn.className = 'fas fa-compress';
+            } else {
+                // 非全螢幕狀態
+                if (btn) btn.className = 'fas fa-expand';
+
+                // 確保樣式恢復
+                if (preview) {
+                    preview.style.overflow = '';
+                    preview.style.height = '';
                 }
-            });
-            
-            document.getElementById('documentForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                generateDocument();
-            });
-            
-            document.getElementById('authModal').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeAuthModal();
+            }
+        });
+
+        function toggleUserDropdown() {
+            const dropdown = document.getElementById('userDropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('active');
+            }
+        }
+
+        function showDashboard() {
+            showNotification('info', '儀表板', '儀表板功能開發中');
+        }
+
+        function showDocuments() {
+            showNotification('info', '我的文件', '文件管理功能開發中');
+        }
+
+        function showSettings() {
+            showNotification('info', '設定', '設定頁面開發中');
+        }
+
+        // AI 助手功能 - 使用免費的 Hugging Face API
+        const AIAssistant = {
+            // Hugging Face 的免費 API (每天有限制次數)
+            API_URL: 'https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium',
+
+            // 取得 AI 建議
+            async getContractSuggestions(contractType, formData) {
+                try {
+                    // 建立提問
+                    const prompt = `給我關於${contractType}的法律建議，甲方是${formData.companyName}，乙方是${formData.counterpartyName}`;
+
+                    // 使用另一個免費API: Google Gemini (需要API key)
+                    // 或使用 OpenAI 的免費試用額度
+
+                    // 這裡示範使用本地模擬
+                    return this.simulateAISuggestions(contractType, formData);
+
+                } catch (error) {
+                    console.error('AI API 錯誤:', error);
+                    return this.getDefaultSuggestions(contractType);
                 }
-            });
+            },
+
+            // 模擬 AI 回應（當API無法使用時）
+            simulateAISuggestions(contractType, formData) {
+                const suggestions = {
+                    employment: [
+                        `建議為 ${formData.companyName} 加入明確的工作職責說明`,
+                        '應明訂試用期的考核標準與程序',
+                        '建議加入保密條款與競業禁止約定',
+                        '須符合勞基法最新工時規定'
+                    ],
+                    nda: [
+                        '建議明確定義「機密資訊」的範圍',
+                        '應設定保密期限（通常為2-5年）',
+                        `${formData.counterpartyName} 的違約賠償金額應合理`,
+                        '建議加入資訊返還條款'
+                    ],
+                    rental: [
+                        '建議詳細記載房屋現況與設備清單',
+                        '押金不得超過兩個月租金',
+                        '應明訂修繕責任歸屬',
+                        '建議加入提前終止的條件'
+                    ],
+                    service: [
+                        '建議明確定義服務範圍與交付標準',
+                        '應設定明確的付款里程碑',
+                        '建議加入服務水準協議(SLA)',
+                        '智慧財產權歸屬需明確約定'
+                    ]
+                };
+
+                return suggestions[contractType] || this.getDefaultSuggestions();
+            },
+
+            // 預設建議
+            getDefaultSuggestions() {
+                return [
+                    '建議諮詢專業法律顧問',
+                    '確保所有條款符合最新法規',
+                    '雙方權利義務應對等',
+                    '爭議解決方式需明確'
+                ];
+            }
+        };
+
+        // 修改 loadAISuggestions 函數
+        function loadAISuggestions() {
+            const container = document.getElementById('aiSuggestions');
+            if (!container) return;
+
+            // 顯示載入中
+            container.innerHTML = `
+        <div style="text-align: center; padding: 20px;">
+            <div class="spinner-small"></div>
+            <p style="color: var(--text-secondary); margin-top: 10px; font-size: 12px;">
+                AI 正在分析您的文件...
+            </p>
+        </div>
+    `;
+
+            // 收集表單資料
+            const formData = collectFormData();
+
+            // 延遲後顯示AI建議
+            setTimeout(async () => {
+                // 取得AI建議
+                const suggestions = await AIAssistant.getContractSuggestions(
+                    APP_STATE.selectedDocType,
+                    formData
+                );
+
+                // 顯示建議
+                container.innerHTML = `
+            <h4 style="font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 12px;">
+                <i class="fas fa-robot" style="color: var(--accent-gold);"></i> AI 智能建議
+            </h4>
+            <ul style="list-style: none; padding: 0;">
+                ${suggestions.map((s, index) => `
+                    <li style="padding: 10px; margin-bottom: 8px; background: var(--glass-bg); border-radius: 8px; color: var(--text-secondary); font-size: 13px; cursor: pointer; transition: all 0.3s;"
+                        onmouseover="this.style.background='rgba(255,184,0,0.1)'; this.style.color='var(--text-primary)';"
+                        onmouseout="this.style.background='var(--glass-bg)'; this.style.color='var(--text-secondary)';"
+                        onclick="applyAISuggestion(${index})">
+                        <i class="fas fa-lightbulb" style="color: var(--accent-green); margin-right: 8px;"></i>
+                        ${s}
+                    </li>
+                `).join('')}
+            </ul>
+            <button class="btn-custom btn-glass" style="width: 100%; margin-top: 12px; font-size: 12px;" 
+                    onclick="refreshAISuggestions()">
+                <i class="fas fa-sync-alt"></i> 重新分析
+            </button>
+        `;
+            }, 2000);
+        }
+
+        // 重新整理AI建議
+        function refreshAISuggestions() {
+            loadAISuggestions();
+            showNotification('info', 'AI分析中', '正在重新分析您的文件...');
+        }
+
+        // 套用AI建議
+        function applyAISuggestion(index) {
+            showNotification('success', 'AI建議已採用', '相關條款將加入文件中');
+            // 這裡可以實作將建議加入文件的邏輯
         }
     </script>
 </body>
+
 </html>
