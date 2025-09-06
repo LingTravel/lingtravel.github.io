@@ -879,6 +879,13 @@
             line-height: 1.5;
         }
 
+        /* 減少動畫模式 */
+        .reduce-motion * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+
         /* ============================================
            Hero Section
            ============================================ */
@@ -1816,33 +1823,6 @@
             }
         }
 
-        /* ============================================
-           Theme Toggle Button
-           ============================================ */
-        .theme-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: var(--accent-gold);
-            color: var(--primary-900);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            box-shadow: var(--shadow-xl);
-            transition: all 0.3s ease;
-            z-index: var(--z-fixed);
-        }
-
-        .theme-toggle:hover {
-            transform: scale(1.1) rotate(180deg);
-        }
-
         /* User Dropdown Styles - 加在第5段CSS的最後 */
         .user-menu {
             position: relative;
@@ -1941,6 +1921,527 @@
             background: var(--glass-border);
             margin: 0;
         }
+
+        /* ============================================
+   AI 聊天助手樣式
+   ============================================ */
+        .ai-chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .chat-trigger {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-900);
+            box-shadow: 0 4px 20px rgba(255, 184, 0, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+
+        .chat-trigger:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(255, 184, 0, 0.6);
+        }
+
+        .chat-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent-red);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 380px;
+            height: 500px;
+            background: var(--primary-800);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .chat-window.active {
+            display: flex;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-header {
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary-700), var(--primary-600));
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .chat-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+        }
+
+        .chat-title {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .chat-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .chat-close {
+            margin-left: auto;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .message {
+            display: flex;
+            gap: 8px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .message img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .ai-message .message-content {
+            background: var(--glass-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--glass-border);
+        }
+
+        .user-message {
+            flex-direction: row-reverse;
+        }
+
+        .user-message .message-content {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: var(--primary-900);
+        }
+
+        .chat-input {
+            padding: 16px;
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            gap: 8px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px 14px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .chat-input button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            border: none;
+            color: var(--primary-900);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .chat-input button:hover {
+            transform: scale(1.1);
+        }
+
+        .quick-actions {
+            padding: 8px 16px 16px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .quick-btn {
+            padding: 6px 12px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            color: var(--text-secondary);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quick-btn:hover {
+            background: rgba(255, 184, 0, 0.1);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        /* 手機版調整 */
+        @media (max-width: 480px) {
+            .chat-window {
+                width: calc(100vw - 40px);
+                height: calc(100vh - 100px);
+                bottom: 70px;
+            }
+        }
+
+        /* 滾動顯示動畫 */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-on-scroll.revealed:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-on-scroll.revealed:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-on-scroll.revealed:nth-child(4) {
+            transition-delay: 0.3s;
+        }
+
+        /* AI 打字動畫 */
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            animation: typing-bounce 1.4s infinite;
+        }
+
+        .typing-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing-bounce {
+
+            0%,
+            60%,
+            100% {
+                transform: translateY(0);
+            }
+
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* ============================================
+   設定面板樣式
+   ============================================ */
+        .settings-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .settings-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: var(--primary-900);
+            box-shadow: 0 10px 30px rgba(255, 184, 0, 0.3);
+            animation: spin 3s linear infinite;
+        }
+
+        .settings-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .settings-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .settings-section {
+            margin-bottom: 32px;
+            padding: 24px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+        }
+
+        .settings-section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .settings-section-title i {
+            color: var(--accent-gold);
+        }
+
+        .settings-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .settings-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .settings-item-info {
+            flex: 1;
+        }
+
+        .settings-item-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .settings-item-description {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        /* 主題選擇器 */
+        .theme-selector {
+            display: flex;
+            gap: 8px;
+        }
+
+        .theme-option {
+            padding: 10px 16px;
+            background: var(--glass-bg);
+            border: 2px solid var(--glass-border);
+            border-radius: 10px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .theme-option:hover {
+            border-color: var(--accent-gold);
+            color: var(--text-primary);
+        }
+
+        .theme-option.active {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: var(--primary-900);
+        }
+
+        /* 顏色選擇器 */
+        .color-selector {
+            display: flex;
+            gap: 8px;
+        }
+
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .color-option.active {
+            border-color: var(--text-primary);
+        }
+
+        .color-option.active::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+
+        /* 開關切換 */
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 26px;
+            cursor: pointer;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--glass-border);
+            border-radius: 26px;
+            transition: all 0.3s;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background: var(--text-primary);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .toggle-switch input:checked+.toggle-slider {
+            background: var(--accent-gold);
+        }
+
+        .toggle-switch input:checked+.toggle-slider:before {
+            transform: translateX(24px);
+        }
+
+        .about-info {
+            padding: 16px;
+            background: var(--primary-900);
+            border-radius: 8px;
+        }
+
+        .about-info p {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .about-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .settings-footer {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .settings-footer button {
+            flex: 1;
+        }
     </style>
 </head>
 
@@ -1948,11 +2449,6 @@
     <!-- Background Effects -->
     <div class="universe-bg"></div>
     <div id="particles"></div>
-
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="切換主題">
-        <i class="fas fa-moon" id="themeIcon"></i>
-    </button>
 
     <!-- Navigation System -->
     <nav class="nav-system" id="navSystem">
@@ -2071,7 +2567,7 @@
 
             <div class="hero-visual">
                 <div class="feature-cards-grid">
-                    <div class="feature-card">
+                    <div class="feature-card reveal-on-scroll">
                         <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
                             <div
                                 style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
@@ -4197,7 +4693,933 @@
             showNotification('success', 'AI建議已採用', '相關條款將加入文件中');
             // 這裡可以實作將建議加入文件的邏輯
         }
+
+        // ============================================
+        // 設定面板功能
+        // ============================================
+        let userSettings = {
+            theme: localStorage.getItem('theme') || 'dark',
+            accentColor: localStorage.getItem('accentColor') || '#FFB800',
+            socialProof: localStorage.getItem('socialProof') !== 'false',
+            sound: localStorage.getItem('sound') === 'true',
+            animations: localStorage.getItem('animations') !== 'false',
+            autoSave: localStorage.getItem('autoSave') !== 'false'
+        };
+
+        // 開啟設定面板
+        function showSettings() {
+            const modal = document.getElementById('settingsModal');
+            if (modal) {
+                modal.classList.add('active');
+                loadCurrentSettings();
+            }
+        }
+
+        // 關閉設定面板
+        function closeSettingsModal() {
+            const modal = document.getElementById('settingsModal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        // 載入當前設定
+        function loadCurrentSettings() {
+            // 主題按鈕狀態
+            document.querySelectorAll('.theme-option').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            if (userSettings.theme === 'light') {
+                document.getElementById('themeLight')?.classList.add('active');
+            } else if (userSettings.theme === 'dark') {
+                document.getElementById('themeDark')?.classList.add('active');
+            } else if (userSettings.theme === 'auto') {
+                document.getElementById('themeAuto')?.classList.add('active');
+            }
+
+            // 開關狀態
+            const socialProofToggle = document.getElementById('socialProofToggle');
+            if (socialProofToggle) socialProofToggle.checked = userSettings.socialProof;
+
+            const soundToggle = document.getElementById('soundToggle');
+            if (soundToggle) soundToggle.checked = userSettings.sound;
+
+            const animationToggle = document.getElementById('animationToggle');
+            if (animationToggle) animationToggle.checked = userSettings.animations;
+
+            const autoSaveToggle = document.getElementById('autoSaveToggle');
+            if (autoSaveToggle) autoSaveToggle.checked = userSettings.autoSave;
+        }
+
+        // 設定主題
+        function setTheme(theme) {
+            userSettings.theme = theme;
+
+            // 更新按鈕狀態
+            document.querySelectorAll('.theme-option').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            if (theme === 'light') {
+                document.getElementById('themeLight')?.classList.add('active');
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else if (theme === 'dark') {
+                document.getElementById('themeDark')?.classList.add('active');
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else if (theme === 'auto') {
+                document.getElementById('themeAuto')?.classList.add('active');
+                // 根據系統設定
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+            }
+
+            localStorage.setItem('theme', theme);
+            showNotification('success', '主題已更新', `已切換至${theme === 'dark' ? '深色' : theme === 'light' ? '淺色' : '自動'}模式`);
+        }
+
+        // 設定強調色
+        function setAccentColor(color) {
+            userSettings.accentColor = color;
+            document.documentElement.style.setProperty('--accent-gold', color);
+            localStorage.setItem('accentColor', color);
+
+            // 更新選中狀態
+            document.querySelectorAll('.color-option').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.style.background === color) {
+                    btn.classList.add('active');
+                }
+            });
+
+            showNotification('success', '強調色已更新', '介面顏色已更新');
+        }
+
+        // 切換社交證明
+        function toggleSocialProof() {
+            const toggle = document.getElementById('socialProofToggle');
+            userSettings.socialProof = toggle.checked;
+            localStorage.setItem('socialProof', toggle.checked);
+
+            if (!toggle.checked) {
+                // 停止社交證明通知
+                if (window.SocialProof) {
+                    window.SocialProof.stop();
+                }
+            } else {
+                // 重新啟動社交證明
+                if (window.SocialProof) {
+                    window.SocialProof.init();
+                }
+            }
+        }
+
+        // 切換音效
+        function toggleSound() {
+            const toggle = document.getElementById('soundToggle');
+            userSettings.sound = toggle.checked;
+            localStorage.setItem('sound', toggle.checked);
+
+            if (toggle.checked) {
+                playClickSound();
+                showNotification('info', '音效已啟用', '按鈕點擊將有音效');
+            }
+        }
+
+        // 切換動畫
+        function toggleAnimations() {
+            const toggle = document.getElementById('animationToggle');
+            userSettings.animations = toggle.checked;
+            localStorage.setItem('animations', toggle.checked);
+
+            if (!toggle.checked) {
+                document.body.classList.add('reduce-motion');
+            } else {
+                document.body.classList.remove('reduce-motion');
+            }
+        }
+
+        // 切換自動儲存
+        function toggleAutoSave() {
+            const toggle = document.getElementById('autoSaveToggle');
+            userSettings.autoSave = toggle.checked;
+            localStorage.setItem('autoSave', toggle.checked);
+        }
+
+        // 重置設定
+        function resetSettings() {
+            if (confirm('確定要重置所有設定嗎？')) {
+                localStorage.clear();
+                userSettings = {
+                    theme: 'dark',
+                    accentColor: '#FFB800',
+                    socialProof: true,
+                    sound: false,
+                    animations: true,
+                    autoSave: true
+                };
+
+                setTheme('dark');
+                setAccentColor('#FFB800');
+                loadCurrentSettings();
+
+                showNotification('success', '設定已重置', '所有設定已恢復預設值');
+            }
+        }
+
+        // 儲存設定
+        function saveSettings() {
+            closeSettingsModal();
+            showNotification('success', '設定已儲存', '您的個人化設定已儲存');
+        }
+
+        // 播放點擊音效
+        function playClickSound() {
+            if (userSettings.sound) {
+                // 使用 Web Audio API 產生音效
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                oscillator.frequency.value = 800;
+                oscillator.type = 'sine';
+
+                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.1);
+            }
+        }
+
+        // 初始化設定
+        document.addEventListener('DOMContentLoaded', function () {
+            // 套用儲存的設定
+            if (userSettings.theme) {
+                setTheme(userSettings.theme);
+            }
+
+            if (userSettings.accentColor) {
+                document.documentElement.style.setProperty('--accent-gold', userSettings.accentColor);
+            }
+
+            if (!userSettings.animations) {
+                document.body.classList.add('reduce-motion');
+            }
+        });
     </script>
+    <!-- 在 </body> 之前加入這段 -->
+    <script>
+        // ============================================
+        // 超酷的動態粒子背景系統
+        // ============================================
+        class ParticleSystem {
+            constructor() {
+                // 建立畫布
+                this.canvas = document.createElement('canvas');
+                this.canvas.id = 'particleCanvas';
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.mouseX = 0;
+                this.mouseY = 0;
+
+                this.init();
+            }
+
+            init() {
+                // 設定畫布樣式
+                this.canvas.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1;
+                opacity: 0.6;
+            `;
+
+                // 把畫布加到網頁上
+                const universeБg = document.querySelector('.universe-bg');
+                if (universeБg) {
+                    universeБg.appendChild(this.canvas);
+                } else {
+                    document.body.appendChild(this.canvas);
+                }
+
+                this.resize();
+                this.createParticles();
+                this.animate();
+
+                // 追蹤滑鼠位置
+                document.addEventListener('mousemove', (e) => {
+                    this.mouseX = e.clientX;
+                    this.mouseY = e.clientY;
+                });
+
+                // 視窗大小改變時調整
+                window.addEventListener('resize', () => this.resize());
+            }
+
+            createParticles() {
+                // 建立 50 個粒子（不要太多，會變慢）
+                for (let i = 0; i < 50; i++) {
+                    this.particles.push({
+                        x: Math.random() * window.innerWidth,
+                        y: Math.random() * window.innerHeight,
+                        size: Math.random() * 3 + 1,
+                        speedX: (Math.random() - 0.5) * 0.5,
+                        speedY: (Math.random() - 0.5) * 0.5,
+                        opacity: Math.random() * 0.5 + 0.2,
+                        hue: Math.random() * 60 + 30 // 金黃色調
+                    });
+                }
+            }
+
+            animate() {
+                // 清除畫布
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                // 繪製每個粒子
+                this.particles.forEach((particle, index) => {
+                    // 更新位置
+                    particle.x += particle.speedX;
+                    particle.y += particle.speedY;
+
+                    // 滑鼠互動效果
+                    const dx = this.mouseX - particle.x;
+                    const dy = this.mouseY - particle.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 150) {
+                        const force = (150 - distance) / 150;
+                        particle.x -= dx * force * 0.01;
+                        particle.y -= dy * force * 0.01;
+                    }
+
+                    // 邊界反彈
+                    if (particle.x < 0 || particle.x > this.canvas.width) {
+                        particle.speedX *= -1;
+                    }
+                    if (particle.y < 0 || particle.y > this.canvas.height) {
+                        particle.speedY *= -1;
+                    }
+
+                    // 繪製粒子
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = `hsla(${particle.hue}, 100%, 60%, ${particle.opacity})`;
+                    this.ctx.fill();
+
+                    // 連線效果（只連接附近的粒子）
+                    for (let j = index + 1; j < this.particles.length; j++) {
+                        const other = this.particles[j];
+                        const dx = particle.x - other.x;
+                        const dy = particle.y - other.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 100) {
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(particle.x, particle.y);
+                            this.ctx.lineTo(other.x, other.y);
+                            this.ctx.strokeStyle = `hsla(45, 100%, 60%, ${0.1 * (1 - distance / 100)})`;
+                            this.ctx.lineWidth = 0.5;
+                            this.ctx.stroke();
+                        }
+                    }
+                });
+
+                // 持續動畫
+                requestAnimationFrame(() => this.animate());
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+        }
+
+        // 頁面載入完成後啟動粒子系統
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(() => {
+                    new ParticleSystem();
+                }, 500);
+            });
+        } else {
+            setTimeout(() => {
+                new ParticleSystem();
+            }, 500);
+        }
+    </script>
+    <script>
+        // ============================================
+        // 真正的 AI 聊天助手 - 使用 Google Gemini
+        // ============================================
+        class RealAIChat {
+            constructor() {
+                // 把你的 API key 放在這裡
+                this.API_KEY = 'AIzaSyBgKooB_0m2KbudZ33U5hEU4P-rAsZ9Yqw'; // ← 替換成你的 API key
+                this.API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
+
+                this.isOpen = false;
+                this.messages = [];
+                this.conversationHistory = [];
+                this.createWidget();
+                this.bindEvents();
+
+                // 初始化對話背景
+                this.systemPrompt = `你是一個專業的台灣法律文件助手，專門協助用戶製作合法的契約文件。
+        你的特點：
+        1. 精通台灣法律，特別是勞動法、民法、公司法
+        2. 說話親切專業，使用繁體中文
+        3. 會主動提供實用的法律建議
+        4. 了解 DOCU 平台的所有功能
+        5. 可以協助選擇適合的文件類型
+        
+        DOCU 平台資訊：
+        - 提供勞動契約、保密協議、租賃契約等50+種範本
+        - 有免費版（每月3份）、基礎版（NT$199）、專業版（NT$599）
+        - 所有文件100%符合台灣最新法規
+        
+        請根據用戶的問題提供專業、實用的回答。`;
+
+                setTimeout(() => this.showWelcomeMessage(), 5000);
+            }
+
+            createWidget() {
+                const widget = document.createElement('div');
+                widget.className = 'ai-chat-widget';
+                widget.innerHTML = `
+            <button class="chat-trigger" id="chatTrigger">
+                <i class="fas fa-robot"></i>
+                <span class="chat-badge" id="chatBadge" style="display: none;">AI</span>
+            </button>
+            <div class="chat-window" id="chatWindow">
+                <div class="chat-header">
+                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #4285f4, #34a853); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-brain" style="color: white;"></i>
+                    </div>
+                    <div>
+                        <div class="chat-title">AI 法律顧問</div>
+                        <div class="chat-status">
+                            <span class="status-dot"></span>
+                            <span>Powered by Gemini AI</span>
+                        </div>
+                    </div>
+                    <button class="chat-close" id="chatClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message ai-message">
+                        <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #4285f4, #34a853); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-brain" style="color: white; font-size: 14px;"></i>
+                        </div>
+                        <div class="message-content">
+                            👋 您好！我是您的 AI 法律顧問！<br><br>
+                            我可以幫您：<br>
+                            • 解答任何法律問題<br>
+                            • 推薦適合的文件類型<br>
+                            • 提供專業法律建議<br>
+                            • 協助填寫文件內容<br><br>
+                            請隨意發問，我會用最專業的知識協助您！
+                        </div>
+                    </div>
+                </div>
+                <div class="quick-actions">
+                    <button class="quick-btn" onclick="realAI.askAI('我要開公司需要什麼文件？')">
+                        開公司文件
+                    </button>
+                    <button class="quick-btn" onclick="realAI.askAI('勞動契約要注意什麼？')">
+                        勞動契約
+                    </button>
+                    <button class="quick-btn" onclick="realAI.askAI('如何保護商業機密？')">
+                        商業機密
+                    </button>
+                </div>
+                <div class="chat-input">
+                    <input type="text" placeholder="問我任何法律問題..." id="chatInput">
+                    <button id="chatSend">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+
+                document.body.appendChild(widget);
+            }
+
+            bindEvents() {
+                document.getElementById('chatTrigger').addEventListener('click', () => {
+                    this.toggle();
+                });
+
+                document.getElementById('chatClose').addEventListener('click', () => {
+                    this.close();
+                });
+
+                document.getElementById('chatSend').addEventListener('click', () => {
+                    this.sendMessage();
+                });
+
+                document.getElementById('chatInput').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        this.sendMessage();
+                    }
+                });
+            }
+
+            toggle() {
+                this.isOpen = !this.isOpen;
+                const window = document.getElementById('chatWindow');
+                const badge = document.getElementById('chatBadge');
+
+                if (this.isOpen) {
+                    window.classList.add('active');
+                    badge.style.display = 'none';
+                } else {
+                    window.classList.remove('active');
+                }
+            }
+
+            open() {
+                this.isOpen = true;
+                document.getElementById('chatWindow').classList.add('active');
+                document.getElementById('chatBadge').style.display = 'none';
+            }
+
+            close() {
+                this.isOpen = false;
+                document.getElementById('chatWindow').classList.remove('active');
+            }
+
+            showWelcomeMessage() {
+                if (!this.isOpen) {
+                    const badge = document.getElementById('chatBadge');
+                    badge.style.display = 'flex';
+
+                    const trigger = document.getElementById('chatTrigger');
+                    trigger.style.animation = 'shake 0.5s';
+                    setTimeout(() => {
+                        trigger.style.animation = 'pulse 2s infinite';
+                    }, 500);
+                }
+            }
+
+            async sendMessage() {
+                const input = document.getElementById('chatInput');
+                const message = input.value.trim();
+
+                if (!message) return;
+
+                // 顯示用戶訊息
+                this.addMessage(message, 'user');
+                input.value = '';
+
+                // 顯示載入中
+                this.showTyping();
+
+                try {
+                    // 呼叫真正的 AI
+                    const aiResponse = await this.callGeminiAI(message);
+                    this.hideTyping();
+                    this.addMessage(aiResponse, 'ai');
+                } catch (error) {
+                    console.error('AI Error:', error);
+                    this.hideTyping();
+                    this.addMessage('抱歉，AI 暫時無法回應。請稍後再試或聯繫客服。', 'ai');
+                }
+            }
+
+            async callGeminiAI(userMessage) {
+                // 準備對話歷史
+                const messages = [
+                    {
+                        role: "user",
+                        parts: [{
+                            text: this.systemPrompt + "\n\n用戶問題：" + userMessage
+                        }]
+                    }
+                ];
+
+                // 加入對話歷史（保留最近5輪對話）
+                if (this.conversationHistory.length > 0) {
+                    const recentHistory = this.conversationHistory.slice(-10);
+                    messages[0].parts[0].text = this.systemPrompt +
+                        "\n\n之前的對話：\n" +
+                        recentHistory.join('\n') +
+                        "\n\n用戶最新問題：" + userMessage;
+                }
+
+                try {
+                    const response = await fetch(`${this.API_URL}?key=${this.API_KEY}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            contents: messages,
+                            generationConfig: {
+                                temperature: 0.7,
+                                topK: 40,
+                                topP: 0.95,
+                                maxOutputTokens: 1024,
+                            },
+                            safetySettings: [
+                                {
+                                    category: "HARM_CATEGORY_HARASSMENT",
+                                    threshold: "BLOCK_NONE"
+                                },
+                                {
+                                    category: "HARM_CATEGORY_HATE_SPEECH",
+                                    threshold: "BLOCK_NONE"
+                                },
+                                {
+                                    category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                                    threshold: "BLOCK_NONE"
+                                },
+                                {
+                                    category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+                                    threshold: "BLOCK_NONE"
+                                }
+                            ]
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('API request failed');
+                    }
+
+                    const data = await response.json();
+
+                    if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
+                        const aiText = data.candidates[0].content.parts[0].text;
+
+                        // 儲存對話歷史
+                        this.conversationHistory.push(`用戶：${userMessage}`);
+                        this.conversationHistory.push(`AI：${aiText}`);
+
+                        return aiText;
+                    } else {
+                        throw new Error('Invalid response format');
+                    }
+
+                } catch (error) {
+                    console.error('Gemini API Error:', error);
+
+                    // 如果 API 失敗，使用備用回應
+                    return this.getFallbackResponse(userMessage);
+                }
+            }
+
+            getFallbackResponse(message) {
+                // 備用的智能回應（當 API 失敗時）
+                const keywords = {
+                    '勞動': '勞動契約需要注意：\n1. 明確約定工作內容、地點、時間\n2. 薪資結構要清楚（本薪、津貼、獎金）\n3. 加班費計算方式要符合勞基法\n4. 試用期最長3個月\n5. 資遣費和退休金規定\n\n建議使用我們的勞動契約範本，已包含所有必要條款。',
+                    '租': '租賃契約重點：\n1. 租金、押金（最多2個月）\n2. 租期和續約條件\n3. 修繕責任歸屬\n4. 提前終止條款\n5. 使用限制（營業、寵物等）\n\n我們的租賃契約範本符合最新租賃住宅條例。',
+                    '保密': '保密協議(NDA)要點：\n1. 明確定義機密資訊範圍\n2. 保密期限（通常2-5年）\n3. 允許揭露的例外情況\n4. 違約賠償條款\n5. 管轄法院約定\n\n可選擇單向或雙向保密協議。',
+                    '價格': '我們的方案：\n\n🆓 免費版\n• 每月3份文件\n• 基本範本\n\n💼 基礎版 NT$199/月\n• 每月20份文件\n• PDF下載\n\n👑 專業版 NT$599/月\n• 無限文件\n• Word檔下載\n• AI法律建議\n\n現在升級享首月5折優惠！',
+                    default: '感謝您的提問！這是個很好的法律問題。建議您：\n\n1. 先確認您需要的文件類型\n2. 使用我們的智能範本系統\n3. 如需更專業的建議，可以升級到專業版獲得完整的法律支援\n\n有其他問題嗎？我隨時為您服務！'
+                };
+
+                const lowerMessage = message.toLowerCase();
+                for (const [key, response] of Object.entries(keywords)) {
+                    if (key !== 'default' && lowerMessage.includes(key)) {
+                        return response;
+                    }
+                }
+
+                return keywords.default;
+            }
+
+            askAI(question) {
+                document.getElementById('chatInput').value = question;
+                this.sendMessage();
+            }
+
+            addMessage(text, sender) {
+                const messagesDiv = document.getElementById('chatMessages');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}-message`;
+
+                if (sender === 'ai') {
+                    // 處理 AI 訊息格式（支援換行和列表）
+                    const formattedText = text
+                        .replace(/\n/g, '<br>')
+                        .replace(/•/g, '&bull;')
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+                    messageDiv.innerHTML = `
+                <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #4285f4, #34a853); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <i class="fas fa-brain" style="color: white; font-size: 14px;"></i>
+                </div>
+                <div class="message-content">${formattedText}</div>
+            `;
+                } else {
+                    messageDiv.innerHTML = `
+                <div class="message-content">${text}</div>
+            `;
+                }
+
+                messagesDiv.appendChild(messageDiv);
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }
+
+            showTyping() {
+                const messagesDiv = document.getElementById('chatMessages');
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'message ai-message typing-indicator';
+                typingDiv.innerHTML = `
+            <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #4285f4, #34a853); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fas fa-brain" style="color: white; font-size: 14px;"></i>
+            </div>
+            <div class="message-content">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        `;
+                messagesDiv.appendChild(typingDiv);
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }
+
+            hideTyping() {
+                const typing = document.querySelector('.typing-indicator');
+                if (typing) typing.remove();
+            }
+        }
+
+        // 啟動真正的 AI 聊天
+        let realAI;
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                realAI = new RealAIChat();
+            });
+        } else {
+            realAI = new RealAIChat();
+        }
+    </script>
+    }
+
+    // 啟動聊天助手
+    let aiChat;
+    if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+    aiChat = new AIChat();
+    });
+    } else {
+    aiChat = new AIChat();
+    }
+
+    // 加入震動動畫
+    const shakeStyle = document.createElement('style');
+    shakeStyle.textContent = `
+    @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    }
+    `;
+    document.head.appendChild(shakeStyle);
+    </script>
+    <script>
+        // ============================================
+        // 滾動顯示動畫系統
+        // ============================================
+        const ScrollReveal = {
+            init() {
+                this.elements = document.querySelectorAll('.reveal-on-scroll');
+                this.observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                this.observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            // 動畫完成後不再觀察
+                            this.observer.unobserve(entry.target);
+                        }
+                    });
+                }, this.observerOptions);
+
+                this.elements.forEach(el => {
+                    this.observer.observe(el);
+                });
+            }
+        };
+
+        // 啟動滾動動畫
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                ScrollReveal.init();
+            });
+        } else {
+            ScrollReveal.init();
+        }
+    </script>
+    <!-- 設定面板 Modal -->
+    <div class="modal-overlay" id="settingsModal">
+        <div class="modal-container" style="max-width: 600px;">
+            <button class="modal-close" onclick="closeSettingsModal()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="modal-content">
+                <div class="settings-header">
+                    <div class="settings-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h2 class="settings-title">系統設定</h2>
+                    <p class="settings-subtitle">自訂您的使用體驗</p>
+                </div>
+
+                <!-- 主題設定 -->
+                <div class="settings-section">
+                    <h3 class="settings-section-title">
+                        <i class="fas fa-palette"></i>
+                        外觀設定
+                    </h3>
+
+                    <div class="settings-item">
+                        <div class="settings-item-info">
+                            <div class="settings-item-title">主題模式</div>
+                            <div class="settings-item-description">選擇您喜歡的介面風格</div>
+                        </div>
+                        <div class="theme-selector">
+                            <button class="theme-option" id="themeLight" onclick="setTheme('light')">
+                                <i class="fas fa-sun"></i>
+                                <span>淺色</span>
+                            </button>
+                            <button class="theme-option active" id="themeDark" onclick="setTheme('dark')">
+                                <i class="fas fa-moon"></i>
+                                <span>深色</span>
+                            </button>
+                            <button class="theme-option" id="themeAuto" onclick="setTheme('auto')">
+                                <i class="fas fa-adjust"></i>
+                                <span>自動</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="settings-item">
+                        <div class="settings-item-info">
+                            <div class="settings-item-title">強調色</div>
+                            <div class="settings-item-description">選擇系統強調色</div>
+                        </div>
+                        <div class="color-selector">
+                            <button class="color-option" style="background: #FFB800;"
+                                onclick="setAccentColor('#FFB800')" title="金色"></button>
+                            <button class="color-option" style="background: #0066FF;"
+                                onclick="setAccentColor('#0066FF')" title="藍色"></button>
+                            <button class="color-option" style="background: #00C896;"
+                                onclick="setAccentColor('#00C896')" title="綠色"></button>
+                            <button class="color-option" style="background: #8B5CF6;"
+                                onclick="setAccentColor('#8B5CF6')" title="紫色"></button>
+                            <button class="color-option" style="background: #FF3B30;"
+                                onclick="setAccentColor('#FF3B30')" title="紅色"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 通知設定 -->
+                <div class="settings-section">
+                    <h3 class="settings-section-title">
+                        <i class="fas fa-bell"></i>
+                        通知設定
+                    </h3>
+
+                    <div class="settings-item">
+                        <div class="settings-item-info">
+                            <div class="settings-item-title">社交證明通知</div>
+                            <div class="settings-item-description">顯示其他用戶的活動通知</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="socialProofToggle" checked onchange="toggleSocialProof()">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="settings-item">
+                        <div class="settings-item-info">
+                            <div class="settings-item-title">音效</div>
+                            <div class="settings-item-description">啟用按鈕點擊與通知音效</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="soundToggle" onchange="toggleSound()">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 進階設定 -->
+                <div class="settings-section">
+                    <h3 class="settings-section-title">
+                        <i class="fas fa-sliders-h"></i>
+                        進階設定
+                    </h3>
+
+                    <div class="settings-item">
+                        <div class="settings-item-info">
+                            <div class="settings-item-title">動畫效果</div>
+                            <div class="settings-item-description">減少動畫以提升效能</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="animationToggle" checked onchange="toggleAnimations()">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="settings-item">
+                        <div class="settings-item-info">
+                            <div class="settings-item-title">自動儲存</div>
+                            <div class="settings-item-description">自動儲存文件草稿</div>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="autoSaveToggle" checked onchange="toggleAutoSave()">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 關於 -->
+                <div class="settings-section">
+                    <h3 class="settings-section-title">
+                        <i class="fas fa-info-circle"></i>
+                        關於
+                    </h3>
+
+                    <div class="about-info">
+                        <p><strong>版本：</strong> 2.0.0</p>
+                        <p><strong>更新日期：</strong> 2024年1月</p>
+                        <p><strong>開發團隊：</strong> DOCU Professional</p>
+                    </div>
+                </div>
+
+                <!-- 底部按鈕 -->
+                <div class="settings-footer">
+                    <button class="btn-custom btn-glass" onclick="resetSettings()">
+                        <i class="fas fa-undo"></i>
+                        重置設定
+                    </button>
+                    <button class="btn-custom btn-primary" onclick="saveSettings()">
+                        <i class="fas fa-save"></i>
+                        儲存設定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 
 </html>
